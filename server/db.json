@@ -1,0 +1,53 @@
+{
+    "users":[
+        {
+            "user_id":1,
+            "username":"tran quoc huu",
+            "email":"huutran@gmail.com",
+            "password":"123456",
+            "avatar":"https://haycafe.vn/wp-content/uploads/2021/11/Anh-avatar-dep-chat-lam-hinh-dai-dien-600x600.jpg",
+            "location":"101B, le huu trac, son tra , da nang",
+            "phone-number":"0394124323"
+        }
+    ],
+    "Plants":[
+        {
+            "plant_id":"1",
+            "user_id":"1",
+            "name":" Acer rubrum",
+            "description":"Cây dáng trực là cây có trục thân cây thẳng góc với mặt đất (thế đứng) α = 0o (nhìn tổng thể giữa ngọn và gốc hình thành đường thẳng hoặc gần thẳng đứng).",
+            "image_plant":"https://cayxinh.vn/wp-content/uploads/2021/01/bon-sai-22121-14.jpg",
+            "price":"120.000",
+            "listed_at":"11/02/2003"        
+        }
+    ],
+    "Posts":[
+        {
+        "post_id":"1",
+        "user_id":"1",
+        "title":"dgdgdgd",
+        "content":"Giao lưu với cô chú 1 cây Nguyệt quế lá xoắn bông trùm cây cao 2m50 thoát thân 1m20 hoành góc 60cm",
+        "image_post":"https://scontent.fsgn2-4.fna.fbcdn.net/v/t39.30808-6/364743609_3349193995377720_8440381991958828060_n.jpg?stp=cp6_dst-jpg_s600x600&_nc_cat=101&ccb=1-7&_nc_sid=5cd70e&_nc_ohc=hIFKvUIUIxIAX84u_wd&_nc_ht=scontent.fsgn2-4.fna&oh=00_AfDrRFtsz-5dFVhHRGgDPaMPJZPVw4IFNtx1KBRtSe3srQ&oe=64CF4145",
+        "create_at":"12/03/2023"
+        }  
+    ],
+    "Transactions":[
+        {
+            "transaction_id ":"1",
+            "seller_id":"1",
+            "buyer_id":"1",
+            "plant_id":"1",
+            "transaction_date":"24/03/2023",
+            "amount":"2"
+        }
+    ],
+    "Comments":[
+        {
+            "comment_id":"1",
+            "user_id":"1",
+            "post_id":"1",
+            "content":"Cẩm thị (kim cương đen) mới làm về gl ace. Rất mong ace yêu thích ủng hộ",
+            "created_comment_at":"12/03/2022"
+        }
+    ]
+}
