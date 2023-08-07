@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 const Header =()=>{
    
         return (
+           
             <header className='fixed w-full bg-white'>
                 <div className='flex Navbar items-center p-2 md:p-0 lg:p-6 justify-between'>
                     <div className='name-web'>
@@ -35,12 +36,18 @@ const Header =()=>{
                         <input className="shadow font-light text-[16px] hidden lg:flex md:hidden appearance-none border  rounded w-full py-2 hover:border-green-500 px-3 text-gray-700  leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="Enter your password" />
                         
                         </div>
-                        <div className="flex items-center lg:gap-2 justify-between">
-                        <button className="bg-green-700 shadow hover:bg-green-500  text-[16px] text-white font-bold py-2 px-4 h-[40px] w-[90px] rounded focus:outline-none focus:shadow-outline" type="button">
+                        <div className="flex items-center lg:gap-2 justify-between gap-2">
+                        <button className="hidden lg:block xl:block bg-green-700 shadow hover:bg-green-500  text-[16px] text-white font-bold py-2 px-4 h-[40px] w-[100px] rounded focus:outline-none focus:shadow-outline" type="button">
                             Sign In
                         </button>
-                        <a className="inline-block hidden lg:block md:hidden align-baseline font-bold text-[16px] text-sm text-green-700 hover:text-green-500 " href="#">
-                            Forgot Password?
+                        <button className="hidden lg:block xl:block bg-green-700 shadow hover:bg-green-500  text-[16px] text-white font-bold py-2 px-4 h-[40px] w-[100px] rounded focus:outline-none focus:shadow-outline" type="button">
+                            <Link to="/Signup" >Sign Up</Link>
+                        </button>
+                        <button className="block lg:hidden xl:hidden bg-green-700 shadow hover:bg-green-500  text-[16px] text-white font-bold py-2 px-4 h-[40px] w-[100px] rounded focus:outline-none focus:shadow-outline" type="button">
+                            <Link to="/Signin"  >Profile</Link>
+                        </button>
+                        <a className="inline-block hidden lg:hidden xl:block md:hidden align-baseline font-bold text-[16px] text-sm text-green-700 hover:text-green-500 " href="#">
+                        <Link to="/ResetPassword"  >Forgot Password?</Link> 
                         </a>
                         </div>
                     </form>
@@ -50,6 +57,7 @@ const Header =()=>{
                     
                 </div>
             </header>
+      
         );
     }
 

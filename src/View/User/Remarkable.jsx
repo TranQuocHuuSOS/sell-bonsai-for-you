@@ -1,17 +1,7 @@
-import React, { useState } from 'react';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { fas } from '@fortawesome/free-solid-svg-icons';
-import '../../components/style/output.css';
-import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
-// import Discuss from './Discuss';
-library.add(fas);
-const Home=()=> {
-    const [nav, setNav] = useState(false)
-    const handleNav = () => {
-        setNav(!nav)
-    }
-        return (
-            <div className='w-full  inline-block'> 
+import React, { Component } from 'react';
+const Remarkable =()=> {
+    return(
+        <div className='w-full  inline-block'> 
                
                 {/* start contennt */}
                 <div className='flex px-0 sm:px-12 md:px-20 gap-4 lg:px-36 xl:px-48 p-8 bg-[#f8d59e]'>
@@ -58,58 +48,19 @@ const Home=()=> {
                                             </a>
                                         </div>
                                         <div className='mx-4'>
-                                            <p className='font-medium text-[16px] hover:underline'>Tran Quoc Huu</p>
-                                            <span className='hover:underline'>16 giờ trước</span>
+                                            <p className='font-medium text-[16px]'>Diệu nhi cho thuê đăng ký duyệt tự động</p>
+                                            <span>16 giờ trước</span>
                                         </div> 
                                 </div>
                                 <div className='justify-between mx-4'>
-                                    <div onClick={handleNav} className='block '>
-                                        {nav ? <AiOutlineClose size={25} className='text-black mx-2' /> : <  svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M8 256a56 56 0 1 1 112 0A56 56 0 1 1 8 256zm160 0a56 56 0 1 1 112 0 56 56 0 1 1 -112 0zm216-56a56 56 0 1 1 0 112 56 56 0 1 1 0-112z" className='mx-2'/></svg>   }
-                                    </div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M8 256a56 56 0 1 1 112 0A56 56 0 1 1 8 256zm160 0a56 56 0 1 1 112 0 56 56 0 1 1 -112 0zm216-56a56 56 0 1 1 0 112 56 56 0 1 1 0-112z"/></svg>
                                 </div>
-                             
-                
-
-
-                <div className={nav ? 'rounded-lg lg:w-[400px] mx-1 p-2  sm:mx-12 md:mx-20 lg:mx-36 md:w-[350px] sm:w-[300px] w-[150px] absolute bg-green-200 text-black md:top-[700px] lg:top-[800px] sm:top-[600px]  left-0  justify-center ' : 'absolute left-[-100%]'}>
-                    <div className='flex items-center gap-4 p-2 border-b-[1px] border-black'>
-                        <i data-visualcompletion="css-img" className="x1b0d499 xep6ejk" style={{ backgroundImage:'url("https://static.xx.fbcdn.net/rsrc.php/v3/yQ/r/2sWMgO9b01D.png")',backgroundPosition: "0px -254px",backgroundSize: "26px 1228px",width: 20,height: 20,backgroundRepeat: "no-repeat",display: "inline-block"}}/>
-                        <div className=''> 
-                            <p><strong>Lưu bài viết</strong></p>
-                            <p>Thêm vào danh sách mục đã lưu</p>
-                        </div>
-                    </div>
-                    <div className='flex items-center gap-4 p-2 border-b-[1px] border-black'>
-                        <i data-visualcompletion="css-img" className="x1b0d499 xep6ejk" style={{backgroundImage:'url("https://static.xx.fbcdn.net/rsrc.php/v3/yN/r/FSxdjzLYyYU.png")',backgroundPosition: "0px -282px",backgroundSize: "38px 838px",width: 20,height: 20,backgroundRepeat: "no-repeat",display: "inline-block"}}/>
-                        <p><strong>Bật thông báo về bài viết này</strong></p>
-                    </div>
-                    <div className='flex items-center gap-4 p-2 border-b-[1px] border-black'>
-                       
-                            <div className=''> 
-                                <p><strong>Lưu bài viết</strong></p>
-                                <p>Thêm vào danh sách mục đã lưu</p>
-                            </div>
-                    </div>
-                </div>
-
-
-
-
                             </div>
                             <p className='content px-4'> Bao ship toàn quốc miễn phí !</p>
-                            <div className='my-4 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols- gap-1 items-center justify-center'>
-                                <div className=''>
-                                    <img src="https://bcolohouse.com.vn/wp-content/uploads/2022/04/trong-cay-bonsai-mini-1.jpg" alt=""></img>
-                                </div>
-                                <div className=''>
-                                    <img src="https://bcolohouse.com.vn/wp-content/uploads/2022/04/trong-cay-bonsai-mini-1.jpg" alt=""></img>
-                                </div>
-                                <div className=''>
-                                    <img src="https://bcolohouse.com.vn/wp-content/uploads/2022/04/trong-cay-bonsai-mini-1.jpg" alt=""></img>
-                                </div>
-                                <div className=''>
-                                    <img src="https://bcolohouse.com.vn/wp-content/uploads/2022/04/trong-cay-bonsai-mini-1.jpg" alt=""></img>
-                                </div>
+                            <div className='my-4  gap-1 items-center justify-center'>
+                               <div className='w-full h-[400px] bg-[#d512e7] items-center justify-center p-16 font-bold text-[32px]'>
+                               Đăng kí duyệt tự động để bán hàng - Gym bài - Thay banner . IB trực tiếp vào page để được hỗ trợ nhé !!!
+                               </div>
                             </div>
                             <div className='p-2 xl:mx-16 lg:mx-16 md:mx-12 sm:mx-6 mx-2 grid  grid-cols-3 border-t-[1px]'>
                                 <div className='flex items-center'>
@@ -191,6 +142,8 @@ const Home=()=> {
                 </div>
                 {/* <Discuss/> */}
             </div> 
-        );
-    }
-export default Home;
+    );
+}
+
+
+export default Remarkable;
