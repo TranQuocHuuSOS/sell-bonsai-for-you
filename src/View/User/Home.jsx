@@ -64,33 +64,62 @@ const Home=()=> {
                                 </div>
                                 <div className='justify-between mx-4'>
                                     <div onClick={handleNav} className='block '>
-                                        {nav ? <AiOutlineClose size={25} className='text-black mx-2' /> : <  svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M8 256a56 56 0 1 1 112 0A56 56 0 1 1 8 256zm160 0a56 56 0 1 1 112 0 56 56 0 1 1 -112 0zm216-56a56 56 0 1 1 0 112 56 56 0 1 1 0-112z" className='mx-2'/></svg>   }
+                                        {nav ? <AiOutlineClose size={20} className='text-black mx-2' /> : <  svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M8 256a56 56 0 1 1 112 0A56 56 0 1 1 8 256zm160 0a56 56 0 1 1 112 0 56 56 0 1 1 -112 0zm216-56a56 56 0 1 1 0 112 56 56 0 1 1 0-112z" className='mx-2'/></svg>   }
                                     </div>
                                 </div>
                              
                 
 
 
-                <div className={nav ? 'rounded-lg lg:w-[400px] mx-1 p-2  sm:mx-12 md:mx-20 lg:mx-36 md:w-[350px] sm:w-[300px] w-[150px] absolute bg-green-200 text-black md:top-[700px] lg:top-[800px] sm:top-[600px]  left-0  justify-center ' : 'absolute left-[-100%]'}>
-                    <div className='flex items-center gap-4 p-2 border-b-[1px] border-black'>
-                        <i data-visualcompletion="css-img" className="x1b0d499 xep6ejk" style={{ backgroundImage:'url("https://static.xx.fbcdn.net/rsrc.php/v3/yQ/r/2sWMgO9b01D.png")',backgroundPosition: "0px -254px",backgroundSize: "26px 1228px",width: 20,height: 20,backgroundRepeat: "no-repeat",display: "inline-block"}}/>
-                        <div className=''> 
-                            <p><strong>Lưu bài viết</strong></p>
-                            <p>Thêm vào danh sách mục đã lưu</p>
-                        </div>
-                    </div>
-                    <div className='flex items-center gap-4 p-2 border-b-[1px] border-black'>
-                        <i data-visualcompletion="css-img" className="x1b0d499 xep6ejk" style={{backgroundImage:'url("https://static.xx.fbcdn.net/rsrc.php/v3/yN/r/FSxdjzLYyYU.png")',backgroundPosition: "0px -282px",backgroundSize: "38px 838px",width: 20,height: 20,backgroundRepeat: "no-repeat",display: "inline-block"}}/>
-                        <p><strong>Bật thông báo về bài viết này</strong></p>
-                    </div>
-                    <div className='flex items-center gap-4 p-2 border-b-[1px] border-black'>
-                       
-                            <div className=''> 
-                                <p><strong>Lưu bài viết</strong></p>
-                                <p>Thêm vào danh sách mục đã lưu</p>
-                            </div>
-                    </div>
-                </div>
+                                <div className={nav ? 'rounded-lg lg:w-[400px] mx-1 p-2  sm:mx-12 md:mx-20 lg:mx-[25%] md:w-[350px] sm:w-[300px] w-[150px] absolute shadow-lg bg-green-200 text-black md:top-[700px] xl:top-[1150px] lg:top-[1000px] sm:top-[600px]  left-0  justify-center ' : 'absolute left-[-100%]'}>
+                                    <div className='flex items-center gap-4 p-2 border-b-[1px] border-black'>
+                                        <i data-visualcompletion="css-img" className="x1b0d499 xep6ejk" style={{ backgroundImage:'url("https://static.xx.fbcdn.net/rsrc.php/v3/yQ/r/2sWMgO9b01D.png")',backgroundPosition: "0px -254px",backgroundSize: "26px 1228px",width: 20,height: 20,backgroundRepeat: "no-repeat",display: "inline-block"}}/>
+                                        <div className=''> 
+                                            <p><strong>Lưu bài viết</strong></p>
+                                            <p>Thêm vào danh sách mục đã lưu.</p>
+                                        </div>
+                                    </div>
+                                    <div className='flex items-center gap-4 p-2 border-b-[1px] border-black'>
+                                        <i data-visualcompletion="css-img" className="x1b0d499 xep6ejk" style={{backgroundImage:'url("https://static.xx.fbcdn.net/rsrc.php/v3/yN/r/FSxdjzLYyYU.png")',backgroundPosition: "0px -282px",backgroundSize: "38px 838px",width: 20,height: 20,backgroundRepeat: "no-repeat",display: "inline-block"}}/>
+                                        <p><strong>Bật thông báo về bài viết này</strong></p>
+                                    </div>
+                                    <div className='flex items-center gap-4 p-2'>
+                                        <div className="x6s0dn4 xoi2r2e x78zum5 xl56j7k xq8finb">
+                                            <img className="x1b0d499 xep6ejk"src="https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/h15jrhghvUR.png"alt=""height={30}width={30}/>
+                                        </div>
+                                        <div className=''> 
+                                            <p><strong>Tạm ẩn Diệu Nhi Cho Thuê Đăng Kí Duyệt Tự Động trong 30 ngày</strong></p>
+                                            <p>Tạm thời không nhìn thấy bài viết nữa.</p>
+                                        </div>
+                                    </div>
+                                    <div className='flex items-center gap-4 p-2'>
+                                        <div className="x6s0dn4 xoi2r2e x78zum5 xl56j7k xq8finb">
+                                            <img className="x1b0d499 xep6ejk" src="https://static.xx.fbcdn.net/rsrc.php/v3/yj/r/KHqkjYOwBTc.png" alt=""height={30}width={30}/>
+                                        </div>
+                                        <div className=''> 
+                                            <p><strong> Ẩn tất cả từ Diệu Nhi Cho Thuê Đăng Kí Duyệt Tự Động</strong></p>
+                                            <p>Không xem bài viết của trang này nữa.</p>
+                                        </div>
+                                    </div>
+                                    <div className='flex items-center gap-4 p-2'>
+                                        <div className="x6s0dn4 xoi2r2e x78zum5 xl56j7k xq8finb">
+                                            <img className="x1b0d499 xep6ejk" src="https://static.xx.fbcdn.net/rsrc.php/v3/yj/r/KHqkjYOwBTc.png" alt=""height={25}width={25}/>
+                                        </div>
+                                        <div className=''> 
+                                            <p><strong> Bỏ theo dõi Hội BONSAI - CÂY CẢNH</strong></p>
+                                            <p>Không xem bài viết nữa nhưng vẫn ở trong nhóm.</p>
+                                        </div>
+                                    </div>
+                                    <div className='flex items-center gap-4 p-2'>
+                                        <div className="x6s0dn4 xoi2r2e x78zum5 xl56j7k xq8finb">
+                                            <img className="x1b0d499 xep6ejk"src="https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/BNdV7yOMsDU.png"alt=""height={30}width={30}/>
+                                        </div>
+                                        <div className=''> 
+                                            <p><strong>Báo cáo bài viết</strong></p>
+                                            <p>Chúng tôi sẽ không cho Diệu Nhi Cho Thuê Đăng Kí Duyệt Tự Động biết ai đã báo cáo.</p>
+                                        </div>
+                                    </div>
+                                </div>
 
 
 

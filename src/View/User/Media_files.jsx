@@ -34,8 +34,9 @@ import {Link} from 'react-router-dom';
                     <img src="https://scontent.fsgn2-4.fna.fbcdn.net/v/t39.30808-6/365792630_614990604110947_3877913662579337846_n.jpg?stp=cp6_dst-jpg_p160x160&_nc_cat=101&cb=99be929b-59f725be&ccb=1-7&_nc_sid=5cd70e&_nc_ohc=H_Q_yP04KqgAX8IHQ9L&_nc_ht=scontent.fsgn2-4.fna&oh=00_AfC3TWpe9q3cqPxZ3TMT_d0qd5VROPeTQTd6JxSFpHGUAQ&oe=64D5792F" alt=""></img>
                     <img src="https://scontent.fsgn2-4.fna.fbcdn.net/v/t39.30808-6/365792630_614990604110947_3877913662579337846_n.jpg?stp=cp6_dst-jpg_p160x160&_nc_cat=101&cb=99be929b-59f725be&ccb=1-7&_nc_sid=5cd70e&_nc_ohc=H_Q_yP04KqgAX8IHQ9L&_nc_ht=scontent.fsgn2-4.fna&oh=00_AfC3TWpe9q3cqPxZ3TMT_d0qd5VROPeTQTd6JxSFpHGUAQ&oe=64D5792F" alt=""></img>
                 </div>
-             </div>
+            </div>
         </div>
+       
     )
 }
 
