@@ -54,6 +54,8 @@ library.add(fas);
                           <dialog id="my_modal_2" className="modal w-[50%] rounded-xl h-[500px]">
                             <form method="dialog" className="modal-box">
                                 <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 ">✕</button>
+
+                                
                                     <h3 className="flex font-bold text-lg border-b-[1px] p-6 justify-center items-center">Tạo sự kiện</h3>
                                     <img className='w-full  ' src="https://saigonhoa.com/wp-content/uploads/2018/09/Tuoi-bonsai.jpg" alt=""></img>
                                     <div className='flex p-4 items-center'>

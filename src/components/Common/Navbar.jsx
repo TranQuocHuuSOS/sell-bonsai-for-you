@@ -84,9 +84,87 @@ const Navbar=()=> {
                 </div>
             </div>
             <div className='flex  gap-2 md:gap-4 lg:gap-4'>
-                <button className='  top-2 flex hover:text-green-300 bg-green-500 hover:bg-green-600 items-center rounded bg-primary px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg'>
+                <button onClick={()=>window.my_modal_search.showModal()} type="button" className='  top-2 flex hover:text-green-300 bg-green-500 hover:bg-green-600 items-center rounded bg-primary px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg'>
                 <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
                 </button>
+            {/*Bắt đầu modal search */}
+                <dialog id="my_modal_search" className="modal w-[50%] rounded-xl">
+                          <form method="dialog" className="modal-box">
+                                <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                                <form className='w-[95%] p-4  '>
+                                   
+                                    <div className="relative">
+                                        <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                            <svg className="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg"fill="none"viewBox="0 0 20 20"
+                                                >
+                                                <path stroke="currentColor"strokeLinecap="round"strokeLinejoin="round"strokeWidth={2}
+                                                    d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                                            </svg>
+                                        </div>
+                                        <input type="search"id="default-search"
+                                            className="block w-full p-4 pl-10 text-sm text-gray-900 border bg-gray-300 border-gray-300 rounded-lg  focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            placeholder="Tìm kiếm hội nhóm, bạn bè,..."required=""/>
+                                        <button type="submit"
+                                            className="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                                        >
+                                            Search
+                                        </button>
+                                    </div>
+                               
+                                    <p className='flex items-center justify-center my-4'>Không có tìm kiếm nào gần đây.</p>
+                                    <div className='p-4 '>
+                                       <p><strong>Khám phá nhóm này</strong></p>
+                                       <div className='flex items-center my-2'>
+                                            <a className=''>
+                                                <img className='rounded-full w-[50px] h-[50px]' src="https://bcolohouse.com.vn/wp-content/uploads/2022/04/trong-cay-bonsai-mini-1.jpg" alt=""></img>
+                                            </a>
+                                            <div className=''>
+                                                <p className=' mx-2 font-medium text-[16px] hover:underline'>Tran Quoc Huu</p>   
+                                                <p className=' mx-2 text-[12px]'>Xem hoạt động của bạn trong nhóm này.</p>
+                                                
+                                            </div>
+                                        </div>
+                                        <div className='flex items-center my-2'>
+                                            <a className='rounded-full w-[50px] h-[50px] bg-gray-300'>
+
+                                                    <svg className="mx-4 my-4 w-6 h-6 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                                    xmlns="http://www.w3.org/2000/svg"fill="none"viewBox="0 0 20 20"
+                                                    >
+                                                    <path stroke="currentColor"strokeLinecap="round"strokeLinejoin="round"strokeWidth={2}
+                                                        d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                                                    </svg>
+                                               
+                                            </a>
+                                            <div className=''>
+                                                
+                                                <p className=' mx-2 font-medium text-[16px]'>Tìm kiếm toàn bộ facebook</p>   
+                                                
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='items-center justify-center text-center'>
+                                        <p className=''>Bạn đang làm gì à?</p>
+                                        <p className='text-[12px]'>Tìm kiếm bài viết, bình luận hoặc thành viên trong hội BONSAI - CÂY CẢNH</p>
+                                    </div>
+                                    </form>
+                            </form>
+                        </dialog>
+
+ {/*Kết thúc modal search */}
+                
+
+
+
+
+
+
+
+
+
+
+
                 <button class=" hover:bg-gray-300  top-2 flex items-center rounded bg-primary px-6 py-2.5 text-xs font-medium uppercase leading-tight bg-white shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg"
                     type="button"id="button-addon1"data-te-ripple-initdata-te-ripple-color="light">
                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M8 256a56 56 0 1 1 112 0A56 56 0 1 1 8 256zm160 0a56 56 0 1 1 112 0 56 56 0 1 1 -112 0zm216-56a56 56 0 1 1 0 112 56 56 0 1 1 0-112z"/></svg>
