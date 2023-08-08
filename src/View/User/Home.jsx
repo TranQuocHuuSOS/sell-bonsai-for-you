@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
+import {Link} from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import '../../components/style/output.css';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 // import Discuss from './Discuss';
 library.add(fas);
+
 const Home=()=> {
     const [nav, setNav] = useState(false)
     const handleNav = () => {
@@ -195,8 +197,8 @@ const Home=()=> {
                                 </div>
                             </div>
                             <div className='p-4'>
-                                <button className='rounded-lg w-full bg-gray-300 hover:bg-gray-400'>
-                                    <p className="py-2">Tìm hiểu thêm</p>
+                                <button className='rounded-lg w-full bg-gray-300 hover:bg-gray-400 py-2'>
+                                    <Link to='/Specific_page' className="py-2">Tìm hiểu thêm</Link>
                                 </button>
                             </div>
                             
@@ -210,8 +212,8 @@ const Home=()=> {
                                 <img src="https://webcaycanh.com/wp-content/uploads/2018/05/can-thanh-bonsai-mini-de-ban-1.jpg" alt=""></img>
                             </a>
                             <div className='p-4'>
-                                <button className='rounded-lg w-full bg-gray-300 hover:bg-gray-400'>
-                                    <p className="py-2">Xem tất cả</p>
+                                <button className='rounded-lg w-full bg-gray-300 hover:bg-gray-400 py-2'>
+                                    <Link to="/Media_files" className="py-2">Xem tất cả</Link>
                                 </button>
                             </div>
                             

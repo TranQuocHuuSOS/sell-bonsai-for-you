@@ -8,6 +8,7 @@ import File from "./View/User/File";
 import Event from "./View/User/Event";
 import Everyone from "./View/User/Everyone";
 import Media_files from "./View/User/Media_files";
+import Specific_page from "./View/User/Specific_page";
 import Signin from "./components/Account/Signin";
 import Signup from "./components/Account/Signup";
 import ResetPassword from "./components/Account/ResetPassword";
@@ -25,6 +26,7 @@ function App() {
         <Route path='/Event' element={<Event/>}/>
         <Route path='/Everyone' element={<Everyone/>}/>
         <Route path='/Media_files' element={<Media_files/>}/>
+        <Route path='/Specific_page' element={<Specific_page/>}/>
         <Route path='/Signin' element={<Signin/>}/>
         <Route path='/Signup' element={<Signup/>}/>
         <Route path='/ResetPassword' element={<ResetPassword/>}/>

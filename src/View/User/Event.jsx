@@ -195,8 +195,8 @@ library.add(fas);
                                 <img className='w-[5%] h-[5%] rounded-full' src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t39.30808-6/315640373_109075705358360_6098016627465134079_n.jpg?_nc_cat=106&cb=99be929b-59f725be&ccb=1-7&_nc_sid=340051&_nc_ohc=uofj8Cx1K_AAX-vAEaz&_nc_ht=scontent.fsgn2-5.fna&oh=00_AfA8uUIy4UtIhaKEJRgb9AG_5A3dKcfnK8W1yvldMp_gmg&oe=64D490C8" alt=""></img>
                                 <p className='mx-2 hover:underline'>Người tạo:<strong>Phạm Phúc</strong></p>
                             </div>
-                            <div className='justify-between mx-4'>
-                                <div onClick={handleNav} className=' block my-8 bg-gray-200 hover:bg-gray-300 top-2 flex items-center rounded  px-6 py-2.5 text-xs font-medium uppercase leading-tight  shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg '>
+                            <div className='justify-between items-center mx-4'>
+                                <div onClick={handleNav} className='  my-8 bg-gray-200 hover:bg-gray-300 top-2 flex items-center justify-center rounded  px-6 py-2.5 text-xs font-medium uppercase leading-tight  shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg '>
                                     {nav ? <AiOutlineClose size={20} className='text-black mx-2' /> : <  svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M8 256a56 56 0 1 1 112 0A56 56 0 1 1 8 256zm160 0a56 56 0 1 1 112 0 56 56 0 1 1 -112 0zm216-56a56 56 0 1 1 0 112 56 56 0 1 1 0-112z" className='mx-2'/></svg>   }
                                 </div>
                             </div>
@@ -212,7 +212,7 @@ library.add(fas);
                                 <p className='mx-2 hover:underline' >Người tạo:<strong>Phạm Phúc</strong></p>
                             </div>
                             <div className='justify-between mx-4'>
-                                <div onClick={handleNav} className=' block my-8 bg-gray-200 hover:bg-gray-300 top-2 flex items-center rounded  px-6 py-2.5 text-xs font-medium uppercase leading-tight  shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg '>
+                                <div onClick={handleNav} className=' my-8 bg-gray-200 hover:bg-gray-300 top-2 flex items-center justify-center rounded  px-6 py-2.5 text-xs font-medium uppercase leading-tight  shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg '>
                                     {navs ? <AiOutlineClose size={20} className='text-black mx-2' /> : <  svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M8 256a56 56 0 1 1 112 0A56 56 0 1 1 8 256zm160 0a56 56 0 1 1 112 0 56 56 0 1 1 -112 0zm216-56a56 56 0 1 1 0 112 56 56 0 1 1 0-112z" className='mx-2'/></svg>   }
                                 </div>
                             </div>

@@ -56,6 +56,84 @@ const Navbar=()=> {
                                     <div className='p-4'>
                                         <input className="border-[1px solid] border-black p-4 font-light text-[16px] flex  bg-gray-200  rounded-[50px] w-full hover:border-gray-500  text-gray-700  " id="password" type="text" placeholder="Tìm bạn bè theo tên" /> 
                                     </div>
+                                    <div className='max-h-[200px] overflow-y-scroll'>
+                                        <div className='flex items-center justify-center'>
+                                            <div className='flex items-center'>
+                                                <a className=''>
+                                                    <img className='rounded-full w-[50px] h-[50px]' src="https://bcolohouse.com.vn/wp-content/uploads/2022/04/trong-cay-bonsai-mini-1.jpg" alt=""></img>
+                                                </a>
+                                                <div className=''>
+                                                    <p className=' mx-2 font-medium text-[16px] hover:underline'>Nguyễn Trọng Nam</p>   
+                                                    <p className=' mx-2 max-w-sm'>9 bạn chung bao gồm Dương Thị Hồng Lam và Muas Aster</p>
+                                                </div>
+                                            </div>
+                                            <div className="flex items-center justify-center mb-4">
+                                                <input
+                                                    id="default-checkbox"
+                                                    type="checkbox"
+                                                    defaultValue=""
+                                                    className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div className='flex items-center justify-center'>
+                                            <div className='flex items-center'>
+                                                <a className=''>
+                                                    <img className='rounded-full w-[50px] h-[50px]' src="https://bcolohouse.com.vn/wp-content/uploads/2022/04/trong-cay-bonsai-mini-1.jpg" alt=""></img>
+                                                </a>
+                                                <div className=''>
+                                                    <p className=' mx-2 font-medium text-[16px] hover:underline'>Tran Quoc Huu</p>   
+                                                    <p className=' mx-2 max-w-sm'>9 bạn chung bao gồm Dương Thị Hồng Lam và Muas Aster</p>
+                                                </div>
+                                            </div>
+                                            <div className="flex items-center justify-center mb-4">
+                                                <input
+                                                    id="default-checkbox"
+                                                    type="checkbox"
+                                                    defaultValue=""
+                                                    className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div className='flex items-center justify-center'>
+                                            <div className='flex items-center'>
+                                                <a className=''>
+                                                    <img className='rounded-full w-[50px] h-[50px]' src="https://bcolohouse.com.vn/wp-content/uploads/2022/04/trong-cay-bonsai-mini-1.jpg" alt=""></img>
+                                                </a>
+                                                <div className=''>
+                                                    <p className=' mx-2 font-medium text-[16px] hover:underline'>Tran Quoc Toản</p>   
+                                                    <p className=' mx-2 max-w-sm'>9 bạn chung bao gồm Dương Thị Hồng Lam và Muas Aster</p>
+                                                </div>
+                                            </div>
+                                            <div className="flex items-center justify-center mb-4">
+                                                <input
+                                                    id="default-checkbox"
+                                                    type="checkbox"
+                                                    defaultValue=""
+                                                    className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div className='flex items-center justify-center'>
+                                            <div className='flex items-center'>
+                                                <a className=''>
+                                                    <img className='rounded-full w-[50px] h-[50px]' src="https://bcolohouse.com.vn/wp-content/uploads/2022/04/trong-cay-bonsai-mini-1.jpg" alt=""></img>
+                                                </a>
+                                                <div className=''>
+                                                    <p className=' mx-2 font-medium text-[16px] hover:underline'>Tran Quoc Tuấn</p>   
+                                                    <p className=' mx-2 max-w-sm'>9 bạn chung bao gồm Dương Thị Hồng Lam và Muas Aster</p>
+                                                </div>
+                                            </div>
+                                            <div className="flex items-center justify-center mb-4">
+                                                <input
+                                                    id="default-checkbox"
+                                                    type="checkbox"
+                                                    defaultValue=""
+                                                    className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <div className='basis-1/4 p-4 '>
@@ -110,11 +188,96 @@ const Navbar=()=> {
                         <p>Nhóm liên quan</p>
                         <p className='text-blue-700'>Khám phá các nhóm khác</p>
                     </div>
-                    <div className='grid grid-cols-3 gap-4 p-4'>
+                    <div className='grid grid-cols-3 gap-4 p-4 '>
+                        <div className='rounded-lg shadow-xl border-[1px] '>
+                            <img className="rounded-lg"  src="https://henryjewels.com/images/products/2022/12/14/original/cover_1670993739.jpg" alt=""></img>
+                            <div className='p-4'>
+                                <p className=' text-[20px] hover:underline'><strong>Hội buôn bán giao lưu trầm</strong></p>
+                                <p className=''>117K thành viên • Hơn 10 bài viết/ngày</p>
+                                <div className='flex items-center '>
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M57.7 193l9.4 16.4c8.3 14.5 21.9 25.2 38 29.8L163 255.7c17.2 4.9 29 20.6 29 38.5v39.9c0 11 6.2 21 16 25.9s16 14.9 16 25.9v39c0 15.6 14.9 26.9 29.9 22.6c16.1-4.6 28.6-17.5 32.7-33.8l2.8-11.2c4.2-16.9 15.2-31.4 30.3-40l8.1-4.6c15-8.5 24.2-24.5 24.2-41.7v-8.3c0-12.7-5.1-24.9-14.1-33.9l-3.9-3.9c-9-9-21.2-14.1-33.9-14.1H257c-11.1 0-22.1-2.9-31.8-8.4l-34.5-19.7c-4.3-2.5-7.6-6.5-9.2-11.2c-3.2-9.6 1.1-20 10.2-24.5l5.9-3c6.6-3.3 14.3-3.9 21.3-1.5l23.2 7.7c8.2 2.7 17.2-.4 21.9-7.5c4.7-7 4.2-16.3-1.2-22.8l-13.6-16.3c-10-12-9.9-29.5 .3-41.3l15.7-18.3c8.8-10.3 10.2-25 3.5-36.7l-2.4-4.2c-3.5-.2-6.9-.3-10.4-.3C163.1 48 84.4 108.9 57.7 193zM464 256c0-36.8-9.6-71.4-26.4-101.5L412 164.8c-15.7 6.3-23.8 23.8-18.5 39.8l16.9 50.7c3.5 10.4 12 18.3 22.6 20.9l29.1 7.3c1.2-9 1.8-18.2 1.8-27.5zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg>
+                                    <h4  className=' mx-2'>Công khai</h4>
+                                </div>
+                            </div>
+                            <div className='p-4'>
+                                <button className=' justify-center  top-2 flex w-full bg-blue-500 hover:bg-blue-700 items-center rounded bg-primary px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg'>
+                                    <svg xmlns="http://www.w3.org/2000/svg" stroke="currentColor" height="1rem" viewBox="0 0 576 512"><path d="M112 48a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm40 304V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V256.9L59.4 304.5c-9.1 15.1-28.8 20-43.9 10.9s-20-28.8-10.9-43.9l58.3-97c17.4-28.9 48.6-46.6 82.3-46.6h29.7c33.7 0 64.9 17.7 82.3 46.6l44.9 74.7c-16.1 17.6-28.6 38.5-36.6 61.5c-1.9-1.8-3.5-3.9-4.9-6.3L232 256.9V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V352H152zM432 224a144 144 0 1 1 0 288 144 144 0 1 1 0-288zm16 80c0-8.8-7.2-16-16-16s-16 7.2-16 16v48H368c-8.8 0-16 7.2-16 16s7.2 16 16 16h48v48c0 8.8 7.2 16 16 16s16-7.2 16-16V384h48c8.8 0 16-7.2 16-16s-7.2-16-16-16H448V304z"/></svg>
+                                    <p className='text-black hidden sm:block md:block lg:block hover:text-gray-700 font-bold text-[16px]'>Tham gia nhóm</p>
+                                </button>
+                            </div> 
+                        </div>
                         <div className='rounded-lg shadow-xl border-[1px]'>
                             <img className="rounded-lg"  src="https://henryjewels.com/images/products/2022/12/14/original/cover_1670993739.jpg" alt=""></img>
                             <div className='p-4'>
-                                <p className=' text-[20px] hover:underline'>Hội buôn bán giao lưu trầm</p>
+                                <p className=' text-[20px] hover:underline'><strong>Hội buôn bán giao lưu trầm</strong></p>
+                                <p className=''>117K thành viên • Hơn 10 bài viết/ngày</p>
+                                <div className='flex items-center '>
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M57.7 193l9.4 16.4c8.3 14.5 21.9 25.2 38 29.8L163 255.7c17.2 4.9 29 20.6 29 38.5v39.9c0 11 6.2 21 16 25.9s16 14.9 16 25.9v39c0 15.6 14.9 26.9 29.9 22.6c16.1-4.6 28.6-17.5 32.7-33.8l2.8-11.2c4.2-16.9 15.2-31.4 30.3-40l8.1-4.6c15-8.5 24.2-24.5 24.2-41.7v-8.3c0-12.7-5.1-24.9-14.1-33.9l-3.9-3.9c-9-9-21.2-14.1-33.9-14.1H257c-11.1 0-22.1-2.9-31.8-8.4l-34.5-19.7c-4.3-2.5-7.6-6.5-9.2-11.2c-3.2-9.6 1.1-20 10.2-24.5l5.9-3c6.6-3.3 14.3-3.9 21.3-1.5l23.2 7.7c8.2 2.7 17.2-.4 21.9-7.5c4.7-7 4.2-16.3-1.2-22.8l-13.6-16.3c-10-12-9.9-29.5 .3-41.3l15.7-18.3c8.8-10.3 10.2-25 3.5-36.7l-2.4-4.2c-3.5-.2-6.9-.3-10.4-.3C163.1 48 84.4 108.9 57.7 193zM464 256c0-36.8-9.6-71.4-26.4-101.5L412 164.8c-15.7 6.3-23.8 23.8-18.5 39.8l16.9 50.7c3.5 10.4 12 18.3 22.6 20.9l29.1 7.3c1.2-9 1.8-18.2 1.8-27.5zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg>
+                                    <h4  className=' mx-2'>Công khai</h4>
+                                </div>
+                            </div>
+                            <div className='p-4'>
+                                <button className=' justify-center  top-2 flex w-full bg-blue-500 hover:bg-blue-700 items-center rounded bg-primary px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg'>
+                                    <svg xmlns="http://www.w3.org/2000/svg" stroke="currentColor" height="1rem" viewBox="0 0 576 512"><path d="M112 48a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm40 304V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V256.9L59.4 304.5c-9.1 15.1-28.8 20-43.9 10.9s-20-28.8-10.9-43.9l58.3-97c17.4-28.9 48.6-46.6 82.3-46.6h29.7c33.7 0 64.9 17.7 82.3 46.6l44.9 74.7c-16.1 17.6-28.6 38.5-36.6 61.5c-1.9-1.8-3.5-3.9-4.9-6.3L232 256.9V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V352H152zM432 224a144 144 0 1 1 0 288 144 144 0 1 1 0-288zm16 80c0-8.8-7.2-16-16-16s-16 7.2-16 16v48H368c-8.8 0-16 7.2-16 16s7.2 16 16 16h48v48c0 8.8 7.2 16 16 16s16-7.2 16-16V384h48c8.8 0 16-7.2 16-16s-7.2-16-16-16H448V304z"/></svg>
+                                    <p className='text-black hidden sm:block md:block lg:block hover:text-gray-700 font-bold text-[16px]'>Tham gia nhóm</p>
+                                </button>
+                            </div> 
+                        </div>
+                        <div className='rounded-lg shadow-xl border-[1px]'>
+                            <img className="rounded-lg"  src="https://henryjewels.com/images/products/2022/12/14/original/cover_1670993739.jpg" alt=""></img>
+                            <div className='p-4'>
+                                <p className=' text-[20px] hover:underline'><strong>Hội buôn bán giao lưu trầm</strong></p>
+                                <p className=''>117K thành viên • Hơn 10 bài viết/ngày</p>
+                                <div className='flex items-center '>
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M57.7 193l9.4 16.4c8.3 14.5 21.9 25.2 38 29.8L163 255.7c17.2 4.9 29 20.6 29 38.5v39.9c0 11 6.2 21 16 25.9s16 14.9 16 25.9v39c0 15.6 14.9 26.9 29.9 22.6c16.1-4.6 28.6-17.5 32.7-33.8l2.8-11.2c4.2-16.9 15.2-31.4 30.3-40l8.1-4.6c15-8.5 24.2-24.5 24.2-41.7v-8.3c0-12.7-5.1-24.9-14.1-33.9l-3.9-3.9c-9-9-21.2-14.1-33.9-14.1H257c-11.1 0-22.1-2.9-31.8-8.4l-34.5-19.7c-4.3-2.5-7.6-6.5-9.2-11.2c-3.2-9.6 1.1-20 10.2-24.5l5.9-3c6.6-3.3 14.3-3.9 21.3-1.5l23.2 7.7c8.2 2.7 17.2-.4 21.9-7.5c4.7-7 4.2-16.3-1.2-22.8l-13.6-16.3c-10-12-9.9-29.5 .3-41.3l15.7-18.3c8.8-10.3 10.2-25 3.5-36.7l-2.4-4.2c-3.5-.2-6.9-.3-10.4-.3C163.1 48 84.4 108.9 57.7 193zM464 256c0-36.8-9.6-71.4-26.4-101.5L412 164.8c-15.7 6.3-23.8 23.8-18.5 39.8l16.9 50.7c3.5 10.4 12 18.3 22.6 20.9l29.1 7.3c1.2-9 1.8-18.2 1.8-27.5zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg>
+                                    <h4  className=' mx-2'>Công khai</h4>
+                                </div>
+                            </div>
+                            <div className='p-4'>
+                                <button className=' justify-center  top-2 flex w-full bg-blue-500 hover:bg-blue-700 items-center rounded bg-primary px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg'>
+                                    <svg xmlns="http://www.w3.org/2000/svg" stroke="currentColor" height="1rem" viewBox="0 0 576 512"><path d="M112 48a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm40 304V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V256.9L59.4 304.5c-9.1 15.1-28.8 20-43.9 10.9s-20-28.8-10.9-43.9l58.3-97c17.4-28.9 48.6-46.6 82.3-46.6h29.7c33.7 0 64.9 17.7 82.3 46.6l44.9 74.7c-16.1 17.6-28.6 38.5-36.6 61.5c-1.9-1.8-3.5-3.9-4.9-6.3L232 256.9V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V352H152zM432 224a144 144 0 1 1 0 288 144 144 0 1 1 0-288zm16 80c0-8.8-7.2-16-16-16s-16 7.2-16 16v48H368c-8.8 0-16 7.2-16 16s7.2 16 16 16h48v48c0 8.8 7.2 16 16 16s16-7.2 16-16V384h48c8.8 0 16-7.2 16-16s-7.2-16-16-16H448V304z"/></svg>
+                                    <p className='text-black hidden sm:block md:block lg:block hover:text-gray-700 font-bold text-[16px]'>Tham gia nhóm</p>
+                                </button>
+                            </div> 
+                        </div>
+                        <div className='rounded-lg shadow-xl border-[1px]'>
+                            <img className="rounded-lg"  src="https://henryjewels.com/images/products/2022/12/14/original/cover_1670993739.jpg" alt=""></img>
+                            <div className='p-4'>
+                                <p className=' text-[20px] hover:underline'><strong>Hội buôn bán giao lưu trầm</strong></p>
+                                <p className=''>117K thành viên • Hơn 10 bài viết/ngày</p>
+                                <div className='flex items-center '>
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M57.7 193l9.4 16.4c8.3 14.5 21.9 25.2 38 29.8L163 255.7c17.2 4.9 29 20.6 29 38.5v39.9c0 11 6.2 21 16 25.9s16 14.9 16 25.9v39c0 15.6 14.9 26.9 29.9 22.6c16.1-4.6 28.6-17.5 32.7-33.8l2.8-11.2c4.2-16.9 15.2-31.4 30.3-40l8.1-4.6c15-8.5 24.2-24.5 24.2-41.7v-8.3c0-12.7-5.1-24.9-14.1-33.9l-3.9-3.9c-9-9-21.2-14.1-33.9-14.1H257c-11.1 0-22.1-2.9-31.8-8.4l-34.5-19.7c-4.3-2.5-7.6-6.5-9.2-11.2c-3.2-9.6 1.1-20 10.2-24.5l5.9-3c6.6-3.3 14.3-3.9 21.3-1.5l23.2 7.7c8.2 2.7 17.2-.4 21.9-7.5c4.7-7 4.2-16.3-1.2-22.8l-13.6-16.3c-10-12-9.9-29.5 .3-41.3l15.7-18.3c8.8-10.3 10.2-25 3.5-36.7l-2.4-4.2c-3.5-.2-6.9-.3-10.4-.3C163.1 48 84.4 108.9 57.7 193zM464 256c0-36.8-9.6-71.4-26.4-101.5L412 164.8c-15.7 6.3-23.8 23.8-18.5 39.8l16.9 50.7c3.5 10.4 12 18.3 22.6 20.9l29.1 7.3c1.2-9 1.8-18.2 1.8-27.5zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg>
+                                    <h4  className=' mx-2'>Công khai</h4>
+                                </div>
+                            </div>
+                            <div className='p-4'>
+                                <button className=' justify-center  top-2 flex w-full bg-blue-500 hover:bg-blue-700 items-center rounded bg-primary px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg'>
+                                    <svg xmlns="http://www.w3.org/2000/svg" stroke="currentColor" height="1rem" viewBox="0 0 576 512"><path d="M112 48a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm40 304V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V256.9L59.4 304.5c-9.1 15.1-28.8 20-43.9 10.9s-20-28.8-10.9-43.9l58.3-97c17.4-28.9 48.6-46.6 82.3-46.6h29.7c33.7 0 64.9 17.7 82.3 46.6l44.9 74.7c-16.1 17.6-28.6 38.5-36.6 61.5c-1.9-1.8-3.5-3.9-4.9-6.3L232 256.9V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V352H152zM432 224a144 144 0 1 1 0 288 144 144 0 1 1 0-288zm16 80c0-8.8-7.2-16-16-16s-16 7.2-16 16v48H368c-8.8 0-16 7.2-16 16s7.2 16 16 16h48v48c0 8.8 7.2 16 16 16s16-7.2 16-16V384h48c8.8 0 16-7.2 16-16s-7.2-16-16-16H448V304z"/></svg>
+                                    <p className='text-black hidden sm:block md:block lg:block hover:text-gray-700 font-bold text-[16px]'>Tham gia nhóm</p>
+                                </button>
+                            </div> 
+                        </div>
+                        <div className='rounded-lg shadow-xl border-[1px]'>
+                            <img className="rounded-lg"  src="https://henryjewels.com/images/products/2022/12/14/original/cover_1670993739.jpg" alt=""></img>
+                            <div className='p-4'>
+                                <p className=' text-[20px] hover:underline'><strong>Hội buôn bán giao lưu trầm</strong></p>
+                                <p className=''>117K thành viên • Hơn 10 bài viết/ngày</p>
+                                <div className='flex items-center '>
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M57.7 193l9.4 16.4c8.3 14.5 21.9 25.2 38 29.8L163 255.7c17.2 4.9 29 20.6 29 38.5v39.9c0 11 6.2 21 16 25.9s16 14.9 16 25.9v39c0 15.6 14.9 26.9 29.9 22.6c16.1-4.6 28.6-17.5 32.7-33.8l2.8-11.2c4.2-16.9 15.2-31.4 30.3-40l8.1-4.6c15-8.5 24.2-24.5 24.2-41.7v-8.3c0-12.7-5.1-24.9-14.1-33.9l-3.9-3.9c-9-9-21.2-14.1-33.9-14.1H257c-11.1 0-22.1-2.9-31.8-8.4l-34.5-19.7c-4.3-2.5-7.6-6.5-9.2-11.2c-3.2-9.6 1.1-20 10.2-24.5l5.9-3c6.6-3.3 14.3-3.9 21.3-1.5l23.2 7.7c8.2 2.7 17.2-.4 21.9-7.5c4.7-7 4.2-16.3-1.2-22.8l-13.6-16.3c-10-12-9.9-29.5 .3-41.3l15.7-18.3c8.8-10.3 10.2-25 3.5-36.7l-2.4-4.2c-3.5-.2-6.9-.3-10.4-.3C163.1 48 84.4 108.9 57.7 193zM464 256c0-36.8-9.6-71.4-26.4-101.5L412 164.8c-15.7 6.3-23.8 23.8-18.5 39.8l16.9 50.7c3.5 10.4 12 18.3 22.6 20.9l29.1 7.3c1.2-9 1.8-18.2 1.8-27.5zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg>
+                                    <h4  className=' mx-2'>Công khai</h4>
+                                </div>
+                            </div>
+                            <div className='p-4'>
+                                <button className=' justify-center  top-2 flex w-full bg-blue-500 hover:bg-blue-700 items-center rounded bg-primary px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg'>
+                                    <svg xmlns="http://www.w3.org/2000/svg" stroke="currentColor" height="1rem" viewBox="0 0 576 512"><path d="M112 48a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm40 304V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V256.9L59.4 304.5c-9.1 15.1-28.8 20-43.9 10.9s-20-28.8-10.9-43.9l58.3-97c17.4-28.9 48.6-46.6 82.3-46.6h29.7c33.7 0 64.9 17.7 82.3 46.6l44.9 74.7c-16.1 17.6-28.6 38.5-36.6 61.5c-1.9-1.8-3.5-3.9-4.9-6.3L232 256.9V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V352H152zM432 224a144 144 0 1 1 0 288 144 144 0 1 1 0-288zm16 80c0-8.8-7.2-16-16-16s-16 7.2-16 16v48H368c-8.8 0-16 7.2-16 16s7.2 16 16 16h48v48c0 8.8 7.2 16 16 16s16-7.2 16-16V384h48c8.8 0 16-7.2 16-16s-7.2-16-16-16H448V304z"/></svg>
+                                    <p className='text-black hidden sm:block md:block lg:block hover:text-gray-700 font-bold text-[16px]'>Tham gia nhóm</p>
+                                </button>
+                            </div> 
+                        </div>
+                        <div className='rounded-lg shadow-xl border-[1px]'>
+                            <img className="rounded-lg"  src="https://henryjewels.com/images/products/2022/12/14/original/cover_1670993739.jpg" alt=""></img>
+                            <div className='p-4'>
+                                <p className=' text-[20px] hover:underline'><strong>Hội buôn bán giao lưu trầm</strong></p>
                                 <p className=''>117K thành viên • Hơn 10 bài viết/ngày</p>
                                 <div className='flex items-center '>
                                     <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M57.7 193l9.4 16.4c8.3 14.5 21.9 25.2 38 29.8L163 255.7c17.2 4.9 29 20.6 29 38.5v39.9c0 11 6.2 21 16 25.9s16 14.9 16 25.9v39c0 15.6 14.9 26.9 29.9 22.6c16.1-4.6 28.6-17.5 32.7-33.8l2.8-11.2c4.2-16.9 15.2-31.4 30.3-40l8.1-4.6c15-8.5 24.2-24.5 24.2-41.7v-8.3c0-12.7-5.1-24.9-14.1-33.9l-3.9-3.9c-9-9-21.2-14.1-33.9-14.1H257c-11.1 0-22.1-2.9-31.8-8.4l-34.5-19.7c-4.3-2.5-7.6-6.5-9.2-11.2c-3.2-9.6 1.1-20 10.2-24.5l5.9-3c6.6-3.3 14.3-3.9 21.3-1.5l23.2 7.7c8.2 2.7 17.2-.4 21.9-7.5c4.7-7 4.2-16.3-1.2-22.8l-13.6-16.3c-10-12-9.9-29.5 .3-41.3l15.7-18.3c8.8-10.3 10.2-25 3.5-36.7l-2.4-4.2c-3.5-.2-6.9-.3-10.4-.3C163.1 48 84.4 108.9 57.7 193zM464 256c0-36.8-9.6-71.4-26.4-101.5L412 164.8c-15.7 6.3-23.8 23.8-18.5 39.8l16.9 50.7c3.5 10.4 12 18.3 22.6 20.9l29.1 7.3c1.2-9 1.8-18.2 1.8-27.5zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg>
@@ -131,7 +294,7 @@ const Navbar=()=> {
                         <div className='rounded-lg shadow-xl border-[1px]'>
                             <img className="rounded-lg"  src="https://chuteu.com/wp-content/uploads/2021/12/top-14-cay-canh-dep-nhat-viet-nam-10.jpg" alt=""></img>
                             <div className='p-4'>
-                                <p className=' text-[20px] hover:underline'>Hội Cây Cảnh Việt Nam</p>
+                                <p className=' text-[20px] hover:underline'><strong>Hội Cây Cảnh Việt Nam</strong></p>
                                 <p className=''>48K thành viên • 8 bài viết/ngày</p>
                                 <div className='flex items-center '>
                                     <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M57.7 193l9.4 16.4c8.3 14.5 21.9 25.2 38 29.8L163 255.7c17.2 4.9 29 20.6 29 38.5v39.9c0 11 6.2 21 16 25.9s16 14.9 16 25.9v39c0 15.6 14.9 26.9 29.9 22.6c16.1-4.6 28.6-17.5 32.7-33.8l2.8-11.2c4.2-16.9 15.2-31.4 30.3-40l8.1-4.6c15-8.5 24.2-24.5 24.2-41.7v-8.3c0-12.7-5.1-24.9-14.1-33.9l-3.9-3.9c-9-9-21.2-14.1-33.9-14.1H257c-11.1 0-22.1-2.9-31.8-8.4l-34.5-19.7c-4.3-2.5-7.6-6.5-9.2-11.2c-3.2-9.6 1.1-20 10.2-24.5l5.9-3c6.6-3.3 14.3-3.9 21.3-1.5l23.2 7.7c8.2 2.7 17.2-.4 21.9-7.5c4.7-7 4.2-16.3-1.2-22.8l-13.6-16.3c-10-12-9.9-29.5 .3-41.3l15.7-18.3c8.8-10.3 10.2-25 3.5-36.7l-2.4-4.2c-3.5-.2-6.9-.3-10.4-.3C163.1 48 84.4 108.9 57.7 193zM464 256c0-36.8-9.6-71.4-26.4-101.5L412 164.8c-15.7 6.3-23.8 23.8-18.5 39.8l16.9 50.7c3.5 10.4 12 18.3 22.6 20.9l29.1 7.3c1.2-9 1.8-18.2 1.8-27.5zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg>
@@ -148,7 +311,7 @@ const Navbar=()=> {
                         <div className='rounded-lg shadow-xl border-[1px]'>
                             <img className="rounded-lg"  src="https://nhadepso.com/wp-content/uploads/2023/01/cay-bonsai-dep_1.jpg" alt=""></img>
                             <div className='p-4'>
-                                <p className=' text-[20px] hover:underline'>Giao lưu Bonsai</p>
+                                <p className=' text-[20px] hover:underline'><strong>Giao lưu Bonsai</strong></p>
                                 <p className=''>12K thành viên • 10 bài viết/tuần</p>
                                 <div className='flex items-center '>
                                     <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M57.7 193l9.4 16.4c8.3 14.5 21.9 25.2 38 29.8L163 255.7c17.2 4.9 29 20.6 29 38.5v39.9c0 11 6.2 21 16 25.9s16 14.9 16 25.9v39c0 15.6 14.9 26.9 29.9 22.6c16.1-4.6 28.6-17.5 32.7-33.8l2.8-11.2c4.2-16.9 15.2-31.4 30.3-40l8.1-4.6c15-8.5 24.2-24.5 24.2-41.7v-8.3c0-12.7-5.1-24.9-14.1-33.9l-3.9-3.9c-9-9-21.2-14.1-33.9-14.1H257c-11.1 0-22.1-2.9-31.8-8.4l-34.5-19.7c-4.3-2.5-7.6-6.5-9.2-11.2c-3.2-9.6 1.1-20 10.2-24.5l5.9-3c6.6-3.3 14.3-3.9 21.3-1.5l23.2 7.7c8.2 2.7 17.2-.4 21.9-7.5c4.7-7 4.2-16.3-1.2-22.8l-13.6-16.3c-10-12-9.9-29.5 .3-41.3l15.7-18.3c8.8-10.3 10.2-25 3.5-36.7l-2.4-4.2c-3.5-.2-6.9-.3-10.4-.3C163.1 48 84.4 108.9 57.7 193zM464 256c0-36.8-9.6-71.4-26.4-101.5L412 164.8c-15.7 6.3-23.8 23.8-18.5 39.8l16.9 50.7c3.5 10.4 12 18.3 22.6 20.9l29.1 7.3c1.2-9 1.8-18.2 1.8-27.5zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg>
