@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from  'react-router-dom';
+
  const Specific_page=()=>{
     return (
         <div className='w-full  inline-block bg-gray-300'>
@@ -35,7 +36,7 @@ import {Link} from  'react-router-dom';
                         />
                         <div className=''> 
                             <p className=''>Hiển thị</p>
-                            <p>Ai cũng có thể tìm thấy nhóm này.</p>
+                            <p className='text-[12px]'>Ai cũng có thể tìm thấy nhóm này.</p>
                         </div>
                     </div>
                     <div className='flex items-center gap-4 p-2  border-black'>
@@ -51,13 +52,67 @@ import {Link} from  'react-router-dom';
                     />
                         <div className=''> 
                             <p className=''>Lịch sử</p>
-                            <p className='text-[12px]'>Đã tạo nhóm vào 8 tháng 2, 2019. Lần gần nhất đổi tên là vào 27 tháng 4, 2022. <a href='/'>Xem thêm</a> </p>
+                            <p className='text-[12px]'>Đã tạo nhóm vào 8 tháng 2, 2019. Lần gần nhất đổi tên là vào 27 tháng 4, 2022. <a className=''  onClick={()=>window.my_modal_history.showModal()}><strong>Xem thêm</strong></a> </p>
                         </div>
+                        <dialog id="my_modal_history" className="modal w-[50%] rounded-xl">
+                            <form method="dialog" className="modal-box">
+                                <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                                    <h3 className="flex font-bold text-lg border-b-[1px] p-6 justify-center items-center">Lịch sử nhóm</h3>
+                                    <p className="flex p-4 items-center justify-center">
+                                        Lịch sử nhóm hiển thị khi bạn tạo nhóm này, cũng như khi tên thay đổi. Bạn có thể dùng Lịch sử nhóm để biết liệu mục đích của một nhóm có thay đổi theo thời gian không.
+                                    </p>
+                                    <div className='p-4'>
+                                    <div className='flex items-center gap-4 p-2  border-black'>
+                                    <img
+                                        className="x1b0d499 xuo83w3"
+                                        src="https://static.xx.fbcdn.net/rsrc.php/v3/yW/r/ehEI8GzjX-8.png"
+                                        alt=""
+                                        height={20}
+                                        width={20}
+                                    />
+                                        <div className=''> 
+                                            <p className=''>Đã đổi tên thành Hội BONSAI - CÂY CẢNH</p>
+                                            <p className='text-[12px]'>27 tháng 4, 2022</p>
+                                        </div>
+                                    </div>
+                                    <div className='flex items-center gap-4 p-2  border-black'>
+                                        <img
+                                        xclassName="x1b0d499 xuo83w3"
+                                        src="https://static.xx.fbcdn.net/rsrc.php/v3/yC/r/XslsLeFRBp8.png"
+                                        alt=""
+                                        height={20}
+                                        width={20}
+/>
+                                        <div className=''> 
+                                            <p className=''>Đã tạo nhóm Hội BONSAI - CÂY CẢNH, MIỀN NAM</p>
+                                            <p className='text-[12px]'>8 tháng 2, 2019</p>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    
+                            </form>
+                        </dialog>
                     </div>
                 </div>
              </div>
-
              <div className='mx-72 py-4 h-auto bg-white rounded-lg '>
+                <div className='flex items-center p-4 '>
+                    <p className=''>Thành viên</p> 
+                    <p className='text-gray-500'> .50,1K</p>
+                </div>
+                <div className=' py-4 border-t-[2px] mx-4'>
+                    <p>Diệu Nhi Cho Thuê Đăng Kí Duyệt Tự Động và Hồng Thịnh là quản trị viên</p>
+                    
+                </div>
+                <div className='p-4'>
+                    <button class="text-[16px]  w-full bg-gray-200 hover:bg-gray-300 top-2 flex items-center justify-center rounded px-6 py-2.5  font-medium uppercase leading-tight  shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg"
+                        type="button"id="button-addon1"data-te-ripple-initdata-te-ripple-color="light">
+                            <Link to="/Everyone">Xem tất cả</Link>
+                    </button>
+                </div>
+             </div>
+
+             <div className='mx-72 my-4 h-auto bg-white rounded-lg '>
                 <div className='flex items-center justify-between p-4 '>
                     <p className=''>Hoạt động</p>
                     
@@ -124,6 +179,51 @@ import {Link} from  'react-router-dom';
                         </div>
                     </div>
                 </div>
+             </div>
+             <div className='mx-72 my-4 h-auto bg-white rounded-lg '>
+                <div className='flex items-center border-b-[1px] mx-4 py-4 justify-between  '>
+                    <p className=''>Quy tắc nhóm của quản trị viên</p>
+                </div>
+                <details className="dropdown  flex  p-4  ">
+                    <summary className="m-1 btn hover:bg-gray-300 ">1. Đăng tải, chia sẻ những bài viết không liên quan</summary>
+                        <ul className="border-[1px] top-[10%] p-2 bg-white w-[100%] shadow-xl menu dropdown-content bg-base-100 rounded-md ">
+                            <div className=' flex items-center justify-between container '>
+                                <div className='flex items-center text-gray-500 '>
+                                    <p>Tuyệt đối không đăng tải, chia sẽ những bài viết không liên quan đến bonsai, cây cảnh. Gỡ bài viết 1 lần trước khi bị ban khỏi nhóm.</p>
+                                </div>
+                                <div className='flex items-center text-gray-500 '>
+                                <details className="dropdown">
+                                    <summary  className="m-1 btn flex hover:bg-gray-300  top-2  items-center rounded bg-primary px-6 py-2.5 text-xs font-medium uppercase leading-tight bg-white shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M8 256a56 56 0 1 1 112 0A56 56 0 1 1 8 256zm160 0a56 56 0 1 1 112 0 56 56 0 1 1 -112 0zm216-56a56 56 0 1 1 0 112 56 56 0 1 1 0-112z"/></svg></summary>
+                                        <ul className="mx-4 xl:right-[300px] p-2 absolute menu dropdown-content z-[1] bg-base-100 rounded-box shadow-lg bg-green-200 text-black">
+                                            <div className='flex items-center gap-4 p-2   '>
+                                            <i
+                                                data-visualcompletion="css-img"
+                                                className="x1b0d499 xep6ejk"
+                                                style={{
+                                                    backgroundImage:
+                                                    'url("https://static.xx.fbcdn.net/rsrc.php/v3/yS/r/UybsExH-n_0.png")',
+                                                    backgroundPosition: "0px -804px",
+                                                    backgroundSize: "26px 1008px",
+                                                    width: 20,
+                                                    height: 20,
+                                                    backgroundRepeat: "no-repeat",
+                                                    display: "inline-block"
+                                                }}
+                                            />
+                                                <div className=''> Báo cáo với fanpage
+                                                    <p><strong></strong></p>
+                                            
+                                                </div>
+                                            </div>
+                            
+                                        </ul>
+                                </details>
+                                </div>
+                                
+                            </div>
+                        </ul>
+                                        
+                </details>
              </div>
         </div>
     );

@@ -8,9 +8,10 @@ import {Link} from 'react-router-dom';
                     <p className='text-[20px] font-bold'>File</p>
                     <div className='flex gap-6 items-center'>
                         <input className="border-[1px solid] border-black p-2 font-light text-[16px] flex  bg-gray-200  rounded-[50px] w-full hover:border-gray-500  text-gray-700  " id="password" type="text" placeholder="Tìm kiếm file..." /> 
-                        <p className='text-blue-700 w-[200px] h-[40px] text-center rounded-md items-center justify-center hover:bg-gray-300'>
-                            <Link to="/">Tải file lên</Link>
-                        </p>
+                        <label className="text-blue-700 w-[200px] h-[40px] text-center rounded-md items-center justify-center hover:bg-gray-300">
+                            <span>Tải file lên</span>
+                            <input type="file" style={{ display: 'none' }} />
+                        </label>
                     </div>
                 </div>
                 <div className='flex gap-2 my-4 items-center justify-center border-t-[1px] mx-4'>

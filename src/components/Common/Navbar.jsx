@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import '../../components/style/output.css';
+
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 // import Discuss from './Discuss';
 library.add(fas);
@@ -182,7 +183,7 @@ const Navbar=()=> {
         </div>
         <details className="dropdown lg:px-48 flex  p-4  ">
             <summary className="m-1 btn hover:bg-gray-300 ">Hội nhóm liên quan</summary>
-            <ul className="border-[1px] top-[10%] p-2 bg-white w-[100%] shadow-xl menu dropdown-content z-[1] bg-base-100 rounded-md ">
+            <ul className="border-[1px] top-[10%] p-2 bg-white w-[100%] shadow-xl menu dropdown-content bg-base-100 rounded-md ">
                 <div className='container '>
                     <div className='flex items-center justify-between '>
                         <p>Nhóm liên quan</p>
@@ -336,7 +337,35 @@ const Navbar=()=> {
         <div className='flex justify-between items-center mx-1 sm:mx-16 md:mx-28 lg:mx-48 p-8   border-t-[1px] border-gray-300 '>
             <div>
                 <div className='xl:flex  hidden md:text-center md:items-center lg:text-center lg:items-center sm:text-center sm:items-center text-center items-center'>
-                    <ul id="tqd-top-menu" className=' xl:flex  hidden sm:gap-2 md:gap-1 lg:gap-4 md:text-center md:items-center lg:text-center lg:items-center sm:text-center sm:items-center text-center items-center'>
+                    <ul id="tqd-top-menu" className='tabs xl:flex  hidden sm:gap-2 md:gap-1 lg:gap-4 md:text-center md:items-center lg:text-center lg:items-center sm:text-center sm:items-center text-center items-center'>
+                        <li className=' tab-item  tqd-top-menu-item hover:bg-gray-300 p-2 rounded font-normal text-[12px] md:text-[14px] lg:text-[16px]'>
+                            <Link className='tab-icon fas fa-code' to="/">Thảo luận</Link>
+                        </li>
+                        <li className='tab-item  tqd-top-menu-item hover:bg-gray-300 p-2 rounded font-normal text-[12px] md:text-[14px] lg:text-[16px]'>
+                            <Link className='tab-icon fas fa-code' to="/Remarkable">Đáng chú ý</Link>
+                        </li>
+                        <li className='tab-item  tqd-top-menu-item hover:bg-gray-300 p-2 rounded font-normal text-[12px] md:text-[14px] lg:text-[16px]'>
+                            <Link className='tab-icon fas fa-code' to="/Everyone">Mọi người</Link>
+                        </li>
+                        <li className='tab-item  tqd-top-menu-item hover:bg-gray-300 p-2 rounded font-normal text-[12px] md:text-[14px] lg:text-[16px]'>
+                            <Link className='tab-icon fas fa-code' to="/Event">Sự kiện</Link>
+                        </li>
+                        <li className='tab-item tqd-top-menu-item hover:bg-gray-300 p-2 rounded font-normal text-[12px] md:text-[14px] lg:text-[16px]'>
+                            <Link className='tab-icon fas fa-code' to="/Media_files">File phương tiện</Link>
+                        </li>
+                        <li className='tab-item tqd-top-menu-item hover:bg-gray-300 p-2 rounded font-normal text-[12px] md:text-[14px] lg:text-[16px]'>
+                            <Link className='tab-icon fas fa-code' to="/File">File</Link>
+                        </li>
+                    </ul>
+                </div>
+
+                {/*ở chế độ màn hình nhỏ hơn xl thì hiện icon tắt bật menu bằng cách click vào icon này*/}
+                <div onClick={handleNav} className='block xl:hidden'>
+                    {nav ? <AiOutlineClose size={25} className='text-black' /> : <AiOutlineMenu size={25} className='text-black' />}
+                </div>
+                
+                <div className={nav ? 'rounded-lg lg:w-[400px] mx-1  sm:mx-12 md:mx-20 lg:mx-36 md:w-[350px] sm:w-[300px] w-[150px] absolute bg-green-200 text-black md:top-[700px] lg:top-[800px] sm:top-[600px]  left-0  justify-center text-center' : 'absolute left-[-100%]'}>
+                    <ul id="tqd-top-menu" className=' '>
                         <li className='tqd-top-menu-item hover:bg-gray-300 p-2 rounded font-normal text-[12px] md:text-[14px] lg:text-[16px]'>
                             <Link  to="/">Thảo luận</Link>
                         </li>
@@ -354,34 +383,6 @@ const Navbar=()=> {
                         </li>
                         <li className='tqd-top-menu-item hover:bg-gray-300 p-2 rounded font-normal text-[12px] md:text-[14px] lg:text-[16px]'>
                             <Link to="/File">File</Link>
-                        </li>
-                    </ul>
-                </div>
-
-                {/*ở chế độ màn hình nhỏ hơn xl thì hiện icon tắt bật menu bằng cách click vào icon này*/}
-                <div onClick={handleNav} className='block xl:hidden'>
-                    {nav ? <AiOutlineClose size={25} className='text-black' /> : <AiOutlineMenu size={25} className='text-black' />}
-                </div>
-                
-                <div className={nav ? 'rounded-lg lg:w-[400px] mx-1  sm:mx-12 md:mx-20 lg:mx-36 md:w-[350px] sm:w-[300px] w-[150px] absolute bg-green-200 text-black md:top-[700px] lg:top-[800px] sm:top-[600px]  left-0  justify-center text-center' : 'absolute left-[-100%]'}>
-                    <ul id="tqd-top-menu" className=' '>
-                        <li className='tqd-top-menu-item hover:bg-gray-300 p-2 rounded font-normal text-[12px] md:text-[14px] lg:text-[16px]'>
-                            <a href="#">Thảo luận</a>
-                        </li>
-                        <li className='tqd-top-menu-item hover:bg-gray-300 p-2 rounded font-normal text-[12px] md:text-[14px] lg:text-[16px]'>
-                            <a href="#">Đáng chú ý</a>
-                        </li>
-                        <li className='tqd-top-menu-item hover:bg-gray-300 p-2 rounded font-normal text-[12px] md:text-[14px] lg:text-[16px]'>
-                            <a href="#">Mọi người</a>
-                        </li>
-                        <li className='tqd-top-menu-item hover:bg-gray-300 p-2 rounded font-normal text-[12px] md:text-[14px] lg:text-[16px]'>
-                            <a href="#">Sự kiện</a>
-                        </li>
-                        <li className='tqd-top-menu-item hover:bg-gray-300 p-2 rounded font-normal text-[12px] md:text-[14px] lg:text-[16px]'>
-                            <a href="#">File phương tiện</a>
-                        </li>
-                        <li className='tqd-top-menu-item hover:bg-gray-300 p-2 rounded font-normal text-[12px] md:text-[14px] lg:text-[16px]'>
-                            <a href="#">File</a>
                         </li>
                     </ul>
                 </div>

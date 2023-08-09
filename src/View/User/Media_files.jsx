@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
- const Media_files=()=>{
+ const Media_files=({ children, isActive })=>{
     return (
         <div className='w-full  inline-block bg-gray-300'>
              <div className='mx-48 my-4 h-auto bg-white rounded-lg'>
@@ -8,10 +8,10 @@ import {Link} from 'react-router-dom';
                     <p className='text-[20px] font-bold'>File phương tiện</p>
                     <div className='flex gap-8'>
                         <p className='text-blue-700 hover:bg-gray-300'>
-                            <Link to="/">Tạo album</Link>
+                            <Link to="/Album_media">Tạo album</Link>
                         </p>
                         <p className='text-blue-700 hover:bg-gray-300'>
-                            <Link to="/">Thêm ảnh/video</Link>
+                            <a type="file">Thêm ảnh/video</a>
                         </p>
                     </div>
                 </div>
@@ -20,7 +20,7 @@ import {Link} from 'react-router-dom';
                         Ảnh
                     </div>
                     <div className='font-semibold text-gray-500'>
-                        Video
+                        <Link to='/Video'>Video</Link>
                     </div>
                     <div className='font-semibold text-gray-500'>
                         Album

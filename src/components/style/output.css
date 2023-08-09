@@ -69,3 +69,41 @@
     height: 1.25rem;
     width: 1.25rem;
   }
+
+
+
+
+
+  
+  .tabs .line {
+    
+    height: 6px;
+    border-radius: 15px;
+    background-color: #c23564;
+   
+  }
+  .tab-item {
+   
+    color: #c23564;
+    background-color: #fff;
+    
+  }
+  
+  .tab-item:hover {
+    opacity: 1;
+    background-color: rgba(194, 53, 100, 0.05);
+    border-color: rgba(194, 53, 100, 0.1);
+  }
+  
+  
+  .tab-pane {
+    color: #333;
+    display: none;
+  }
+  
+
+
+
+
+
+  

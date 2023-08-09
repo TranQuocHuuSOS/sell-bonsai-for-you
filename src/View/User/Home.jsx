@@ -69,8 +69,6 @@ const Home=()=> {
                                         {nav ? <AiOutlineClose size={20} className='text-black mx-2' /> : <  svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M8 256a56 56 0 1 1 112 0A56 56 0 1 1 8 256zm160 0a56 56 0 1 1 112 0 56 56 0 1 1 -112 0zm216-56a56 56 0 1 1 0 112 56 56 0 1 1 0-112z" className='mx-2'/></svg>   }
                                     </div>
                                 </div>
-                             
-                
 
 
                                 <div className={nav ? 'rounded-lg lg:w-[400px] mx-1 p-2  sm:mx-12 md:mx-20 lg:mx-[25%] md:w-[350px] sm:w-[300px] w-[150px] absolute shadow-lg bg-green-200 text-black md:top-[700px] xl:top-[1150px] lg:top-[1000px] sm:top-[600px]  left-0  justify-center ' : 'absolute left-[-100%]'}>
