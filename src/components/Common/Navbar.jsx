@@ -16,19 +16,18 @@ const Navbar=()=> {
         setNav(!nav)
     }
     return (
-        
         <div className='shadow-lg  bg-gradient-to-b items-center justify-between from-green-400 to-green-0 w-full  h-auto'>
         <a className='flex  items-center justify-center'>
             <img className='items-center justify-center w-[75%] h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] rounded-lg' src='https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2022/5/19/1046610/6.jpeg' alt=""></img>
         </a>
-        <div className='lg:flex md:flex sm:block block justify-between px-12 sm:px-20 md:px-36 lg:px-48 p-8'>
-            <h3 className=' text-[20px] md:text-[18px] justify-center items-center text-center lg:text-h4-2 font-bold'>Hội BONSAI - CÂY CẢNH</h3>
+        <div className='lg:flex md:flex sm:block block justify-between  sm:px-16 md:px-24 lg:px-48 py-4 sm:py-4 md:py-6 lg:py-8 xl:py-8 px-8'>
+            <h3 className='text-[16px] sm:text-[18px] md:text-[18px] justify-center items-center text-center lg:text-h4-2  xl:text-h4-2 font-bold'>Hội BONSAI - CÂY CẢNH</h3>
             <div className='flex items-center justify-center gap-2 md:gap-4 lg:gap-4'>
-                <button className='   top-2 flex bg-green-500 hover:bg-green-500 items-center rounded bg-primary px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg'>
+                <button className='h-[30px] sm:h-[40px] md:h-[40px] lg:h-[40px] xl:h-[40px]  top-2 flex bg-green-500 hover:bg-green-500 items-center rounded bg-primary px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg'>
                 <svg xmlns="http://www.w3.org/2000/svg" stroke="currentColor" height="1rem" viewBox="0 0 576 512"><path d="M112 48a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm40 304V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V256.9L59.4 304.5c-9.1 15.1-28.8 20-43.9 10.9s-20-28.8-10.9-43.9l58.3-97c17.4-28.9 48.6-46.6 82.3-46.6h29.7c33.7 0 64.9 17.7 82.3 46.6l44.9 74.7c-16.1 17.6-28.6 38.5-36.6 61.5c-1.9-1.8-3.5-3.9-4.9-6.3L232 256.9V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V352H152zM432 224a144 144 0 1 1 0 288 144 144 0 1 1 0-288zm16 80c0-8.8-7.2-16-16-16s-16 7.2-16 16v48H368c-8.8 0-16 7.2-16 16s7.2 16 16 16h48v48c0 8.8 7.2 16 16 16s16-7.2 16-16V384h48c8.8 0 16-7.2 16-16s-7.2-16-16-16H448V304z"/></svg>
                     <p className='text-black hidden sm:block md:block lg:block hover:text-gray-700 font-bold text-[16px]'>Tham gia nhóm</p>
                 </button>
-                <button onClick={()=>window.my_modal_invite.showModal()} type="button" className='   top-2 flex bg-green-500 hover:bg-green-500 items-center rounded bg-primary px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg'>
+                <button onClick={()=>window.my_modal_invite.showModal()} type="button" className='   top-2 flex bg-green-500 hover:bg-green-500 items-center rounded bg-primary px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg h-[30px] sm:h-[40px] md:h-[40px] lg:h-[40px] xl:h-[40px]'>
                 <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
                     <p className='text-black hidden sm:block md:block lg:block hover:text-gray-700 font-bold text-[16px]'>Mời</p>
                 </button>
@@ -181,8 +180,8 @@ const Navbar=()=> {
                 </dialog>
             </div>
         </div>
-        <details className="dropdown lg:px-48 flex  p-4  ">
-            <summary className="m-1 btn hover:bg-gray-300 ">Hội nhóm liên quan</summary>
+        <details className="dropdown sm:px-20 md:px-36 lg:px-48  py-0 px-4  ">
+            <summary className="m-1 btn hover:bg-gray-300">Hội nhóm liên quan</summary>
             <ul className="border-[1px] top-[10%] p-2 bg-white w-[100%] shadow-xl menu dropdown-content bg-base-100 rounded-md ">
                 <div className='container '>
                     <div className='flex items-center justify-between '>
@@ -334,7 +333,7 @@ const Navbar=()=> {
 
 
         {/*bắt đầu thanh navbar */}
-        <div className='flex justify-between items-center mx-1 sm:mx-16 md:mx-28 lg:mx-48 p-8   border-t-[1px] border-gray-300 '>
+        <div className='flex justify-between items-center mx-1 sm:mx-16 md:mx-28 lg:mx-48 py-4 sm:py-4 md:py-6 lg:py-8 xl:py-8 px-8   border-t-[1px] border-gray-300 '>
             <div>
                 <div className='xl:flex  hidden md:text-center md:items-center lg:text-center lg:items-center sm:text-center sm:items-center text-center items-center'>
                     <ul id="tqd-top-menu" className='tabs xl:flex  hidden sm:gap-2 md:gap-1 lg:gap-4 md:text-center md:items-center lg:text-center lg:items-center sm:text-center sm:items-center text-center items-center'>
@@ -387,9 +386,9 @@ const Navbar=()=> {
                     </ul>
                 </div>
             </div>
-            <div className='flex  gap-2 md:gap-4 lg:gap-4'>
-                <button onClick={()=>window.my_modal_search.showModal()} type="button" className='  top-2 flex hover:text-green-300 bg-green-500 hover:bg-green-600 items-center rounded bg-primary px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg'>
-                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+            <div className='flex  gap-2 md:gap-4 lg:gap-4 items-center justify-center'>
+                <button onClick={()=>window.my_modal_search.showModal()} type="button" className='   flex hover:text-green-300 bg-green-500 hover:bg-green-600 items-center rounded bg-primary px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg h-[30px] sm:h-[40px] md:h-[40px] lg:h-[40px] xl:h-[40px]'>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
                 </button>
             {/*Bắt đầu modal search */}
                 <dialog id="my_modal_search" className="modal w-[50%] rounded-xl">
@@ -461,8 +460,8 @@ const Navbar=()=> {
                     type="button"id="button-addon1"data-te-ripple-initdata-te-ripple-color="light">
                         {nav ? <AiOutlineClose size={20} className='text-black mx-2' /> : <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M8 256a56 56 0 1 1 112 0A56 56 0 1 1 8 256zm160 0a56 56 0 1 1 112 0 56 56 0 1 1 -112 0zm216-56a56 56 0 1 1 0 112 56 56 0 1 1 0-112z"/></svg>   }  
                 </button> */}
-                <details className="dropdown">
-                    <summary  className="m-1 btn flex hover:bg-gray-300  top-2  items-center rounded bg-primary px-6 py-2.5 text-xs font-medium uppercase leading-tight bg-white shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M8 256a56 56 0 1 1 112 0A56 56 0 1 1 8 256zm160 0a56 56 0 1 1 112 0 56 56 0 1 1 -112 0zm216-56a56 56 0 1 1 0 112 56 56 0 1 1 0-112z"/></svg></summary>
+                <details className="dropdown h-[30px] sm:h-[40px] md:h-[40px] lg:h-[40px] xl:h-[40px]">
+                    <summary  className=" flex hover:bg-gray-300  top-2  items-center rounded bg-primary px-6 py-2.5 text-xs font-medium uppercase leading-tight bg-white shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg h-[30px] sm:h-[40px] md:h-[40px] lg:h-[40px] xl:h-[40px]"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M8 256a56 56 0 1 1 112 0A56 56 0 1 1 8 256zm160 0a56 56 0 1 1 112 0 56 56 0 1 1 -112 0zm216-56a56 56 0 1 1 0 112 56 56 0 1 1 0-112z"/></svg></summary>
                         <ul className="mx-4 xl:right-[10px] p-2 absolute menu dropdown-content z-[1] bg-base-100 rounded-box shadow-lg bg-green-200 text-black">
                             <div className='flex items-center gap-4 p-2   '>
                                 <i data-visualcompletion="css-img"

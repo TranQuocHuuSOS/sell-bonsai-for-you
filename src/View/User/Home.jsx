@@ -25,7 +25,7 @@ const Home=()=> {
                                 </a>
                                 <input className="xl:mx-8 lg:mx-8 md:mx-6 sm:mx-4 mx-2 shadow font-light text-[16px] flex appearance-none bg-gray-200  rounded-[50px] w-full hover:border-gray-500  text-gray-700  leading-tight focus:outline-none focus:shadow-outline" id="password" type="text" placeholder=" Bạn hãy viết gì đi..." />
                             </div>
-                            <div className='p-4 items-center justify-center grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 border-t-[1px]'>
+                            <div className='p-4 items-center justify-center grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 grid-cols-1 border-t-[1px]'>
                                 <div className='flex items-center'>
                                     <img src="https://static.xx.fbcdn.net/rsrc.php/v3/y-/r/WpZH_PxfuYV.png" alt=""></img>
                                     <h4  className='font-semibold text-gray-400 mx-4'>Anonymous Post</h4>
@@ -64,14 +64,14 @@ const Home=()=> {
                                             <span className='hover:underline'>16 giờ trước</span>
                                         </div> 
                                 </div>
-                                <div className='justify-between mx-4'>
-                                    <div onClick={handleNav} className='block '>
+                                <div className='flex  mx-4'>
+                                    <div onClick={handleNav} className='block'>
                                         {nav ? <AiOutlineClose size={20} className='text-black mx-2' /> : <  svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M8 256a56 56 0 1 1 112 0A56 56 0 1 1 8 256zm160 0a56 56 0 1 1 112 0 56 56 0 1 1 -112 0zm216-56a56 56 0 1 1 0 112 56 56 0 1 1 0-112z" className='mx-2'/></svg>   }
                                     </div>
                                 </div>
 
 
-                                <div className={nav ? 'rounded-lg lg:w-[400px] mx-1 p-2  sm:mx-12 md:mx-20 lg:mx-[25%] md:w-[350px] sm:w-[300px] w-[150px] absolute shadow-lg bg-green-200 text-black md:top-[700px] xl:top-[1150px] lg:top-[1000px] sm:top-[600px]  left-0  justify-center ' : 'absolute left-[-100%]'}>
+                                <div className={nav ? ' rounded-lg  lg:w-[400px] xl:w-[400px] mx-1 p-2  sm:mx-12 md:mx-20 lg:mx-[25%] md:w-[350px] sm:w-[300px] w-[150px] absolute shadow-lg bg-green-200 text-black md:top-[700px] xl:top-[1150px] lg:top-[1000px] sm:top-[600px]  left-0  justify-center ' : 'absolute left-[-400%] sm:left-[-200%] md:left-[-100%] lg:left-[-100%] xl:left-[-100%]'}>
                                     <div className='flex items-center gap-4 p-2 border-b-[1px] border-black'>
                                         <i data-visualcompletion="css-img" className="x1b0d499 xep6ejk" style={{ backgroundImage:'url("https://static.xx.fbcdn.net/rsrc.php/v3/yQ/r/2sWMgO9b01D.png")',backgroundPosition: "0px -254px",backgroundSize: "26px 1228px",width: 20,height: 20,backgroundRepeat: "no-repeat",display: "inline-block"}}/>
                                         <div className=''> 
@@ -120,10 +120,6 @@ const Home=()=> {
                                         </div>
                                     </div>
                                 </div>
-
-
-
-
                             </div>
                             <p className='content px-4'> Bao ship toàn quốc miễn phí !</p>
                             <div className='my-4 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols- gap-1 items-center justify-center'>

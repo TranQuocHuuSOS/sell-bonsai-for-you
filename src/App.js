@@ -1,6 +1,6 @@
 import {Route, Routes} from "react-router-dom";
 import Header from "./components/Common/Header";
-import Footer from "./components/Common/Footer";
+// import Footer from "./components/Common/Footer";
 import Navbar from "./components/Common/Navbar";
 import Home from "./View/User/Home";
 import Remarkable from "./View/User/Remarkable";
@@ -38,7 +38,7 @@ function App() {
         <Route path='/ResetPassword' element={<ResetPassword/>}/>
       </Routes>
       {/* </div> */}
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   );
 }

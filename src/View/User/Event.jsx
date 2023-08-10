@@ -14,11 +14,11 @@ library.add(fas);
     }
     return (
         <div className='w-full  inline-block bg-gray-300'>
-             <div className='mx-72 my-4 h-auto bg-white rounded-lg'>
-                <div className='flex items-center justify-between p-4 '>
-                    <p className='text-[20px] font-bold'>Sự kiện sắp tới</p>
-                    <div className='flex gap-2'>
-                        <button className="bg-gray-300 shadow hover:bg-gray-400 text-[16px] text-black font-bold py-2 px-4 h-[40px] w-[120px] rounded focus:outline-none focus:shadow-outline" onClick={()=>window.my_modal_3.showModal()} type="button">
+             <div className='mx-0 sm:mx-16 md:mx-32 lg:mx-56 xl:mx-72 my-4 h-auto bg-white rounded-lg'>
+                <div className='grid sm:flex md:flex lg:flex xl:flex items-center justify-center sm:justify-between md:justify-between lg:justify-between xl:justify-between p-4 '>
+                    <p className='text-[20px] font-bold w-full flex items-center justify-center sm:justify-start md:justify-start lg:justify-start xl:justify-start'>Sự kiện sắp tới</p>
+                    <div className=' grid sm:flex md:flex lg:flex xl:flex gap-2 items-center justify-center py-2'>
+                        <button className="bg-gray-300 shadow hover:bg-gray-400 text-[16px] text-black font-bold py-2 px-0 sm:px-4 md:px-4 lg:px-4 xl:px-4 h-[40px] w-[120px] rounded focus:outline-none focus:shadow-outline" onClick={()=>window.my_modal_3.showModal()} type="button">
                             Tìm sự kiện      
                         </button>
                         {/* You can open the modal using ID.showModal() method */}
@@ -46,7 +46,7 @@ library.add(fas);
 
 
 
-                        <button className="bg-green-700 shadow hover:bg-green-500  text-[16px] text-white font-bold py-2 px-4 h-[40px] w-[120px] rounded focus:outline-none focus:shadow-outline" onClick={()=>window.my_modal_2.showModal()} type="button">
+                        <button className="bg-green-700 shadow hover:bg-green-500  text-[16px] text-white font-bold py-2 px-0 sm:px-4 md:px-4 lg:px-4 xl:px-4 h-[40px] w-[120px] rounded focus:outline-none focus:shadow-outline" onClick={()=>window.my_modal_2.showModal()} type="button">
                             Tạo sự kiện
                         </button>
 
@@ -178,22 +178,41 @@ library.add(fas);
 
                     </div>
                 </div>
-                <div className='items-center justify-center flex p-4'>
-                    Chưa có sự kiện nào sắp diễn ra
+                <div className='items-center justify-center flex p-0 md:p-4 lg:p-4 xl:p-4'>
+                    <div className=''>
+                        <span className='flex items-center justify-center'>
+                        <i data-visualcompletion="css-img"className="flex items-center justify-center"
+                            style={{
+                            backgroundImage:
+                            'url("https://static.xx.fbcdn.net/rsrc.php/v3/yK/r/GYA7Pcxl6Ai.png")',
+                            backgroundPosition: "0px -260px",
+                            backgroundSize: "146px 374px",
+                            width: 112,
+                            height: 112,
+                            backgroundRepeat: "no-repeat",
+                            display: "inline-block"
+                            }}
+                        />
+                        </span>
+                        <p className='flex items-center text-center justify-center'>
+                            Chưa có sự kiện nào sắp diễn ra
+                        </p>
+                    </div>
+                   
                 </div>
              </div>
 
-             <div className='mx-72 my-4 h-auto bg-white rounded-lg'>
-                <div className=' p-4 '>
+             <div className='mx-0 sm:mx-16 md:mx-32 lg:mx-56 xl:mx-72 my-4 h-auto bg-white rounded-lg'>
+                <div className='p-1 sm:p-2 md:p-4 lg:p-4 xl:p-4 '>
                     <p className='text-[20px] font-bold'>Sự kiện trước đây</p>
-                    <div className='flex my-4 border-b-[1px]'>
-                        <img className='w-[20%] h-[20%] rounded-lg' src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t39.30808-6/315640373_109075705358360_6098016627465134079_n.jpg?_nc_cat=106&cb=99be929b-59f725be&ccb=1-7&_nc_sid=340051&_nc_ohc=uofj8Cx1K_AAX-vAEaz&_nc_ht=scontent.fsgn2-5.fna&oh=00_AfA8uUIy4UtIhaKEJRgb9AG_5A3dKcfnK8W1yvldMp_gmg&oe=64D490C8" alt=""></img>
+                    <div className='grid sm:flex md:flex lg:flex xl:flex my-2 sm:my-2 md:my-4 lg:my-4 xl:my-4 border-b-[1px]'>
+                        <img className=' w-[100%] sm:w-[20%] md:w-[20%] lg:w-[20%] xl:w-[20%] h-[100%] rounded-lg' src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t39.30808-6/315640373_109075705358360_6098016627465134079_n.jpg?_nc_cat=106&cb=99be929b-59f725be&ccb=1-7&_nc_sid=340051&_nc_ohc=uofj8Cx1K_AAX-vAEaz&_nc_ht=scontent.fsgn2-5.fna&oh=00_AfA8uUIy4UtIhaKEJRgb9AG_5A3dKcfnK8W1yvldMp_gmg&oe=64D490C8" alt=""></img>
                         <div className='mx-4'>
                             <time className='hover:underline'>T6, 18 THÁNG 11, 2022</time>
-                            <p className='font-bold text-[24px] hover:underline'>On Top Top Mỗi Ngày X10 Mức Thu Tết Ấm</p>
+                            <p className='font-bold text-[16px] sm:text-[20px] md:text-[24px] lg:text-[24px] xl:text-[24px] hover:underline'>On Top Top Mỗi Ngày X10 Mức Thu Tết Ấm</p>
                             <div className='flex'>
-                                <img className='w-[5%] h-[5%] rounded-full' src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t39.30808-6/315640373_109075705358360_6098016627465134079_n.jpg?_nc_cat=106&cb=99be929b-59f725be&ccb=1-7&_nc_sid=340051&_nc_ohc=uofj8Cx1K_AAX-vAEaz&_nc_ht=scontent.fsgn2-5.fna&oh=00_AfA8uUIy4UtIhaKEJRgb9AG_5A3dKcfnK8W1yvldMp_gmg&oe=64D490C8" alt=""></img>
-                                <p className='mx-2 hover:underline'>Người tạo:<strong>Phạm Phúc</strong></p>
+                                <img className='w-[5%] h-[5%] hidden sm:flex md:flex lg:flex xl:flex  rounded-full' src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t39.30808-6/315640373_109075705358360_6098016627465134079_n.jpg?_nc_cat=106&cb=99be929b-59f725be&ccb=1-7&_nc_sid=340051&_nc_ohc=uofj8Cx1K_AAX-vAEaz&_nc_ht=scontent.fsgn2-5.fna&oh=00_AfA8uUIy4UtIhaKEJRgb9AG_5A3dKcfnK8W1yvldMp_gmg&oe=64D490C8" alt=""></img>
+                                <p className=' mx-0 sm:mx-2 md:mx-2 lg:mx-2 xl:mx-2 hover:underline'>Người tạo:<strong>Phạm Phúc</strong></p>
                             </div>
                             <div className='justify-between items-center mx-4'>
                                 <div onClick={handleNav} className='  my-8 bg-gray-200 hover:bg-gray-300 top-2 flex items-center justify-center rounded  px-6 py-2.5 text-xs font-medium uppercase leading-tight  shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg '>
@@ -202,16 +221,16 @@ library.add(fas);
                             </div>
                         </div>
                     </div>
-                    <div className='flex my-4 border-b-[1px]'>
-                        <img className='w-[20%] h-[20%] rounded-lg' src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t39.30808-6/315640373_109075705358360_6098016627465134079_n.jpg?_nc_cat=106&cb=99be929b-59f725be&ccb=1-7&_nc_sid=340051&_nc_ohc=uofj8Cx1K_AAX-vAEaz&_nc_ht=scontent.fsgn2-5.fna&oh=00_AfA8uUIy4UtIhaKEJRgb9AG_5A3dKcfnK8W1yvldMp_gmg&oe=64D490C8" alt=""></img>
+                    <div className='grid sm:flex md:flex lg:flex xl:flex my-4 border-b-[1px]'>
+                        <img className='w-[100%] sm:w-[20%] md:w-[20%] lg:w-[20%] xl:w-[20%] h-[100%] rounded-lg' src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t39.30808-6/315640373_109075705358360_6098016627465134079_n.jpg?_nc_cat=106&cb=99be929b-59f725be&ccb=1-7&_nc_sid=340051&_nc_ohc=uofj8Cx1K_AAX-vAEaz&_nc_ht=scontent.fsgn2-5.fna&oh=00_AfA8uUIy4UtIhaKEJRgb9AG_5A3dKcfnK8W1yvldMp_gmg&oe=64D490C8" alt=""></img>
                         <div className='mx-4'>
                             <time className='hover:underline'>T6, 18 THÁNG 11, 2022</time>
-                            <p className='font-bold text-[24px] hover:underline'>On Top Top Mỗi Ngày X10 Mức Thu Tết Ấm</p>
+                            <p className='font-bold text-[16px] sm:text-[20px] md:text-[24px] lg:text-[24px] xl:text-[24px] hover:underline'>On Top Top Mỗi Ngày X10 Mức Thu Tết Ấm</p>
                             <div className='flex'>
-                                <img className='w-[5%] h-[5%] rounded-full' src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t39.30808-6/315640373_109075705358360_6098016627465134079_n.jpg?_nc_cat=106&cb=99be929b-59f725be&ccb=1-7&_nc_sid=340051&_nc_ohc=uofj8Cx1K_AAX-vAEaz&_nc_ht=scontent.fsgn2-5.fna&oh=00_AfA8uUIy4UtIhaKEJRgb9AG_5A3dKcfnK8W1yvldMp_gmg&oe=64D490C8" alt=""></img>
-                                <p className='mx-2 hover:underline' >Người tạo:<strong>Phạm Phúc</strong></p>
+                                <img className='w-[5%] h-[5%] hidden sm:flex md:flex lg:flex xl:flex rounded-full' src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t39.30808-6/315640373_109075705358360_6098016627465134079_n.jpg?_nc_cat=106&cb=99be929b-59f725be&ccb=1-7&_nc_sid=340051&_nc_ohc=uofj8Cx1K_AAX-vAEaz&_nc_ht=scontent.fsgn2-5.fna&oh=00_AfA8uUIy4UtIhaKEJRgb9AG_5A3dKcfnK8W1yvldMp_gmg&oe=64D490C8" alt=""></img>
+                                <p className='mx-0 sm:mx-2 md:mx-2 lg:mx-2 xl:mx-2 hover:underline' >Người tạo:<strong>Phạm Phúc</strong></p>
                             </div>
-                            <div className='justify-between mx-4'>
+                            <div className='w-auto justify-between mx-4'>
                                 <div onClick={handleNav} className=' my-8 bg-gray-200 hover:bg-gray-300 top-2 flex items-center justify-center rounded  px-6 py-2.5 text-xs font-medium uppercase leading-tight  shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg '>
                                     {navs ? <AiOutlineClose size={20} className='text-black mx-2' /> : <  svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M8 256a56 56 0 1 1 112 0A56 56 0 1 1 8 256zm160 0a56 56 0 1 1 112 0 56 56 0 1 1 -112 0zm216-56a56 56 0 1 1 0 112 56 56 0 1 1 0-112z" className='mx-2'/></svg>   }
                                 </div>
@@ -221,7 +240,7 @@ library.add(fas);
                 </div>
                 
 
-                <div className={nav ? 'rounded-lg lg:w-[400px] mx-1 p-2  sm:mx-12 md:mx-20 lg:mx-[25%] md:w-[350px] sm:w-[300px] w-[150px] absolute shadow-lg bg-green-200 text-black md:top-[700px] xl:top-[1150px] lg:top-[1000px] sm:top-[600px]  left-0  justify-center ' : 'absolute left-[-100%]'}>
+                <div className={nav ? 'rounded-lg lg:w-[400px] mx-1 p-2  sm:mx-12 md:mx-20 lg:mx-[25%] md:w-[350px] sm:w-[300px] w-[150px] absolute shadow-lg bg-green-200 text-black md:top-[700px] xl:top-[1150px] lg:top-[1000px] sm:top-[600px]  left-0  justify-center ' : 'absolute left-[-400%] sm:left-[-200%] md:left-[-100%] lg:left-[-100%] xl:left-[-100%]'}>
                                     <div className='flex items-center gap-4 p-2  '>
                                     <i data-visualcompletion="css-img"className="x1b0d499 xep6ejk"style={{backgroundImage:'url("https://static.xx.fbcdn.net/rsrc.php/v3/yQ/r/2sWMgO9b01D.png")',backgroundPosition: "0px -738px",backgroundSize: "26px 1228px",width: 20,height: 20,backgroundRepeat: "no-repeat",display: "inline-block"}}/>
                                         <div className=''> 
@@ -279,7 +298,7 @@ library.add(fas);
 
 
 
-                                <div className={navs ? 'rounded-lg lg:w-[400px] mx-1 p-2  sm:mx-12 md:mx-20 lg:mx-[25%] md:w-[350px] sm:w-[300px] w-[150px] absolute shadow-lg bg-green-200 text-black md:top-[700px] xl:top-[1150px] lg:top-[1000px] sm:top-[600px]  left-0  justify-center ' : 'absolute left-[-100%]'}>
+                                <div className={navs ? 'rounded-lg lg:w-[400px] mx-1 p-2  sm:mx-12 md:mx-20 lg:mx-[25%] md:w-[350px] sm:w-[300px] w-[150px] absolute shadow-lg bg-green-200 text-black md:top-[700px] xl:top-[1150px] lg:top-[1000px] sm:top-[600px]  left-0  justify-center ' : 'absolute left-[-400%] sm:left-[-200%] md:left-[-100%] lg:left-[-100%] xl:left-[-100%]'}>
                                     <div className='flex items-center gap-4 p-2   '>
                                     <i data-visualcompletion="css-img"className="x1b0d499 xep6ejk"style={{backgroundImage:'url("https://static.xx.fbcdn.net/rsrc.php/v3/yQ/r/2sWMgO9b01D.png")',backgroundPosition: "0px -738px",backgroundSize: "26px 1228px",width: 20,height: 20,backgroundRepeat: "no-repeat",display: "inline-block"}}/>
                                         <div className=''> 
