@@ -56,7 +56,7 @@ const Home=()=> {
                                 <div className='flex  items-center p-4'>
                                         <div className=''>
                                             <a className=''>
-                                                <img className='rounded-full w-[50px] h-[50px]' src="https://bcolohouse.com.vn/wp-content/uploads/2022/04/trong-cay-bonsai-mini-1.jpg" alt=""></img>
+                                                <img className='rounded-full w-[30px] sm:w-[40px] md:w-[50px] lg:w-[50px] xl:w-[50px] h-[30px] sm:h-[40px] md:h-[50px] lg:h-[50px] xl:h-[50px]' src="https://bcolohouse.com.vn/wp-content/uploads/2022/04/trong-cay-bonsai-mini-1.jpg" alt=""></img>
                                             </a>
                                         </div>
                                         <div className='mx-4'>
@@ -69,27 +69,25 @@ const Home=()=> {
                                         {nav ? <AiOutlineClose size={20} className='text-black mx-2' /> : <  svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M8 256a56 56 0 1 1 112 0A56 56 0 1 1 8 256zm160 0a56 56 0 1 1 112 0 56 56 0 1 1 -112 0zm216-56a56 56 0 1 1 0 112 56 56 0 1 1 0-112z" className='mx-2'/></svg>   }
                                     </div>
                                 </div>
-
-
-                                <div className={nav ? ' rounded-lg  lg:w-[400px] xl:w-[400px] mx-1 p-2  sm:mx-12 md:mx-20 lg:mx-[25%] md:w-[350px] sm:w-[300px] w-[150px] absolute shadow-lg bg-green-200 text-black md:top-[700px] xl:top-[1150px] lg:top-[1000px] sm:top-[600px]  left-0  justify-center ' : 'absolute left-[-400%] sm:left-[-200%] md:left-[-100%] lg:left-[-100%] xl:left-[-100%]'}>
+                                <div className={nav ? 'rounded-lg mx-[1%] p-2  sm:mx-[12%] md:mx-[20%] lg:mx-[25%] xl:w-[400px] lg:w-[400px] md:w-[400px] sm:w-[400px] w-[250px] absolute shadow-lg bg-green-200 text-black top-[900px] sm:top-[1000px] md:top-[1050px] lg:top-[1200px] xl:top-[1200px] left-0 justify-center ' : 'absolute left-[-400%] sm:left-[-200%] md:left-[-100%] lg:left-[-100%] xl:left-[-100%]'}>
                                     <div className='flex items-center gap-4 p-2 border-b-[1px] border-black'>
                                         <i data-visualcompletion="css-img" className="x1b0d499 xep6ejk" style={{ backgroundImage:'url("https://static.xx.fbcdn.net/rsrc.php/v3/yQ/r/2sWMgO9b01D.png")',backgroundPosition: "0px -254px",backgroundSize: "26px 1228px",width: 20,height: 20,backgroundRepeat: "no-repeat",display: "inline-block"}}/>
                                         <div className=''> 
-                                            <p><strong>Lưu bài viết</strong></p>
-                                            <p>Thêm vào danh sách mục đã lưu.</p>
+                                            <p className='text-[14px] lg:text-[16px] xl:text-[16px]'><strong>Lưu bài viết</strong></p>
+                                            <p  className='text-[14px] lg:text-[16px] xl:text-[16px]'>Thêm vào danh sách mục đã lưu.</p>
                                         </div>
                                     </div>
                                     <div className='flex items-center gap-4 p-2 border-b-[1px] border-black'>
                                         <i data-visualcompletion="css-img" className="x1b0d499 xep6ejk" style={{backgroundImage:'url("https://static.xx.fbcdn.net/rsrc.php/v3/yN/r/FSxdjzLYyYU.png")',backgroundPosition: "0px -282px",backgroundSize: "38px 838px",width: 20,height: 20,backgroundRepeat: "no-repeat",display: "inline-block"}}/>
-                                        <p><strong>Bật thông báo về bài viết này</strong></p>
+                                        <p  className='text-[14px] lg:text-[16px] xl:text-[16px]'><strong>Bật thông báo về bài viết này</strong></p>
                                     </div>
                                     <div className='flex items-center gap-4 p-2'>
                                         <div className="x6s0dn4 xoi2r2e x78zum5 xl56j7k xq8finb">
                                             <img className="x1b0d499 xep6ejk"src="https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/h15jrhghvUR.png"alt=""height={30}width={30}/>
                                         </div>
                                         <div className=''> 
-                                            <p><strong>Tạm ẩn Diệu Nhi Cho Thuê Đăng Kí Duyệt Tự Động trong 30 ngày</strong></p>
-                                            <p>Tạm thời không nhìn thấy bài viết nữa.</p>
+                                            <p className='text-[14px] lg:text-[16px] xl:text-[16px]'><strong>Tạm ẩn Diệu Nhi Cho Thuê Đăng Kí Duyệt Tự Động trong 30 ngày</strong></p>
+                                            <p className='text-[14px] lg:text-[16px] xl:text-[16px]'>Tạm thời không nhìn thấy bài viết nữa.</p>
                                         </div>
                                     </div>
                                     <div className='flex items-center gap-4 p-2'>
@@ -97,8 +95,8 @@ const Home=()=> {
                                             <img className="x1b0d499 xep6ejk" src="https://static.xx.fbcdn.net/rsrc.php/v3/yj/r/KHqkjYOwBTc.png" alt=""height={30}width={30}/>
                                         </div>
                                         <div className=''> 
-                                            <p><strong> Ẩn tất cả từ Diệu Nhi Cho Thuê Đăng Kí Duyệt Tự Động</strong></p>
-                                            <p>Không xem bài viết của trang này nữa.</p>
+                                            <p className='text-[14px] lg:text-[16px] xl:text-[16px]'><strong> Ẩn tất cả từ Diệu Nhi Cho Thuê Đăng Kí Duyệt Tự Động</strong></p>
+                                            <p className='text-[14px] lg:text-[16px] xl:text-[16px]'>Không xem bài viết của trang này nữa.</p>
                                         </div>
                                     </div>
                                     <div className='flex items-center gap-4 p-2'>
@@ -106,8 +104,8 @@ const Home=()=> {
                                             <img className="x1b0d499 xep6ejk" src="https://static.xx.fbcdn.net/rsrc.php/v3/yj/r/KHqkjYOwBTc.png" alt=""height={25}width={25}/>
                                         </div>
                                         <div className=''> 
-                                            <p><strong> Bỏ theo dõi Hội BONSAI - CÂY CẢNH</strong></p>
-                                            <p>Không xem bài viết nữa nhưng vẫn ở trong nhóm.</p>
+                                            <p className='text-[14px] lg:text-[16px] xl:text-[16px]'><strong> Bỏ theo dõi Hội BONSAI - CÂY CẢNH</strong></p>
+                                            <p className='text-[14px] lg:text-[16px] xl:text-[16px]'>Không xem bài viết nữa nhưng vẫn ở trong nhóm.</p>
                                         </div>
                                     </div>
                                     <div className='flex items-center gap-4 p-2'>
@@ -115,8 +113,8 @@ const Home=()=> {
                                             <img className="x1b0d499 xep6ejk"src="https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/BNdV7yOMsDU.png"alt=""height={30}width={30}/>
                                         </div>
                                         <div className=''> 
-                                            <p><strong>Báo cáo bài viết</strong></p>
-                                            <p>Chúng tôi sẽ không cho Diệu Nhi Cho Thuê Đăng Kí Duyệt Tự Động biết ai đã báo cáo.</p>
+                                            <p className='text-[14px] lg:text-[16px] xl:text-[16px]'><strong>Báo cáo bài viết</strong></p>
+                                            <p className='text-[14px] lg:text-[16px] xl:text-[16px]'>Chúng tôi sẽ không cho Diệu Nhi Cho Thuê Đăng Kí Duyệt Tự Động biết ai đã báo cáo.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -152,7 +150,7 @@ const Home=()=> {
                             </div>
                             <div className='flex items-center justify-center my-4 p-4 mx-1 sm:mx-4 md:mx-4 lg:mx-4 xl:mx-4 border-t-[1px]'>
                                 <a className=''>
-                                    <img className='rounded-full xl:w-[60px] xl:h-[50px] lg:w-[60px] lg:h-[50px]  md:w-[60px] md:h-[50px] sm:w-[60px] sm:h-[50px] w-[60px] h-[50px]' src="https://bcolohouse.com.vn/wp-content/uploads/2022/04/trong-cay-bonsai-mini-1.jpg" alt=""></img>
+                                    <img className='rounded-full w-[30px] sm:w-[40px] md:w-[50px] lg:w-[50px] xl:w-[50px] h-[30px] sm:h-[40px] md:h-[50px] lg:h-[50px] xl:h-[50px]' src="https://bcolohouse.com.vn/wp-content/uploads/2022/04/trong-cay-bonsai-mini-1.jpg" alt=""></img>
                                 </a>
                                 <input className="xl:mx-4 lg:mx-4 md:mx-4 sm:mx-4 mx-2 h-[50px] bg-gray-200 shadow font-light text-[16px] flex  appearance-none border  rounded-[50px] w-full hover:border-gray-500  text-black  leading-tight focus:outline-none focus:shadow-outline" id="password" type="text" placeholder=" Viết bình luận công khai..." />
                                 <button className=' '>
@@ -207,7 +205,7 @@ const Home=()=> {
                             </a>
                             <div className='p-4'>
                                 <button className='rounded-lg w-full bg-gray-300 hover:bg-gray-400 py-2'>
-                                    <Link to="/Media_files" className="py-2">Xem tất cả</Link>
+                                    {/* <Link to="/Media_files" className="py-2">Xem tất cả</Link> */}
                                 </button>
                             </div>
                             

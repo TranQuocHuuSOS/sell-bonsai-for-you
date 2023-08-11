@@ -14,7 +14,6 @@ import Album_media from "./View/User/Album_media";
 import Signin from "./components/Account/Signin";
 import Signup from "./components/Account/Signup";
 import ResetPassword from "./components/Account/ResetPassword";
-import { routes } from './Route';
 
 function App() {
   
@@ -24,7 +23,7 @@ function App() {
       {/* <div className="container"> */}
       <Navbar/>
       <Routes>
-        <Route path='/' element={<Home/>}/>
+        <Route path='/Home' element={<Home/>}/>
         <Route path='/Remarkable' element={<Remarkable/>}/>
         <Route path='/File' element={<File/>}/>
         <Route path='/Event' element={<Event/>}/>
@@ -33,7 +32,7 @@ function App() {
         <Route path='/Specific_page' element={<Specific_page/>}/>
         <Route path='/Video' element={<Video/>}/>
         <Route path='/Album_media' element={<Album_media/>}/>
-        <Route path='/Signin' element={<Signin/>}/>
+        <Route path='/' element={<Signin/>}/>
         <Route path='/Signup' element={<Signup/>}/>
         <Route path='/ResetPassword' element={<ResetPassword/>}/>
       </Routes>
@@ -44,3 +43,31 @@ function App() {
 }
 
 export default App;
+
+
+
+// import React from "react";
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import Header from "./components/Common/Header";
+// import Navbar from "./components/Common/Navbar";
+// import { routes } from './routes';
+
+// function App() {
+//   const pathInFile = (ways) =>
+//     ways.map((way) => (
+//       <Route key={way.path} path={way.path} element={way.element} index={way.index} />
+//     ));
+
+//   return (
+//     <div className="bg-[#f8e8ce]">
+//       <Header />
+//       <Navbar />
+//       <Router>
+//         <Routes>{pathInFile(routes)}</Routes>
+//       </Router>
+//     </div>
+//   );
+// }
+
+// export default App;
+
