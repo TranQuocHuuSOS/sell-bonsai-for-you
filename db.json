@@ -125,6 +125,15 @@
       "location": "101B le huu trac",
       "numberphone": "0395142866",
       "id": 14
+    },
+    {
+      "username": "hhh",
+      "email": "h@gmail.com",
+      "password": "654321",
+      "role": "user",
+      "location": "hhh",
+      "numberphone": "0982563748",
+      "id": 15
     }
   ],
   "Plants": [

@@ -1,4 +1,4 @@
-import {BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Common/Header";
 // import Footer from "./components/Common/Footer";
 import Navbar from "./components/Common/Navbar";
@@ -20,23 +20,23 @@ import { useState } from "react";
 function App() {
   return (
     <div className="bg-[#f8e8ce]">
-      <Header/>
+      <Header />
       {/* <div className="container"> */}
-      <Navbar/>
+      <Navbar />
       <Routes>
-        <Route path='/' element={<BeginPage/>}/>
-        <Route path='/Home' element={<Home/>}/>
-        <Route path='/Remarkable' element={<Remarkable/>}/>
-        <Route path='/File' element={<File/>}/>
-        <Route path='/Event' element={<Event/>}/>
-        <Route path='/Everyone' element={<Everyone/>}/>
-        <Route path='/Media_files' element={<Media_files/>}/>
-        <Route path='/Specific_page' element={<Specific_page/>}/>
-        <Route path='/Video' element={<Video/>}/>
-        <Route path='/Album_media' element={<Album_media/>}/>
-        <Route path='/Signin'element={<Signin/>}/>
-        <Route path='/Signup' element={<Signup/>}/>
-        <Route path='/ResetPassword' element={<ResetPassword/>}/>
+        <Route path="/" element={<BeginPage />} />
+        <Route path="/Home" element={<Home />} />
+        <Route path="/Remarkable" element={<Remarkable />} />
+        <Route path="/File" element={<File />} />
+        <Route path="/Event" element={<Event />} />
+        <Route path="/Everyone" element={<Everyone />} />
+        <Route path="/Media_files" element={<Media_files />} />
+        <Route path="/Specific_page" element={<Specific_page />} />
+        <Route path="/Video" element={<Video />} />
+        <Route path="/Album_media" element={<Album_media />} />
+        <Route path="/Signin" element={<Signin />} />
+        <Route path="/Signup" element={<Signup />} />
+        <Route path="/ResetPassword" element={<ResetPassword />} />
       </Routes>
       {/* </div> */}
       {/* <Footer/> */}
@@ -45,8 +45,6 @@ function App() {
 }
 
 export default App;
-
-
 
 // import React from "react";
 // import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -72,4 +70,3 @@ export default App;
 // }
 
 // export default App;
-

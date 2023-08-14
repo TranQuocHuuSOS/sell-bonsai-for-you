@@ -1,5 +1,5 @@
 // PostContext.js
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState } from "react";
 
 const PostContext = createContext();
 
@@ -15,7 +15,7 @@ export const PostProvider = ({ children }) => {
     setPost(postData);
     setUser(userData);
   };
-  return(
+  return (
     <PostContext.Provider value={{ post, user, setPostAndUser }}>
       {children}
     </PostContext.Provider>
