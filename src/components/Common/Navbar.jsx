@@ -285,7 +285,7 @@ const Navbar = () => {
           </dialog>
         </div>
       </div>
-      <details className="cursor-pointer dropdown px-0 sm:px-16 md:px-24 lg:px-32 xl:px-48 py-0">
+      <details className="dropdown px-0 sm:px-16 md:px-24 lg:px-32 xl:px-48 py-0">
         <summary className="cursor-pointer m-1 btn hover:bg-gray-300">
           Hội nhóm liên quan
         </summary>
@@ -295,19 +295,19 @@ const Navbar = () => {
               <p className="flex justify-center sm:justify-start md:justify-start lg:justify-start xl:justify-start">
                 Nhóm liên quan
               </p>
-              <p className="text-blue-700 flex justify-center sm:justify-end md:justify-end lg:justify-end xl:justify-end">
+              <p className="cursor-pointer text-blue-700 flex justify-center sm:justify-end md:justify-end lg:justify-end xl:justify-end">
                 Khám phá các nhóm khác
               </p>
             </div>
             <div className="grid-cols-1 sm:grid-cols-2 grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 p-0 sm:p-2 md:p-4 lg:p-4 xl:p-4 ">
               <div className="rounded-lg shadow-xl border-[1px] ">
                 <img
-                  className="rounded-lg"
+                  className="cursor-pointer rounded-lg"
                   src="https://henryjewels.com/images/products/2022/12/14/original/cover_1670993739.jpg"
                   alt=""
                 ></img>
                 <div className="p-4">
-                  <p className="text-[16px] sm:text-[18px] md:text-[20px] lg:text-[20px] xl:text-[20px] hover:underline">
+                  <p className="cursor-pointer text-[16px] sm:text-[18px] md:text-[20px] lg:text-[20px] xl:text-[20px] hover:underline">
                     <strong>Hội buôn bán giao lưu trầm</strong>
                   </p>
                   <p className="sm:text-[16px] md:text-[18px] lg:text-[18px] xl:text-[18px]">
@@ -325,7 +325,7 @@ const Navbar = () => {
                   </div>
                 </div>
                 <div className="p-4">
-                  <button className=" justify-center  top-2 flex w-full bg-blue-500 hover:bg-blue-700 items-center rounded bg-primary px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg">
+                  <button className="cursor-pointer justify-center  top-2 flex w-full bg-blue-500 hover:bg-blue-700 items-center rounded bg-primary px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       stroke="currentColor"
@@ -343,12 +343,12 @@ const Navbar = () => {
 
               <div className="rounded-lg shadow-xl border-[1px]">
                 <img
-                  className="rounded-lg"
+                  className="cursor-pointer rounded-lg"
                   src="https://henryjewels.com/images/products/2022/12/14/original/cover_1670993739.jpg"
                   alt=""
                 ></img>
                 <div className="p-4">
-                  <p className="text-[16px] sm:text-[18px] md:text-[20px] lg:text-[20px] xl:text-[20px] hover:underline">
+                  <p className="cursor-pointer text-[16px] sm:text-[18px] md:text-[20px] lg:text-[20px] xl:text-[20px] hover:underline">
                     <strong>Hội buôn bán giao lưu trầm</strong>
                   </p>
                   <p className="sm:text-[16px] md:text-[18px] lg:text-[18px] xl:text-[18px]">
@@ -366,7 +366,7 @@ const Navbar = () => {
                   </div>
                 </div>
                 <div className="p-4">
-                  <button className=" justify-center  top-2 flex w-full bg-blue-500 hover:bg-blue-700 items-center rounded bg-primary px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg">
+                  <button className="cursor-pointer justify-center  top-2 flex w-full bg-blue-500 hover:bg-blue-700 items-center rounded bg-primary px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       stroke="currentColor"
@@ -375,7 +375,7 @@ const Navbar = () => {
                     >
                       <path d="M112 48a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm40 304V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V256.9L59.4 304.5c-9.1 15.1-28.8 20-43.9 10.9s-20-28.8-10.9-43.9l58.3-97c17.4-28.9 48.6-46.6 82.3-46.6h29.7c33.7 0 64.9 17.7 82.3 46.6l44.9 74.7c-16.1 17.6-28.6 38.5-36.6 61.5c-1.9-1.8-3.5-3.9-4.9-6.3L232 256.9V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V352H152zM432 224a144 144 0 1 1 0 288 144 144 0 1 1 0-288zm16 80c0-8.8-7.2-16-16-16s-16 7.2-16 16v48H368c-8.8 0-16 7.2-16 16s7.2 16 16 16h48v48c0 8.8 7.2 16 16 16s16-7.2 16-16V384h48c8.8 0 16-7.2 16-16s-7.2-16-16-16H448V304z" />
                     </svg>
-                    <p className="text-black hidden sm:block md:block lg:block xl:block hover:text-gray-700 font-bold text-[12px] sm:text-[12px] md:text-[12px] lg:text-[14px] xl:text-[16px]">
+                    <p className="cursor-pointer text-black hidden sm:block md:block lg:block xl:block hover:text-gray-700 font-bold text-[12px] sm:text-[12px] md:text-[12px] lg:text-[14px] xl:text-[16px]">
                       Tham gia nhóm
                     </p>
                   </button>
@@ -383,12 +383,12 @@ const Navbar = () => {
               </div>
               <div className="rounded-lg shadow-xl border-[1px]">
                 <img
-                  className="rounded-lg"
+                  className="cursor-pointer rounded-lg"
                   src="https://henryjewels.com/images/products/2022/12/14/original/cover_1670993739.jpg"
                   alt=""
                 ></img>
                 <div className="p-4">
-                  <p className="text-[16px] sm:text-[18px] md:text-[20px] lg:text-[20px] xl:text-[20px] hover:underline">
+                  <p className="cursor-pointer text-[16px] sm:text-[18px] md:text-[20px] lg:text-[20px] xl:text-[20px] hover:underline">
                     <strong>Hội buôn bán giao lưu trầm</strong>
                   </p>
                   <p className="sm:text-[16px] md:text-[18px] lg:text-[18px] xl:text-[18px]">
@@ -406,7 +406,7 @@ const Navbar = () => {
                   </div>
                 </div>
                 <div className="p-4">
-                  <button className=" justify-center  top-2 flex w-full bg-blue-500 hover:bg-blue-700 items-center rounded bg-primary px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg">
+                  <button className="cursor-pointer justify-center  top-2 flex w-full bg-blue-500 hover:bg-blue-700 items-center rounded bg-primary px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       stroke="currentColor"
@@ -415,7 +415,7 @@ const Navbar = () => {
                     >
                       <path d="M112 48a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm40 304V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V256.9L59.4 304.5c-9.1 15.1-28.8 20-43.9 10.9s-20-28.8-10.9-43.9l58.3-97c17.4-28.9 48.6-46.6 82.3-46.6h29.7c33.7 0 64.9 17.7 82.3 46.6l44.9 74.7c-16.1 17.6-28.6 38.5-36.6 61.5c-1.9-1.8-3.5-3.9-4.9-6.3L232 256.9V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V352H152zM432 224a144 144 0 1 1 0 288 144 144 0 1 1 0-288zm16 80c0-8.8-7.2-16-16-16s-16 7.2-16 16v48H368c-8.8 0-16 7.2-16 16s7.2 16 16 16h48v48c0 8.8 7.2 16 16 16s16-7.2 16-16V384h48c8.8 0 16-7.2 16-16s-7.2-16-16-16H448V304z" />
                     </svg>
-                    <p className="text-black hidden sm:block md:block lg:block xl:block hover:text-gray-700 font-bold text-[12px] sm:text-[12px] md:text-[12px] lg:text-[14px] xl:text-[16px]">
+                    <p className="cursor-pointer text-black hidden sm:block md:block lg:block xl:block hover:text-gray-700 font-bold text-[12px] sm:text-[12px] md:text-[12px] lg:text-[14px] xl:text-[16px]">
                       Tham gia nhóm
                     </p>
                   </button>
@@ -423,12 +423,12 @@ const Navbar = () => {
               </div>
               <div className="rounded-lg shadow-xl border-[1px]">
                 <img
-                  className="rounded-lg"
+                  className="cursor-pointer rounded-lg"
                   src="https://chuteu.com/wp-content/uploads/2021/12/top-14-cay-canh-dep-nhat-viet-nam-10.jpg"
                   alt=""
                 ></img>
                 <div className="p-4">
-                  <p className="text-[16px] sm:text-[18px] md:text-[20px] lg:text-[20px] xl:text-[20px] hover:underline">
+                  <p className="cursor-pointer text-[16px] sm:text-[18px] md:text-[20px] lg:text-[20px] xl:text-[20px] hover:underline">
                     <strong>Hội Cây Cảnh Việt Nam</strong>
                   </p>
                   <p className="sm:text-[16px] md:text-[18px] lg:text-[18px] xl:text-[18px]">
@@ -446,7 +446,7 @@ const Navbar = () => {
                   </div>
                 </div>
                 <div className="p-4">
-                  <button className=" justify-center  top-2 flex w-full bg-blue-500 hover:bg-blue-700 items-center rounded bg-primary px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg">
+                  <button className="cursor-pointer justify-center  top-2 flex w-full bg-blue-500 hover:bg-blue-700 items-center rounded bg-primary px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       stroke="currentColor"
@@ -455,7 +455,7 @@ const Navbar = () => {
                     >
                       <path d="M112 48a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm40 304V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V256.9L59.4 304.5c-9.1 15.1-28.8 20-43.9 10.9s-20-28.8-10.9-43.9l58.3-97c17.4-28.9 48.6-46.6 82.3-46.6h29.7c33.7 0 64.9 17.7 82.3 46.6l44.9 74.7c-16.1 17.6-28.6 38.5-36.6 61.5c-1.9-1.8-3.5-3.9-4.9-6.3L232 256.9V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V352H152zM432 224a144 144 0 1 1 0 288 144 144 0 1 1 0-288zm16 80c0-8.8-7.2-16-16-16s-16 7.2-16 16v48H368c-8.8 0-16 7.2-16 16s7.2 16 16 16h48v48c0 8.8 7.2 16 16 16s16-7.2 16-16V384h48c8.8 0 16-7.2 16-16s-7.2-16-16-16H448V304z" />
                     </svg>
-                    <p className="text-black hidden sm:block md:block lg:block xl:block hover:text-gray-700 font-bold text-[12px] sm:text-[12px] md:text-[12px] lg:text-[14px] xl:text-[16px]">
+                    <p className="cursor-pointer text-black hidden sm:block md:block lg:block xl:block hover:text-gray-700 font-bold text-[12px] sm:text-[12px] md:text-[12px] lg:text-[14px] xl:text-[16px]">
                       Tham gia nhóm
                     </p>
                   </button>
@@ -463,12 +463,12 @@ const Navbar = () => {
               </div>
               <div className="rounded-lg shadow-xl border-[1px]">
                 <img
-                  className="rounded-lg"
+                  className="cursor-pointer rounded-lg"
                   src="https://nhadepso.com/wp-content/uploads/2023/01/cay-bonsai-dep_1.jpg"
                   alt=""
                 ></img>
                 <div className="p-4">
-                  <p className="text-[16px] sm:text-[18px] md:text-[20px] lg:text-[20px] xl:text-[20px] hover:underline">
+                  <p className="cursor-pointer text-[16px] sm:text-[18px] md:text-[20px] lg:text-[20px] xl:text-[20px] hover:underline">
                     <strong>Giao lưu Bonsai</strong>
                   </p>
                   <p className="sm:text-[16px] md:text-[18px] lg:text-[18px] xl:text-[18px]">
@@ -486,7 +486,7 @@ const Navbar = () => {
                   </div>
                 </div>
                 <div className="p-4">
-                  <button className=" justify-center  top-2 flex w-full bg-blue-500 hover:bg-blue-700 items-center rounded bg-primary px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg">
+                  <button className="cursor-pointer justify-center  top-2 flex w-full bg-blue-500 hover:bg-blue-700 items-center rounded bg-primary px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       stroke="currentColor"
@@ -515,17 +515,17 @@ const Navbar = () => {
               className="tabs xl:flex  hidden sm:gap-2 md:gap-1 lg:gap-4 md:text-center md:items-center lg:text-center lg:items-center sm:text-center sm:items-center text-center items-center"
             >
               <li className=" tab-item  tqd-top-menu-item hover:bg-gray-300 p-2 rounded font-normal text-[12px] md:text-[14px] lg:text-[16px]">
-                <Link className="tab-icon fas fa-code" to="/Home">
+                <Link className="tab-icon fas fa-code" to="/Discussion">
                   Thảo luận
                 </Link>
               </li>
               <li className="tab-item  tqd-top-menu-item hover:bg-gray-300 p-2 rounded font-normal text-[12px] md:text-[14px] lg:text-[16px]">
-                <Link className="tab-icon fas fa-code" to="/Remarkable">
+                <Link className="tab-icon fas fa-code" to="/Important">
                   Đáng chú ý
                 </Link>
               </li>
               <li className="tab-item  tqd-top-menu-item hover:bg-gray-300 p-2 rounded font-normal text-[12px] md:text-[14px] lg:text-[16px]">
-                <Link className="tab-icon fas fa-code" to="/Everyone">
+                <Link className="tab-icon fas fa-code" to="/Collaborators">
                   Mọi người
                 </Link>
               </li>
@@ -535,12 +535,12 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className="tab-item tqd-top-menu-item hover:bg-gray-300 p-2 rounded font-normal text-[12px] md:text-[14px] lg:text-[16px]">
-                <Link className="tab-icon fas fa-code" to="/Media_files">
+                <Link className="tab-icon fas fa-code" to="/Multimedia">
                   File phương tiện
                 </Link>
               </li>
               <li className="tab-item tqd-top-menu-item hover:bg-gray-300 p-2 rounded font-normal text-[12px] md:text-[14px] lg:text-[16px]">
-                <Link className="tab-icon fas fa-code" to="/File">
+                <Link className="tab-icon fas fa-code" to="/Utilities">
                   File
                 </Link>
               </li>
@@ -565,22 +565,22 @@ const Navbar = () => {
           >
             <ul id="tqd-top-menu" className=" ">
               <li className="tqd-top-menu-item hover:bg-gray-300 p-2 rounded font-normal text-[12px] md:text-[14px] lg:text-[16px]">
-                <Link to="/Home">Thảo luận</Link>
+                <Link to="/Discussion">Thảo luận</Link>
               </li>
               <li className="tqd-top-menu-item hover:bg-gray-300 p-2 rounded font-normal text-[12px] md:text-[14px] lg:text-[16px]">
-                <Link to="/Remarkable">Đáng chú ý</Link>
+                <Link to="/Important">Đáng chú ý</Link>
               </li>
               <li className="tqd-top-menu-item hover:bg-gray-300 p-2 rounded font-normal text-[12px] md:text-[14px] lg:text-[16px]">
-                <Link to="/Everyone">Mọi người</Link>
+                <Link to="/Collaborators">Mọi người</Link>
               </li>
               <li className="tqd-top-menu-item hover:bg-gray-300 p-2 rounded font-normal text-[12px] md:text-[14px] lg:text-[16px]">
                 <Link to="/Event">Sự kiện</Link>
               </li>
               <li className="tqd-top-menu-item hover:bg-gray-300 p-2 rounded font-normal text-[12px] md:text-[14px] lg:text-[16px]">
-                <Link to="/Media_files">File phương tiện</Link>
+                <Link to="/Multimedia">File phương tiện</Link>
               </li>
               <li className="tqd-top-menu-item hover:bg-gray-300 p-2 rounded font-normal text-[12px] md:text-[14px] lg:text-[16px]">
-                <Link to="/File">File</Link>
+                <Link to="/Utilities">File</Link>
               </li>
             </ul>
           </div>

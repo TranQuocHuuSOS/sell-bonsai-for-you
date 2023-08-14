@@ -57,9 +57,25 @@ const Header = () => {
                   Profile
                 </summary>
                 <div className="font-bold text-[16px] rounded-lg mx-4 right-[2px] sm:right-[10px] md:right-[10px] lg:right-[10px] xl:right-[10px] p-2 absolute menu dropdown-content z-[1] bg-base-100 rounded-box shadow-lg bg-green-200 text-black">
-                  Welcome,{" "}
-                  {isLoggedIn && userData ? userData.username : "Guest"}
+                    <div className="border-b-[2px] border-gray-400">
+                        Welcome,{" "}
+                        {isLoggedIn && userData ? userData.username : "Guest"}
+                    </div>
+                    <div className="border-b-[2px] border-gray-400">
+                        My email: {isLoggedIn && userData ? userData.email : "Guest"}
+                    </div>
+                    <div className="border-b-[2px] border-gray-400">
+                        My phone number: {isLoggedIn && userData ? userData.numberphone : "Guest"}
+                    </div>
+                    <div className="border-b-[2px] border-gray-400">
+                        My role: {isLoggedIn && userData ? userData.role : "Guest"}
+                    </div>
+                    <div className="border-b-[2px] border-gray-400">
+                        My location: {isLoggedIn && userData ? userData.location: "Guest"}
+                    </div>
+                  
                 </div>
+
               </details>
             )}
             {showProfileAndLogout && (

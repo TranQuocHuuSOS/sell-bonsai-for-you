@@ -2,19 +2,19 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Common/Header";
 // import Footer from "./components/Common/Footer";
 import Navbar from "./components/Common/Navbar";
-import Home from "./View/User/Home";
-import Remarkable from "./View/User/Remarkable";
-import File from "./View/User/File";
+import Discussion from "./View/User/Discussion";
+import Important from "./View/User/Important";
+import Utilities from "./View/User/Utilities";
 import Event from "./View/User/Event";
-import Everyone from "./View/User/Everyone";
-import Media_files from "./View/User/Media_files";
-import Specific_page from "./View/User/Specific_page";
+import Collaborators from "./View/User/Collaborators";
+import Multimedia from "./View/User/Multimedia";
+import References from "./View/User/References";
 import Video from "./View/User/Video";
 import Album_media from "./View/User/Album_media";
 import Signin from "./components/Account/Signin";
 import Signup from "./components/Account/Signup";
 import ResetPassword from "./components/Account/ResetPassword";
-import BeginPage from "./View/User/BeginPage";
+import ConnectMe from "./View/User/ConnectMe";
 import { useState } from "react";
 
 function App() {
@@ -24,14 +24,14 @@ function App() {
       {/* <div className="container"> */}
       <Navbar />
       <Routes>
-        <Route path="/" element={<BeginPage />} />
-        <Route path="/Home" element={<Home />} />
-        <Route path="/Remarkable" element={<Remarkable />} />
-        <Route path="/File" element={<File />} />
+        <Route path="/" element={<ConnectMe />} />
+        <Route path="/Discussion" element={<Discussion />} />
+        <Route path="/Important" element={<Important />} />
+        <Route path="/Utilities" element={<Utilities />} />
         <Route path="/Event" element={<Event />} />
-        <Route path="/Everyone" element={<Everyone />} />
-        <Route path="/Media_files" element={<Media_files />} />
-        <Route path="/Specific_page" element={<Specific_page />} />
+        <Route path="/Collaborators" element={<Collaborators />} />
+        <Route path="/Multimedia" element={<Multimedia />} />
+        <Route path="/References" element={<References />} />
         <Route path="/Video" element={<Video />} />
         <Route path="/Album_media" element={<Album_media />} />
         <Route path="/Signin" element={<Signin />} />

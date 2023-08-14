@@ -24,7 +24,7 @@ const Signin = ({ history }) => {
             // Lưu thông tin người dùng vào local storage
             localStorage.setItem("userData", JSON.stringify(user));
             if (user.role === "user" || user.role === "buyer") {
-              window.location.href = "./Home";
+              window.location.href = "./Discussion";
             } else if (user.role === "admin") {
               window.location.href = "./Admin";
             }

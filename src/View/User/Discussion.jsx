@@ -7,7 +7,7 @@ import "../../components/style/output.css";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 // import Discuss from './Discuss';
 library.add(fas);
-const Home = (url) => {
+const Discussion = (url) => {
   const [nav, setNav] = useState(false);
   const handleNav = () => {
     setNav(!nav);
@@ -413,7 +413,7 @@ const Home = (url) => {
             </div>
             <div className="p-4">
               <button className="rounded-lg w-full bg-gray-300 hover:bg-gray-400 py-2">
-                <Link to="/Specific_page" className="py-2">
+                <Link to="/References" className="py-2">
                   Tìm hiểu thêm
                 </Link>
               </button>
@@ -451,4 +451,4 @@ const Home = (url) => {
     </div>
   );
 };
-export default Home;
+export default Discussion;
