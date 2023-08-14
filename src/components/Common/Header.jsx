@@ -10,7 +10,7 @@ const Header = () => {
     // Đổi trạng thái của dropdown thành đóng
     setIsDropdownOpen(false);
     // Quay về trang đăng nhập
-    window.location.href = "/Signin";
+    window.location.href = "/";
   };
   // Lấy thông tin người dùng từ local storage khi tải trang
   useEffect(() => {
