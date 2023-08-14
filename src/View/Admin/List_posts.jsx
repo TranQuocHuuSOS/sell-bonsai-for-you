@@ -1,33 +1,48 @@
-import React, { Component } from "react";
-const List_posts = () => {
+import React, { Component, useEffect, useState } from "react";
+import axios from "axios";
+const List_posts = (url) => {
+    const [data, setData]= useState([]);
+    const [isLoading, setIsLoading]= useState(true);
+    useEffect(()=>{
+        axios.get("http://localhost:3000/posts")
+        .then((response)=>{
+            setData(response.data);
+            setIsLoading(false);
+        })
+        .catch((error)=>{
+            console.error(
+                "An error occurred while fetching data from the server:", error
+            );
+            setIsLoading(false)
+        })
+    }, [url]);
   return (
-  <div className="flex items-center justify-center">
+  <div className="w-full  inline-block">
   <div className="">
     <p className="flex items-center justify-center font-bold text-[32px]">Danh sách bài đăng</p>
-    <table class="border-[2px] border-green-700 w-full mx-4">
+    <table class="border-[2px] border-green-700 w-[100%]">
       <thead>
-        <tr >
-          <th className=" border-[2px] border-green-700 w-full">Song</th>
-          <th className=" border-[2px] border-green-700 w-full">Artist</th>
-          <th className=" border-[2px] border-green-700 w-full">Year</th>
+        <tr>
+          <th className=" border-[2px] border-green-700 ">ID user</th>
+          <th className=" border-[2px] border-green-700 ">Title</th>
+          <th className=" border-[2px] border-green-700 ">Content</th>
+          <th className=" border-[2px] border-green-700 ">Image post</th>
+          <th className=" border-[2px] border-green-700 ">Create at</th>
+          <th className=" border-[2px] border-green-700 ">Time</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td className=" border-[2px] border-green-700 w-full">The Sliding Mr. Bones (Next Stop, Pottersville)</td>
-          <td className=" border-[2px] border-green-700 w-full">Malcolm Lockyer</td>
-          <td className=" border-[2px] border-green-700 w-full">1961</td>
+        {data.map((item)=>(
+        <tr key={item.id}>
+          <td className=" border-[2px] border-green-700 ">{item.post_id}</td>
+          <td className=" border-[2px] border-green-700 ">{item.title}</td>
+          <td className=" border-[2px] border-green-700 ">{item.content}</td>
+          <td className=" border-[2px] border-green-700 ">{item.imagepost}</td>
+          <td className=" border-[2px] border-green-700 ">{item.createat}</td>
+          <td className=" border-[2px] border-green-700 ">{item.time}</td>
         </tr>
-        <tr>
-          <td className=" border-[2px] border-green-700 w-full" >Witchy Woman</td>
-          <td className=" border-[2px] border-green-700 w-full">The Eagles</td>
-          <td className=" border-[2px] border-green-700 w-full">1972</td>
-        </tr>
-        <tr>
-          <td className=" border-[2px] border-green-700 w-full">Shining Star</td>
-          <td className=" border-[2px] border-green-700 w-full">Earth, Wind, and Fire</td>
-          <td className=" border-[2px] border-green-700 w-full">1975</td>
-        </tr>
+        ))}
+
       </tbody>
     </table>
   </div>

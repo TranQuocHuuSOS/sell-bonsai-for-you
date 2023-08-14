@@ -16,12 +16,12 @@ const List_users = (url) => {
       });
   }, [url]);
   return (
-    <div className="flex items-center justify-center">
+    <div className="w-full  inline-block">
       <div className="">
         <p className="flex items-center justify-center font-bold text-[32px]">
           Danh sách người dùng
         </p>
-        <table class="border-[2px] border-green-700 w-full mx-4">
+        <table class="border-[2px] border-green-700 w-full">
           <thead>
             <tr>
               <th className=" border-[2px] border-green-700 w-full">ID</th>
