@@ -16,13 +16,16 @@ import Signup from "./components/Account/Signup";
 import ResetPassword from "./components/Account/ResetPassword";
 import ConnectMe from "./View/User/ConnectMe";
 import { useState } from "react";
-
+import { useAuth } from "./components/Account/AuthContext";
 function App() {
+  const { isLoggedIn} = useAuth();
   return (
     <div className="bg-[#f8e8ce]">
       <Header />
       {/* <div className="container"> */}
+      {isLoggedIn && (
       <Navbar />
+      )}
       <Routes>
         <Route path="/" element={<ConnectMe />} />
         <Route path="/Discussion" element={<Discussion />} />
