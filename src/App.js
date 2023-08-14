@@ -17,17 +17,32 @@ import ResetPassword from "./components/Account/ResetPassword";
 import ConnectMe from "./View/User/ConnectMe";
 import { useState } from "react";
 import { useAuth } from "./components/Account/AuthContext";
+import Page_main from "./View/Admin/Page_main";
+import List_posts from "./View/Admin/List_posts";
+import List_users from "./View/Admin/List_users";
 function App() {
-  const { isLoggedIn} = useAuth();
+  const { isLoggedIn, userData } = useAuth();
   return (
     <div className="bg-[#f8e8ce]">
       <Header />
       {/* <div className="container"> */}
-      {isLoggedIn && (
+      
+      {isLoggedIn &&  userData.role === "user" && (
+          
       <Navbar />
       )}
+      {isLoggedIn &&  userData.role === "admin" && (
+          
+          <Page_main />
+          
+         
+       
+      )}
+
       <Routes>
+      {!isLoggedIn && (
         <Route path="/" element={<ConnectMe />} />
+      )}
         <Route path="/Discussion" element={<Discussion />} />
         <Route path="/Important" element={<Important />} />
         <Route path="/Utilities" element={<Utilities />} />
@@ -40,6 +55,8 @@ function App() {
         <Route path="/Signin" element={<Signin />} />
         <Route path="/Signup" element={<Signup />} />
         <Route path="/ResetPassword" element={<ResetPassword />} />
+        <Route path="/List_posts" element={<List_posts/>}/>
+        <Route path="/List_users" element={<List_users/>}/>
       </Routes>
       {/* </div> */}
       {/* <Footer/> */}

@@ -14,7 +14,7 @@ const Discussion = (url) => {
   };
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  useEffect(() => {
+  useEffect(() =>{
     axios
       .get("http://localhost:3000/posts")
       .then((response) => {
@@ -340,7 +340,7 @@ const Discussion = (url) => {
                 <div className="flex items-center justify-center my-4 p-4 mx-1 sm:mx-4 md:mx-4 lg:mx-4 xl:mx-4 border-t-[1px]">
                   <a className="cursor-pointer">
                     <img
-                      className="rounded-full w-[30px] sm:w-[40px] md:w-[50px] lg:w-[50px] xl:w-[50px] h-[30px] sm:h-[40px] md:h-[47px] lg:h-[47px] xl:h-[47px]"
+                      className="rounded-full w-[30px] sm:w-[40px] md:w-[50px] lg:w-[50px] xl:w-[50px] h-[25px] sm:h-[35px] md:h-[45px] lg:h-[45px] xl:h-[45px]"
                       src="https://bcolohouse.com.vn/wp-content/uploads/2022/04/trong-cay-bonsai-mini-1.jpg"
                       alt=""
                     ></img>

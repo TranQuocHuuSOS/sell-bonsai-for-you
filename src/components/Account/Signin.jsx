@@ -26,7 +26,7 @@ const Signin = ({ history }) => {
             if (user.role === "user" || user.role === "buyer") {
               window.location.href = "./Discussion";
             } else if (user.role === "admin") {
-              window.location.href = "./Admin";
+              window.location.href = "./Page_main";
             }
           } else {
             console.log("Invalid credentials!");
@@ -35,7 +35,7 @@ const Signin = ({ history }) => {
         .catch((error) => {
           console.error("An error occurred!", error);
         });
-    } else {
+    } else {    
       console.log("Please enter email and password");
     }
   }
