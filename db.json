@@ -1,0 +1,171 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "tran quoc huu",
+      "email": "huutran@gmail.com",
+      "password": "123456",
+      "role": "user",
+      "location": "101B, le huu trac, son tra , da nang",
+      "numberphone": "0394124323"
+    },
+    {
+      "username": "Nguyễn văn nhật",
+      "email": "nhat@gmail.com",
+      "password": "nguyenvannat",
+      "role": "user",
+      "location": "101B lê hữu trác",
+      "numberphone": "095463748",
+      "id": 2
+    },
+    {
+      "username": "Phan Thanh Luc",
+      "email": "luc@gmailcom",
+      "password": "lực12345678",
+      "role": "user",
+      "location": "101B lê hữu trác",
+      "numberphone": "0987678751",
+      "id": 3
+    },
+    {
+      "username": "Trương Lê Thành Luân",
+      "email": "luan@gmailcom",
+      "password": "luan1234567890",
+      "role": "user",
+      "location": "101B lê hữu trác",
+      "numberphone": "0935474853",
+      "id": 4
+    },
+    {
+      "username": "dương thị hồng lam",
+      "email": "lam@gmail.com",
+      "password": "lam1234567890",
+      "role": "user",
+      "location": "101B lê hữu trác",
+      "numberphone": "0395142866",
+      "id": 5
+    },
+    {
+      "username": "a quang nhé",
+      "email": "quang@gmail.com",
+      "password": "quang123",
+      "role": "admin",
+      "location": "101B lê hữu trác",
+      "numberphone": "0698657433",
+      "id": 6
+    },
+    {
+      "username": "a tân",
+      "email": "tan@gmail.com",
+      "password": "tan123",
+      "role": "buyer",
+      "location": "101B lê hữu trác",
+      "numberphone": "0965435643",
+      "id": 7
+    },
+    {
+      "username": "a mão ",
+      "email": "mao@gmail.com",
+      "password": "mao123",
+      "role": "user",
+      "location": "101B lê hữu trác",
+      "numberphone": "0953457364",
+      "id": 8
+    },
+    {
+      "username": "a còng",
+      "email": "cong@gmail.com",
+      "password": "cong123",
+      "role": "user",
+      "location": "101B lê hữu trác",
+      "numberphone": "0956456762",
+      "id": 9
+    },
+    {
+      "username": "khánh skype",
+      "email": "khanh@gmail.com",
+      "password": "khanh123",
+      "role": "buyer",
+      "location": "101B lê hữu trác",
+      "numberphone": "0395142866",
+      "id": 10
+    },
+    {
+      "username": "ông hai",
+      "email": "hai@gmail.com",
+      "password": "hai",
+      "role": "buyer",
+      "location": "101B lê hữu trác",
+      "numberphone": "0987677845",
+      "id": 11
+    },
+    {
+      "username": "ông bảy",
+      "email": "bay@gmail.com",
+      "password": "bay123",
+      "role": "user",
+      "location": "101B lê hữu trác",
+      "numberphone": "0935467645",
+      "id": 12
+    },
+    {
+      "username": "Phan Thanh Lucs",
+      "email": "hhh@gmail.com",
+      "password": "123456",
+      "role": "buyer",
+      "location": "101B le huu trac",
+      "numberphone": "0395142866",
+      "id": 13
+    },
+    {
+      "username": "Phan Thanh Lucs",
+      "email": "hh@gmail.com",
+      "password": "123456",
+      "role": "admin",
+      "location": "101B le huu trac",
+      "numberphone": "0395142866",
+      "id": 14
+    }
+  ],
+  "Plants": [
+    {
+      "plant_id": "1",
+      "user_id": "1",
+      "name": " Acer rubrum",
+      "description": "Cây dáng trực là cây có trục thân cây thẳng góc với mặt đất (thế đứng) α = 0o (nhìn tổng thể giữa ngọn và gốc hình thành đường thẳng hoặc gần thẳng đứng).",
+      "image_plant": "https://cayxinh.vn/wp-content/uploads/2021/01/bon-sai-22121-14.jpg",
+      "price": "120.000",
+      "listed_at": "11/02/2003"
+    }
+  ],
+  "Posts": [
+    {
+      "post_id": "1",
+      "user_id": "1",
+      "title": "Cây khỏe tuổi thọ thấp quý khách yên tâm nhé!",
+      "content": "Giao lưu với cô chú 1 cây Nguyệt quế lá xoắn bông trùm cây cao 2m50 thoát thân 1m20 hoành góc 60cm",
+      "imagepost": "https://bcolohouse.com.vn/wp-content/uploads/2022/04/trong-cay-bonsai-mini-1.jpg",
+      "createat": "12/03/2023",
+      "time": " 12:00"
+    }
+  ],
+  "Transactions": [
+    {
+      "transaction_id ": "1",
+      "seller_id": "1",
+      "buyer_id": "1",
+      "plant_id": "1",
+      "transaction_date": "24/03/2023",
+      "amount": "2"
+    }
+  ],
+  "Comments": [
+    {
+      "comment_id": "1",
+      "user_id": "1",
+      "post_id": "1",
+      "content": "Cẩm thị (kim cương đen) mới làm về gl ace. Rất mong ace yêu thích ủng hộ",
+      "created_comment_at": "12/03/2022"
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 import React, { Component, useState } from 'react';
+import {Link} from 'react-router-dom';
 import axios from 'axios';
 const Signup=()=> {
         const [username, setUsername]= useState("");
@@ -32,7 +33,7 @@ const Signup=()=> {
                 });
         }
         return(
-            <div className='  w-full'>
+            <div className='w-full'>
                 {showSuccessMessage ?(
                     window.location.href="/Signin"
                 ):(
@@ -69,11 +70,14 @@ const Signup=()=> {
                             <label className='my-2'>Your role</label>
                             <input value={role} onChange={(e)=> setRole(e.target.value)} className="  shadow font-light text-[16px]  appearance-none border rounded w-full py-2 px-3 hover:border-green-500 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder='Enter your role' id="username" type="text" />
                         </div>
-                        <div className="text-center items-center lg:gap-2 justify-center">
-                        <button onClick={Sign_up} className="bg-green-700 my-4 shadow hover:bg-green-500  text-[16px] text-white font-bold py-2 px-4 h-[40px] w-[90px] rounded focus:outline-none focus:shadow-outline" type="button">
-                            Sign up
-                        </button>
-                        <br/>
+                        <div className="grid text-center items-center justify-center">
+                            <button onClick={Sign_up} className="bg-green-700 my-4 shadow hover:bg-green-500  text-[16px] text-white font-bold py-2 px-4 h-[40px] w-[150px] rounded focus:outline-none focus:shadow-outline" type="button">
+                                Sign up
+                            </button>
+                            <a className=" py-2 align-baseline font-bold text-[16px] text-sm text-blue-700 hover:text-blue-500 " href="#">
+                                <Link to='/Signin'>Tôi đã có tài khoản!</Link>
+                            </a>
+                            <br/>
                         </div>
                     </form>
                 </div>

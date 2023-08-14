@@ -1,4 +1,5 @@
-import  { useState } from 'react';
+import  { useState, useEffect } from 'react';
+import axios from 'axios';
 import {Link} from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
@@ -6,15 +7,26 @@ import '../../components/style/output.css';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 // import Discuss from './Discuss';
 library.add(fas);
-
-const Home=()=> {
+const Home=(url)=> {
     const [nav, setNav] = useState(false)
     const handleNav = () => {
         setNav(!nav)
     }
+    const [data, setData] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+    useEffect(() => {
+        axios.get("http://localhost:3000/posts")
+            .then(response => {
+                setData(response.data);
+                setIsLoading(false);
+            })
+            .catch(error => {
+                console.error("An error occurred while fetching data from the server:", error);
+                setIsLoading(false);
+            });
+    }, [url]);
         return (
             <div className='w-full  inline-block'> 
-               
                 {/* start contennt */}
                 <div className='flex px-0 sm:px-12 md:px-20 gap-4 lg:px-36 xl:px-48 p-8 bg-[#f8d59e]'>
                     <div className='xl:basis-3/5 md:w-full'>
@@ -52,6 +64,10 @@ const Home=()=> {
                             </span>
                         </div>
                         <div  className='rounded-lg  shadow-sm border-[1px] bg-white my-6'>
+                        
+                        {data.map(item => (
+                            <div key={item.id}>
+                           
                            <div className='flex  justify-between items-center'>
                                 <div className='flex  items-center p-4'>
                                         <div className=''>
@@ -119,10 +135,10 @@ const Home=()=> {
                                     </div>
                                 </div>
                             </div>
-                            <p className='content px-4'> Bao ship toàn quốc miễn phí !</p>
+                            <p className='content px-4'> {item.title}</p>
                             <div className='my-4 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols- gap-1 items-center justify-center'>
                                 <div className=''>
-                                    <img src="https://bcolohouse.com.vn/wp-content/uploads/2022/04/trong-cay-bonsai-mini-1.jpg" alt=""></img>
+                                    <img src={item.imagepost} alt=""></img>
                                 </div>
                                 <div className=''>
                                     <img src="https://bcolohouse.com.vn/wp-content/uploads/2022/04/trong-cay-bonsai-mini-1.jpg" alt=""></img>
@@ -150,15 +166,17 @@ const Home=()=> {
                             </div>
                             <div className='flex items-center justify-center my-4 p-4 mx-1 sm:mx-4 md:mx-4 lg:mx-4 xl:mx-4 border-t-[1px]'>
                                 <a className=''>
-                                    <img className='rounded-full w-[30px] sm:w-[40px] md:w-[50px] lg:w-[50px] xl:w-[50px] h-[30px] sm:h-[40px] md:h-[50px] lg:h-[50px] xl:h-[50px]' src="https://bcolohouse.com.vn/wp-content/uploads/2022/04/trong-cay-bonsai-mini-1.jpg" alt=""></img>
+                                    <img className='rounded-full w-[30px] sm:w-[40px] md:w-[50px] lg:w-[50px] xl:w-[50px] h-[30px] sm:h-[40px] md:h-[47px] lg:h-[47px] xl:h-[47px]' src="https://bcolohouse.com.vn/wp-content/uploads/2022/04/trong-cay-bonsai-mini-1.jpg" alt=""></img>
                                 </a>
                                 <input className="xl:mx-4 lg:mx-4 md:mx-4 sm:mx-4 mx-2 h-[50px] bg-gray-200 shadow font-light text-[16px] flex  appearance-none border  rounded-[50px] w-full hover:border-gray-500  text-black  leading-tight focus:outline-none focus:shadow-outline" id="password" type="text" placeholder=" Viết bình luận công khai..." />
                                 <button className=' '>
                                     <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480V396.4c0-4 1.5-7.8 4.2-10.7L331.8 202.8c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8 17.7 316.6C7.1 311.3 .3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4z"/></svg>
                                 </button>
                             </div>
+                            </div>
+                       ))}
                         </div>
-                        
+                      
                     </div>
                     <div className='xl:basis-2/5 xl:block hidden'>
                         <div  className='rounded-lg shadow-sm border-[1px] bg-white'>

@@ -1,4 +1,4 @@
-import {Route, Routes} from "react-router-dom";
+import {BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Common/Header";
 // import Footer from "./components/Common/Footer";
 import Navbar from "./components/Common/Navbar";
@@ -14,15 +14,17 @@ import Album_media from "./View/User/Album_media";
 import Signin from "./components/Account/Signin";
 import Signup from "./components/Account/Signup";
 import ResetPassword from "./components/Account/ResetPassword";
+import BeginPage from "./View/User/BeginPage";
+import { useState } from "react";
 
 function App() {
-  
   return (
     <div className="bg-[#f8e8ce]">
       <Header/>
       {/* <div className="container"> */}
       <Navbar/>
       <Routes>
+        <Route path='/' element={<BeginPage/>}/>
         <Route path='/Home' element={<Home/>}/>
         <Route path='/Remarkable' element={<Remarkable/>}/>
         <Route path='/File' element={<File/>}/>
@@ -32,7 +34,7 @@ function App() {
         <Route path='/Specific_page' element={<Specific_page/>}/>
         <Route path='/Video' element={<Video/>}/>
         <Route path='/Album_media' element={<Album_media/>}/>
-        <Route path='/' element={<Signin/>}/>
+        <Route path='/Signin'element={<Signin/>}/>
         <Route path='/Signup' element={<Signup/>}/>
         <Route path='/ResetPassword' element={<ResetPassword/>}/>
       </Routes>
