@@ -79,7 +79,7 @@ const Header = () => {
               </details>
             )}
             {showProfileAndLogout && (
-              <button onClick={handleLogout} className="">
+              <button onClick={handleLogout} className="flex items-center justify-center rounded hover:bg-gray-300 w-[40px] h-[30px] sm:h-[40px] md:h-[40px] lg:h-[40px] xl:h-[40px]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   height="1em"
