@@ -32,14 +32,14 @@ const List_posts = (url) => {
         </tr>
       </thead>
       <tbody>
-        {data.map((item)=>(
-        <tr key={item.id}>
-          <td className=" border-[2px] border-green-700 ">{item.post_id}</td>
-          <td className=" border-[2px] border-green-700 ">{item.title}</td>
-          <td className=" border-[2px] border-green-700 ">{item.content}</td>
-          <td className=" border-[2px] border-green-700 ">{item.imagepost}</td>
-          <td className=" border-[2px] border-green-700 ">{item.createat}</td>
-          <td className=" border-[2px] border-green-700 ">{item.time}</td>
+        {data.map((posts)=>(
+        <tr key={posts.id}>
+          <td className=" border-[2px] border-green-700 ">{posts.post_id}</td>
+          <td className=" border-[2px] border-green-700 ">{posts.title}</td>
+          <td className=" border-[2px] border-green-700 ">{posts.content}</td>
+          <td className=" border-[2px] border-green-700 ">{posts.imagepost}</td>
+          <td className=" border-[2px] border-green-700 ">{posts.createat}</td>
+          <td className=" border-[2px] border-green-700 ">{posts.time}</td>
         </tr>
         ))}
 

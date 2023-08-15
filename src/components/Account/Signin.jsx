@@ -9,7 +9,7 @@ const Signin = ({ history }) => {
   const { login } = useAuth();
   function handleLogin() {
     // kiểm tra dữ liệu đăng nhập
-    if (email && password) {
+    if (email && password ) {
       axios
         .get("http://localhost:3000/users")
         .then((response) => {
@@ -17,7 +17,8 @@ const Signin = ({ history }) => {
           const user = userData.find(
             (user) => user.email === email && user.password === password
           );
-          if (user) {
+          if (user ) {
+            if(user.status === 'action'){
             login(user); // Call the login function from the AuthContext
             console.log("Login Successfully!");
             alert("bạn đã đăng nhập thành công!");
@@ -25,9 +26,15 @@ const Signin = ({ history }) => {
             localStorage.setItem("userData", JSON.stringify(user));
             if (user.role === "user" || user.role === "buyer") {
               window.location.href = "./Discussion";
-            } else if (user.role === "admin") {
+            } 
+            else if (user.role === "admin") {
               window.location.href = "./Page_main";
             }
+          }
+          else{
+            console.log("This account blocked!");
+            alert("This account was blocked!")
+          }
           } else {
             console.log("Invalid credentials!");
           }

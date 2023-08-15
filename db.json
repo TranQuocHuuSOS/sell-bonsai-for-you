@@ -7,7 +7,8 @@
       "password": "123456",
       "role": "user",
       "location": "101B, le huu trac, son tra , da nang",
-      "numberphone": "0394124323"
+      "numberphone": "0394124323",
+      "status": "action"
     },
     {
       "username": "Nguyễn văn nhật",
@@ -16,7 +17,8 @@
       "role": "user",
       "location": "101B lê hữu trác",
       "numberphone": "095463748",
-      "id": 2
+      "id": 2,
+      "status": "action"
     },
     {
       "username": "Phan Thanh Luc",
@@ -25,7 +27,8 @@
       "role": "user",
       "location": "101B lê hữu trác",
       "numberphone": "0987678751",
-      "id": 3
+      "id": 3,
+      "status": "action"
     },
     {
       "username": "Trương Lê Thành Luân",
@@ -34,7 +37,8 @@
       "role": "user",
       "location": "101B lê hữu trác",
       "numberphone": "0935474853",
-      "id": 4
+      "id": 4,
+      "status": "action"
     },
     {
       "username": "dương thị hồng lam",
@@ -43,7 +47,8 @@
       "role": "user",
       "location": "101B lê hữu trác",
       "numberphone": "0395142866",
-      "id": 5
+      "id": 5,
+      "status": "block"
     },
     {
       "username": "a quang nhé",
@@ -52,7 +57,8 @@
       "role": "admin",
       "location": "101B lê hữu trác",
       "numberphone": "0698657433",
-      "id": 6
+      "id": 6,
+      "status": "action"
     },
     {
       "username": "a tân",
@@ -61,7 +67,8 @@
       "role": "buyer",
       "location": "101B lê hữu trác",
       "numberphone": "0965435643",
-      "id": 7
+      "id": 7,
+      "status": "action"
     },
     {
       "username": "a mão ",
@@ -70,7 +77,8 @@
       "role": "user",
       "location": "101B lê hữu trác",
       "numberphone": "0953457364",
-      "id": 8
+      "id": 8,
+      "status": "action"
     },
     {
       "username": "a còng",
@@ -79,7 +87,8 @@
       "role": "user",
       "location": "101B lê hữu trác",
       "numberphone": "0956456762",
-      "id": 9
+      "id": 9,
+      "status": "action"
     },
     {
       "username": "khánh skype",
@@ -88,7 +97,8 @@
       "role": "buyer",
       "location": "101B lê hữu trác",
       "numberphone": "0395142866",
-      "id": 10
+      "id": 10,
+      "status": "action"
     },
     {
       "username": "ông hai",
@@ -97,7 +107,8 @@
       "role": "buyer",
       "location": "101B lê hữu trác",
       "numberphone": "0987677845",
-      "id": 11
+      "id": 11,
+      "status": "action"
     },
     {
       "username": "ông bảy",
@@ -106,7 +117,8 @@
       "role": "user",
       "location": "101B lê hữu trác",
       "numberphone": "0935467645",
-      "id": 12
+      "id": 12,
+      "status": "action"
     },
     {
       "username": "Phan Thanh Lucs",
@@ -115,7 +127,8 @@
       "role": "buyer",
       "location": "101B le huu trac",
       "numberphone": "0395142866",
-      "id": 13
+      "id": 13,
+      "status": "action"
     },
     {
       "username": "Phan Thanh Lucs",
@@ -124,7 +137,8 @@
       "role": "admin",
       "location": "101B le huu trac",
       "numberphone": "0395142866",
-      "id": 14
+      "id": 14,
+      "status": "action"
     },
     {
       "username": "hhh",
@@ -133,7 +147,18 @@
       "role": "user",
       "location": "hhh",
       "numberphone": "0982563748",
-      "id": 15
+      "id": 15,
+      "status": "action"
+    },
+    {
+      "username": "anh thư",
+      "email": "thu@gmail.com",
+      "password": "4321",
+      "role": "user",
+      "location": "101B lê hữu trác",
+      "numberphone": "0897876424",
+      "status": "action",
+      "id": 16
     }
   ],
   "Plants": [

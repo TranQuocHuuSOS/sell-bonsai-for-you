@@ -24,40 +24,38 @@ const List_users = (url) => {
         <table class="border-[2px] border-green-700 w-full">
           <thead>
             <tr>
-              <th className=" border-[2px] border-green-700 w-full">ID</th>
-              <th className=" border-[2px] border-green-700 w-full">
-                Username
-              </th>
-              <th className=" border-[2px] border-green-700 w-full">Email</th>
-              <th className=" border-[2px] border-green-700 w-full">Role</th>
-              <th className=" border-[2px] border-green-700 w-full">
-                Location
-              </th>
-              <th className=" border-[2px] border-green-700 w-full">
-                Phone Number
-              </th>
+              <th className=" border-[2px] border-green-700 ">ID</th>
+              <th className=" border-[2px] border-green-700 ">Username</th>
+              <th className=" border-[2px] border-green-700 ">Email</th>
+              <th className=" border-[2px] border-green-700 ">Role</th>
+              <th className=" border-[2px] border-green-700 ">Location</th>
+              <th className=" border-[2px] border-green-700 ">Phone Number</th>
+              <th className=" border-[2px] border-green-700 ">Status</th>
             </tr>
           </thead>
           <tbody>
-            {data.map((item) => (
-              <tr key={item.id}>
-                <td className=" border-[2px] border-green-700 w-full">
-                  {item.id}
+            {data.map((users) => (
+              <tr key={users.id}>
+                <td className=" border-[2px] border-green-700 ">
+                  {users.id}
                 </td>
-                <td className=" border-[2px] border-green-700 w-full">
-                  {item.username}
+                <td className=" border-[2px] border-green-700 ">
+                  {users.username}
                 </td>
-                <td className=" border-[2px] border-green-700 w-full">
-                  {item.email}
+                <td className=" border-[2px] border-green-700 ">
+                  {users.email}
                 </td>
-                <td className=" border-[2px] border-green-700 w-full">
-                  {item.role}
+                <td className=" border-[2px] border-green-700 ">
+                  {users.role}
                 </td>
-                <td className=" border-[2px] border-green-700 w-full">
-                  {item.location}
+                <td className=" border-[2px] border-green-700 ">
+                  {users.location}
                 </td>
-                <td className=" border-[2px] border-green-700 w-full">
-                  {item.numberphone}
+                <td className=" border-[2px] border-green-700 ">
+                  {users.numberphone}
+                </td>
+                <td className=" border-[2px] border-green-700 ">
+                  {users.status}
                 </td>
               </tr>
             ))}

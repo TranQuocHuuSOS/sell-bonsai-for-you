@@ -8,6 +8,7 @@ const Signup = () => {
   const [role, setRole] = useState("");
   const [location, setLocation] = useState("");
   const [numberphone, setNumberphone] = useState("");
+  const [status, setStatus] = useState("");
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   function Sign_up() {
     const data = {
@@ -17,6 +18,7 @@ const Signup = () => {
       role: role,
       location: location,
       numberphone: numberphone,
+      status: "action"
     };
     axios
       .post("http://localhost:3000/users", data)
