@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useAuth } from "../../components/Account/AuthContext";
 import { Link } from "react-router-dom";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
@@ -7,7 +8,15 @@ import "../../components/style/output.css";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 // import Discuss from './Discuss';
 library.add(fas);
+
 const Discussion = (url) => {
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+  const [imagepost, setImagepost] = useState("");
+  const [userID, setUserID] = useState("");
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  const { isLoggedIn, userData, login } = useAuth(); // Use the useAuth hook
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [nav, setNav] = useState(false);
   const handleNav = () => {
     setNav(!nav);
@@ -49,200 +58,629 @@ const Discussion = (url) => {
       });
   }, [data]);
 
+  useEffect(() => {
+    const storedUserData = localStorage.getItem("userData");
+    if (storedUserData) {
+      const parsedUserData = JSON.parse(storedUserData);
+      login(parsedUserData);
+    }
+  }, [login]);
+  const showProfileAndLogout = isLoggedIn || userData;
+
+  function post() {
+    const data = {
+      title: title,
+      content: content,
+      imagepost: imagepost,
+      userID: userID,
+    };
+    axios
+      .post("http://localhost:3000/posts", data)
+      .then((response) => {
+        if (response.status > 0) {
+          setShowSuccessMessage(true);
+          alert("Posted successfully!");
+        } else {
+          console.error("Post failed!");
+        }
+      })
+      .catch((error) => {
+        console.error("An error occurred:", error);
+      });
+  }
   return (
     <div className="w-full  inline-block">
       {/* start contennt */}
-      <div className="flex px-0 sm:px-12 md:px-20 gap-4 lg:px-36 xl:px-48 p-8 bg-[#f8d59e]">
-        <div className="xl:basis-3/5 md:w-full">
-          <div className="rounded-lg shadow-sm border-[1px] bg-white">
-            <div className="flex p-4">
-              <a className="   ">
-                <img
-                  className="rounded-full xl:w-[60px] xl:h-[50px] lg:w-[60px] lg:h-[50px]  md:w-[60px] md:h-[50px] sm:w-[60px] sm:h-[50px] w-[60px] h-[50px]"
-                  src="https://bcolohouse.com.vn/wp-content/uploads/2022/04/trong-cay-bonsai-mini-1.jpg"
-                  alt=""
-                ></img>
-              </a>
-              <button
-                onClick={() => window.my_modal_post.showModal()}
-                className="flex items-center cursor-pointer xl:mx-8 lg:mx-8 md:mx-6 sm:mx-4 mx-2 shadow font-light text-[16px] flex appearance-none bg-gray-200  rounded-[50px] w-full hover:border-gray-500  text-gray-700  leading-tight focus:outline-none focus:shadow-outline"
-                id="password"
-                type="button"
-              >
-                Bạn hãy viết gì đi...
-              </button>
-
-              {/*Bắt đầu modal search */}
-              <dialog
-                id="my_modal_post"
-                className="modal w-[100%] sm:w-[80%] md:w-[60%] lg:w-[50%] xl:w-[50%] rounded-xl"
-              >
-                <form method="dialog" className="modal-box">
-                  <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
-                    ✕
+      {showProfileAndLogout && (
+        <div className="flex px-0 sm:px-12 md:px-20 gap-4 lg:px-36 xl:px-48 p-8 bg-[#f8d59e]">
+          <div className="xl:basis-3/5 md:w-full">
+            {showSuccessMessage ? (
+              (window.location.href = "/Discussion")
+            ) : (
+              <div className="rounded-lg shadow-sm border-[1px] bg-white">
+                <div className="flex p-4">
+                  <a className="   ">
+                    <img
+                      className="rounded-full xl:w-[60px] xl:h-[50px] lg:w-[60px] lg:h-[50px]  md:w-[60px] md:h-[50px] sm:w-[60px] sm:h-[50px] w-[60px] h-[50px]"
+                      src="https://bcolohouse.com.vn/wp-content/uploads/2022/04/trong-cay-bonsai-mini-1.jpg"
+                      alt=""
+                    ></img>
+                  </a>
+                  <button
+                    onClick={() => window.my_modal_post.showModal()}
+                    className="flex items-center cursor-pointer xl:mx-8 lg:mx-8 md:mx-6 sm:mx-4 mx-2 shadow font-light text-[16px] flex appearance-none bg-gray-200  rounded-[50px] w-full hover:border-gray-500  text-gray-700  leading-tight focus:outline-none focus:shadow-outline"
+                    id="password"
+                    type="button"
+                  >
+                    Bạn hãy viết gì đi...
                   </button>
-                  <form className="w-[95%] p-4  ">
-                    <div className="relative text-[20px] flex items-center justify-center font-bold">
-                      Tạo bài viết
-                    </div>
-                    <div className="p-0 sm:p-2 md:p-4 lg:p-4 xl:p-4">
-                      <div className="cursor-pointer flex items-center my-2">
-                        <a className="">
-                          <img
-                            className="rounded-full w-[30px] sm:w-[40px] md:w-[50px] lg:w-[50px] xl:w-[50px] h-[30px] sm:h-[40px] md:h-[50px] lg:h-[50px] xl:h-[50px]"
-                            src="https://bcolohouse.com.vn/wp-content/uploads/2022/04/trong-cay-bonsai-mini-1.jpg"
-                            alt=""
-                          ></img>
-                        </a>
-                        <div className="">
-                          <p className=" mx-2 font-medium text-[16px] hover:underline">
-                            Tran Quoc Huu
-                          </p>
-                          <div className="gap-4 mx-2 grid sm:flex md:flex lg:flex xl:flex">
-                            <button className="flex items-center justify-center bg-gray-300 rounded p-1">
+
+                  {/*Bắt đầu modal post */}
+                  <dialog
+                    id="my_modal_post"
+                    className="modal w-[100%] sm:w-[80%] md:w-[60%] lg:w-[50%] xl:w-[50%] rounded-xl"
+                  >
+                    <form method="dialog" className="modal-box">
+                      <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+                        ✕
+                      </button>
+                      <form className="w-[95%] p-4  ">
+                        <div className="relative text-[20px] flex items-center justify-center font-bold">
+                          Tạo bài viết
+                        </div>
+                        <div className="p-0 sm:p-2 md:p-4 lg:p-4 xl:p-4">
+                          <div className="cursor-pointer flex items-center my-2">
+                            <a className="">
+                              <img
+                                className="rounded-full w-[30px] sm:w-[40px] md:w-[50px] lg:w-[50px] xl:w-[50px] h-[30px] sm:h-[40px] md:h-[50px] lg:h-[50px] xl:h-[50px]"
+                                src="https://bcolohouse.com.vn/wp-content/uploads/2022/04/trong-cay-bonsai-mini-1.jpg"
+                                alt=""
+                              ></img>
+                            </a>
+                            <div className="">
+                              <p className=" mx-2 font-medium text-[16px] hover:underline">
+                                <div className="hidden">
+                                  {isLoggedIn && userData
+                                    ? userData.id
+                                    : "Guest"}
+                                </div>
+                                {isLoggedIn && userData
+                                  ? userData.username
+                                  : "Guest"}
+                              </p>
+                              <div className="gap-4 mx-2 grid sm:flex md:flex lg:flex xl:flex">
+                                <button className="flex items-center justify-center bg-gray-300 rounded p-1">
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    height="1em"
+                                    viewBox="0 0 512 512"
+                                  >
+                                    <path d="M57.7 193l9.4 16.4c8.3 14.5 21.9 25.2 38 29.8L163 255.7c17.2 4.9 29 20.6 29 38.5v39.9c0 11 6.2 21 16 25.9s16 14.9 16 25.9v39c0 15.6 14.9 26.9 29.9 22.6c16.1-4.6 28.6-17.5 32.7-33.8l2.8-11.2c4.2-16.9 15.2-31.4 30.3-40l8.1-4.6c15-8.5 24.2-24.5 24.2-41.7v-8.3c0-12.7-5.1-24.9-14.1-33.9l-3.9-3.9c-9-9-21.2-14.1-33.9-14.1H257c-11.1 0-22.1-2.9-31.8-8.4l-34.5-19.7c-4.3-2.5-7.6-6.5-9.2-11.2c-3.2-9.6 1.1-20 10.2-24.5l5.9-3c6.6-3.3 14.3-3.9 21.3-1.5l23.2 7.7c8.2 2.7 17.2-.4 21.9-7.5c4.7-7 4.2-16.3-1.2-22.8l-13.6-16.3c-10-12-9.9-29.5 .3-41.3l15.7-18.3c8.8-10.3 10.2-25 3.5-36.7l-2.4-4.2c-3.5-.2-6.9-.3-10.4-.3C163.1 48 84.4 108.9 57.7 193zM464 256c0-36.8-9.6-71.4-26.4-101.5L412 164.8c-15.7 6.3-23.8 23.8-18.5 39.8l16.9 50.7c3.5 10.4 12 18.3 22.6 20.9l29.1 7.3c1.2-9 1.8-18.2 1.8-27.5zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z" />
+                                  </svg>
+                                  Nhóm công khai
+                                </button>
+                                <button className="flex items-center justify-center bg-gray-300 rounded p-1">
+                                  <i
+                                    data-visualcompletion="css-img"
+                                    className="x1b0d499 xep6ejk"
+                                    aria-label="Quy tắc"
+                                    role="img"
+                                    style={{
+                                      backgroundImage:
+                                        'url("https://static.xx.fbcdn.net/rsrc.php/v3/yx/r/8gTfEscoFW8.png")',
+                                      backgroundPosition: "-74px -98px",
+                                      backgroundSize: "98px 142px",
+                                      width: 16,
+                                      height: 16,
+                                      backgroundRepeat: "no-repeat",
+                                      display: "inline-block",
+                                    }}
+                                  />
+                                  Quy tắc
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <input
+                          value={title}
+                          onChange={(e) => setTitle(e.target.value)}
+                          type="text"
+                          className="cursor-pointer w-[100%] h-[100px] mx-4"
+                          placeholder="Tạo bài viết công khai..."
+                        ></input>
+                        <div className="border-[2px] rounded p-4 grid sm:flex md:flex lg:flex xl:flex w-[100%] items-center justify-center sm:justify-between md:justify-between lg:justify-between xl:justify-between mx-4">
+                          <div className="cursor-pointer">
+                            Thêm vào bài viết của bạn
+                          </div>
+                          <div className="flex gap-4">
+                            <label className="inline-flex  text-blue-700 w-auto h-[40px] text-center rounded-md items-center justify-center hover:bg-gray-300">
+                              <span className="cursor-pointer">
+                                <img
+                                  className="x1b0d499 xl1xv1r"
+                                  src="https://static.xx.fbcdn.net/rsrc.php/v3/yC/r/a6OjkIIE-R0.png"
+                                  alt=""
+                                  style={{ height: 24, width: 24 }}
+                                />
+                                <input
+                                  value={imagepost}
+                                  onChange={(e) => setImagepost(e.target.value)}
+                                  className="flex items-center justify-center"
+                                  type="file"
+                                  style={{ display: "none" }}
+                                />
+                              </span>
+                            </label>
+                            <span className="flex items-center cursor-pointer">
+                              <img
+                                className="x1b0d499 xl1xv1r"
+                                src="https://static.xx.fbcdn.net/rsrc.php/v3/yC/r/MqTJr_DM3Jg.png"
+                                alt=""
+                                style={{ height: 24, width: 24 }}
+                              />
+                              <input
+                                className="flex items-center justify-center"
+                                type="file"
+                                style={{ display: "none" }}
+                              />
+                            </span>
+                            <span className="flex items-center cursor-pointer">
+                              <img
+                                className="x1b0d499 xl1xv1r"
+                                src="https://static.xx.fbcdn.net/rsrc.php/v3/yy/r/uywzfiZad5N.png"
+                                alt=""
+                                style={{ height: 24, width: 24 }}
+                              />
+                              <input
+                                className="flex items-center justify-center"
+                                type="file"
+                                style={{ display: "none" }}
+                              />
+                            </span>
+                            <span
+                              onClick={() => window.my_modal_icon.showModal()}
+                              className="flex items-center cursor-pointer"
+                            >
+                              <img
+                                className="x1b0d499 xl1xv1r"
+                                src="https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/yMDS19UDsWe.png"
+                                alt=""
+                                style={{ height: 24, width: 24 }}
+                              />
+                              <input
+                                className="flex items-center justify-center"
+                                type="file"
+                                style={{ display: "none" }}
+                              />
+                            </span>
+                            {/* bắt đầu 1 cái modal để mình chọn icon cảm xúc cho các bài đăng*/}
+                            <dialog
+                              id="my_modal_icon"
+                              className="modal w-[100%] sm:w-[80%] md:w-[60%] lg:w-[50%] xl:w-[50%] rounded-xl"
+                            >
+                              <form method="dialog" className="modal-box">
+                                <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+                                  ✕
+                                </button>
+                                <form className="w-[95%] p-4  ">
+                                  <div className="relative text-[20px] flex items-center justify-center font-bold">
+                                    Bạn đang cảm thấy thế nào?
+                                  </div>
+                                  <div className="p-0 sm:p-2 md:p-4 lg:p-4 xl:p-4">
+                                    <div className="grid sm:flex md:flex lg:flex xl:flex gap-2 md:gap-4 lg:gap-6 xl:gap-8 justify-center md:justify-start lg:justify-start xl:justify-start">
+                                      <p className="text-green-700 font-bold p-2 flex items-center justify-center hover:bg-gray-400 cursor-pointer rounded w-[100px] lg:w-[100px] xl:w-[100px]">
+                                        Cảm xúc
+                                      </p>
+                                      <p className="text-green-700 font-bold p-2 flex items-center justify-center hover:bg-gray-400 cursor-pointer rounded w-[100px] lg:w-[100px] xl:w-[100px]">
+                                        Hoạt động
+                                      </p>
+                                    </div>
+                                    <div className="">
+                                      <input
+                                        type="search"
+                                        id="default-search"
+                                        className="cursor-pointer block w-[100%] p-4 pl-10 text-sm text-gray-900 border bg-gray-300 border-gray-300 rounded-lg  focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="Tìm kiếm hội nhóm, bạn bè,..."
+                                        required=""
+                                      />
+                                    </div>
+                                    <div className="overscroll-y-200 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
+                                      <div className="">
+                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                          <img
+                                            height={20}
+                                            width={20}
+                                            alt=""
+                                            referrerPolicy="origin-when-cross-origin"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yg/r/2T8CKph5g-l.png"
+                                          />
+                                          Hạnh phúc
+                                          <input
+                                            className="flex items-center justify-center"
+                                            type="file"
+                                            style={{ display: "none" }}
+                                          />
+                                        </div>
+                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                          <img
+                                            height={20}
+                                            width={20}
+                                            alt=""
+                                            referrerPolicy="origin-when-cross-origin"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yn/r/6uxKmbIP8GH.png"
+                                          />
+                                          Được yêu
+                                        </div>
+                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                          <img
+                                            height={20}
+                                            width={20}
+                                            alt=""
+                                            referrerPolicy="origin-when-cross-origin"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yn/r/6uxKmbIP8GH.png"
+                                          />
+                                          Đáng yêu
+                                        </div>
+                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                          <img
+                                            height="20"
+                                            width="20"
+                                            alt=""
+                                            referrerpolicy="origin-when-cross-origin"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yi/r/1HpO3vuPieX.png"
+                                          />
+                                          Hào hứng
+                                        </div>
+                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                          <img
+                                            height={20}
+                                            width={20}
+                                            alt=""
+                                            referrerPolicy="origin-when-cross-origin"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/66a8gSiDW1a.png"
+                                          />
+                                          Điên
+                                        </div>
+                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                          <img
+                                            height={20}
+                                            width={20}
+                                            alt=""
+                                            referrerPolicy="origin-when-cross-origin"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yZ/r/8co0V8Vlpb5.png"
+                                          />
+                                          Có phúc
+                                        </div>
+                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                          <img
+                                            height={20}
+                                            width={20}
+                                            alt=""
+                                            referrerPolicy="origin-when-cross-origin"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yb/r/Qmhf7JHw_Ht.png"
+                                          />
+                                          Buồn
+                                        </div>
+                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                          <img
+                                            height={20}
+                                            width={20}
+                                            alt=""
+                                            referrerPolicy="origin-when-cross-origin"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/KlUlzF0jf_B.png"
+                                          />
+                                          Biết ơn
+                                        </div>
+                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                          <img
+                                            height={20}
+                                            width={20}
+                                            alt=""
+                                            referrerPolicy="origin-when-cross-origin"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yn/r/6uxKmbIP8GH.png"
+                                          />
+                                          Đang yêu
+                                        </div>
+                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                          <img
+                                            height={20}
+                                            width={20}
+                                            alt=""
+                                            referrerPolicy="origin-when-cross-origin"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yl/r/0DfJywXMapU.png"
+                                          />
+                                          Sung sướng
+                                        </div>
+                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                          <img
+                                            height={20}
+                                            width={20}
+                                            alt=""
+                                            referrerPolicy="origin-when-cross-origin"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yy/r/xO5gTNyuse0.png"
+                                          />
+                                          Khờ khạo
+                                        </div>
+                                      </div>
+                                      <div className="">
+                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                          <img
+                                            height={20}
+                                            width={20}
+                                            alt=""
+                                            referrerPolicy="origin-when-cross-origin"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yy/r/xO5gTNyuse0.png"
+                                          />
+                                          Thư giãn
+                                        </div>
+                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                          <img
+                                            height={20}
+                                            width={20}
+                                            alt=""
+                                            referrerPolicy="origin-when-cross-origin"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/Wh8KupBh0Py.png"
+                                          />
+                                          Vui vẻ
+                                        </div>
+                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                          <img
+                                            height={20}
+                                            width={20}
+                                            alt=""
+                                            referrerPolicy="origin-when-cross-origin"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/ym/r/ScTevBl-xyd.png"
+                                          />
+                                          Thoải mái
+                                        </div>
+                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                          <img
+                                            height={20}
+                                            width={20}
+                                            alt=""
+                                            referrerPolicy="origin-when-cross-origin"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yl/r/0DfJywXMapU.png"
+                                          />
+                                          Hân hoan
+                                        </div>
+                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                          <img
+                                            height={20}
+                                            width={20}
+                                            alt=""
+                                            referrerPolicy="origin-when-cross-origin"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yz/r/C8Of21bdJ1C.png"
+                                          />
+                                          Có động lực
+                                        </div>
+                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                          <img
+                                            height={20}
+                                            width={20}
+                                            alt=""
+                                            referrerPolicy="origin-when-cross-origin"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/y0/r/cyuCzxUQ3ex.png"
+                                          />
+                                          Giận dữ
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </form>
+                              </form>
+                            </dialog>
+                            {/* kết thúc modal chọn icon cảm xúc cho bài đăng*/}
+                            <p
+                              onClick={() => window.my_modal_file.showModal()}
+                              className="flex items-center cursor-pointer rounded-full hover:bg-gray-300"
+                            >
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 height="1em"
-                                viewBox="0 0 512 512"
+                                viewBox="0 0 448 512"
                               >
-                                <path d="M57.7 193l9.4 16.4c8.3 14.5 21.9 25.2 38 29.8L163 255.7c17.2 4.9 29 20.6 29 38.5v39.9c0 11 6.2 21 16 25.9s16 14.9 16 25.9v39c0 15.6 14.9 26.9 29.9 22.6c16.1-4.6 28.6-17.5 32.7-33.8l2.8-11.2c4.2-16.9 15.2-31.4 30.3-40l8.1-4.6c15-8.5 24.2-24.5 24.2-41.7v-8.3c0-12.7-5.1-24.9-14.1-33.9l-3.9-3.9c-9-9-21.2-14.1-33.9-14.1H257c-11.1 0-22.1-2.9-31.8-8.4l-34.5-19.7c-4.3-2.5-7.6-6.5-9.2-11.2c-3.2-9.6 1.1-20 10.2-24.5l5.9-3c6.6-3.3 14.3-3.9 21.3-1.5l23.2 7.7c8.2 2.7 17.2-.4 21.9-7.5c4.7-7 4.2-16.3-1.2-22.8l-13.6-16.3c-10-12-9.9-29.5 .3-41.3l15.7-18.3c8.8-10.3 10.2-25 3.5-36.7l-2.4-4.2c-3.5-.2-6.9-.3-10.4-.3C163.1 48 84.4 108.9 57.7 193zM464 256c0-36.8-9.6-71.4-26.4-101.5L412 164.8c-15.7 6.3-23.8 23.8-18.5 39.8l16.9 50.7c3.5 10.4 12 18.3 22.6 20.9l29.1 7.3c1.2-9 1.8-18.2 1.8-27.5zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z" />
+                                <path d="M8 256a56 56 0 1 1 112 0A56 56 0 1 1 8 256zm160 0a56 56 0 1 1 112 0 56 56 0 1 1 -112 0zm216-56a56 56 0 1 1 0 112 56 56 0 1 1 0-112z" />
                               </svg>
-                              Nhóm công khai
-                            </button>
-                            <button className="flex items-center justify-center bg-gray-300 rounded p-1">
-                              <i
-                                data-visualcompletion="css-img"
-                                className="x1b0d499 xep6ejk"
-                                aria-label="Quy tắc"
-                                role="img"
-                                style={{
-                                  backgroundImage:
-                                    'url("https://static.xx.fbcdn.net/rsrc.php/v3/yx/r/8gTfEscoFW8.png")',
-                                  backgroundPosition: "-74px -98px",
-                                  backgroundSize: "98px 142px",
-                                  width: 16,
-                                  height: 16,
-                                  backgroundRepeat: "no-repeat",
-                                  display: "inline-block",
-                                }}
-                              />
-                              Quy tắc
-                            </button>
+                            </p>
+                            {/* bắt đầu 1 cái modal để mình chọn file ảnh các thứ liên quan*/}
+                            <dialog
+                              id="my_modal_file"
+                              className="modal w-[100%] sm:w-[80%] md:w-[60%] lg:w-[50%] xl:w-[50%] rounded-xl"
+                            >
+                              <form method="dialog" className="modal-box">
+                                <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+                                  ✕
+                                </button>
+                                <form className="w-[95%] p-4  ">
+                                  <div className="relative text-[20px] flex items-center justify-center font-bold">
+                                    Thêm vào bài viết của bạn
+                                  </div>
+                                  <div className="p-0 sm:p-2 md:p-4 lg:p-4 xl:p-4">
+                                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
+                                      <div className="">
+                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                          <img
+                                            className="x1b0d499 xl1xv1r"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yC/r/a6OjkIIE-R0.png"
+                                            alt=""
+                                            style={{ height: 24, width: 24 }}
+                                          />
+                                          Ảnh/video
+                                          <input
+                                            className="flex items-center justify-center"
+                                            type="file"
+                                            style={{ display: "none" }}
+                                          />
+                                        </div>
+
+                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                          <img
+                                            className="x1b0d499 xl1xv1r"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yy/r/uywzfiZad5N.png"
+                                            alt=""
+                                            style={{ height: 24, width: 24 }}
+                                          />
+                                          Check in
+                                        </div>
+                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                          <img
+                                            className="x1b0d499 xl1xv1r"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yX/r/j0Jp-GpONWx.png"
+                                            alt=""
+                                            style={{ height: 24, width: 24 }}
+                                          />
+                                          File GIF
+                                        </div>
+                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                          <img
+                                            className="x1b0d499 xl1xv1r"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yf/r/9GrkIIXcz_9.png"
+                                            alt=""
+                                            style={{ height: 24, width: 24 }}
+                                          />
+                                          Gắn thẻ sự kiện
+                                        </div>
+                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                          <img
+                                            className="x1b0d499 xl1xv1r"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yl/r/GNB0Xu7GKO5.png"
+                                            alt=""
+                                            style={{ height: 24, width: 24 }}
+                                          />
+                                          File
+                                        </div>
+                                      </div>
+                                      <div className="">
+                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                          <img
+                                            className="x1b0d499 xl1xv1r"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yC/r/MqTJr_DM3Jg.png"
+                                            alt=""
+                                            style={{ height: 24, width: 24 }}
+                                          />
+                                          Gắn thẻ người khác
+                                        </div>
+                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                          <img
+                                            className="x1b0d499 xl1xv1r"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/yMDS19UDsWe.png"
+                                            alt=""
+                                            style={{ height: 24, width: 24 }}
+                                          />
+                                          Cảm xúc/ Hoạt động
+                                        </div>
+                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                          <img
+                                            className="x1b0d499 xl1xv1r"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yz/r/JlS35MWIk0L.png"
+                                            alt=""
+                                            style={{ height: 24, width: 24 }}
+                                          />
+                                          Thăm dò ý kiến
+                                        </div>
+                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                          <img
+                                            className="x1b0d499 xl1xv1r"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yF/r/v1iF2605Cb5.png"
+                                            alt=""
+                                            style={{ height: 24, width: 24 }}
+                                          />
+                                          Video trực tiếp
+                                        </div>
+                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                          <img
+                                            className="x1b0d499 xl1xv1r"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yf/r/9GrkIIXcz_9.png"
+                                            alt=""
+                                            style={{ height: 24, width: 24 }}
+                                          />
+                                          Tạo sự kiện
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </form>
+                              </form>
+                            </dialog>
+                            {/* kết thúc modal chọn file ảnh các file liên quan*/}
                           </div>
                         </div>
-                      </div>
-                    </div>
-                    <input
-                      type="text"
-                      className="w-[100%] h-[100px] mx-4"
-                      placeholder="Tạo bài viết công khai..."
-                    ></input>
-                    <button className="grid sm:flex md:flex lg:flex xl:flex w-[100%] items-center justify-center sm:justify-between md:justify-between lg:justify-between xl:justify-between mx-4">
-                      <div>Thêm vào bài viết của bạn</div>
-                      <div className="flex gap-4">
-                        <img
-                          className="x1b0d499 xl1xv1r"
-                          src="https://static.xx.fbcdn.net/rsrc.php/v3/yC/r/a6OjkIIE-R0.png"
-                          alt=""
-                          style={{ height: 24, width: 24 }}
-                        />
-                        <img
-                          className="x1b0d499 xl1xv1r"
-                          src="https://static.xx.fbcdn.net/rsrc.php/v3/yC/r/MqTJr_DM3Jg.png"
-                          alt=""
-                          style={{ height: 24, width: 24 }}
-                        />
-                        <img
-                          className="x1b0d499 xl1xv1r"
-                          src="https://static.xx.fbcdn.net/rsrc.php/v3/yy/r/uywzfiZad5N.png"
-                          alt=""
-                          style={{ height: 24, width: 24 }}
-                        />
-                        <img
-                          className="x1b0d499 xl1xv1r"
-                          src="https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/yMDS19UDsWe.png"
-                          alt=""
-                          style={{ height: 24, width: 24 }}
-                        />
-                        <p className="rounded-full hover:bg-gray-300">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            height="1em"
-                            viewBox="0 0 448 512"
-                          >
-                            <path d="M8 256a56 56 0 1 1 112 0A56 56 0 1 1 8 256zm160 0a56 56 0 1 1 112 0 56 56 0 1 1 -112 0zm216-56a56 56 0 1 1 0 112 56 56 0 1 1 0-112z" />
-                          </svg>
-                        </p>
-                      </div>
-                    </button>
-                    <button
-                      className="bg-gray-300 shadow mx-4 my-8 hover:bg-gray-400 text-[16px] text-black font-bold h-[40px] w-[100%] rounded focus:outline-none focus:shadow-outline"
-                      type="button"
-                    >
-                      Tạo sự kiện
-                    </button>
-                  </form>
-                </form>
-              </dialog>
-            </div>
-            <div className="p-4 items-center justify-center grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 grid-cols-1 border-t-[1px]">
-              <div className="cursor-pointer flex items-center hover:bg-gray-300 rounded">
-                <img
-                  src="https://static.xx.fbcdn.net/rsrc.php/v3/y-/r/WpZH_PxfuYV.png"
-                  alt=""
-                ></img>
-                <h4 className="font-semibold text-gray-400 mx-4">
-                  Anonymous Post
-                </h4>
+
+                        <button
+                          onClick={post}
+                          className="bg-gray-300 shadow mx-4 my-8 hover:bg-gray-400 text-[16px] text-black font-bold h-[40px] w-[100%] rounded focus:outline-none focus:shadow-outline"
+                          type="button"
+                        >
+                          Tạo sự kiện
+                        </button>
+                      </form>
+                    </form>
+                  </dialog>
+                </div>
+                <div className="p-4 items-center justify-center grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 grid-cols-1 border-t-[1px]">
+                  <div className="cursor-pointer flex items-center hover:bg-gray-300 rounded">
+                    <img
+                      src="https://static.xx.fbcdn.net/rsrc.php/v3/y-/r/WpZH_PxfuYV.png"
+                      alt=""
+                    ></img>
+                    <h4 className="font-semibold text-gray-400 mx-4">
+                      Anonymous Post
+                    </h4>
+                  </div>
+                  <div className="cursor-pointer flex items-center hover:bg-gray-300 rounded">
+                    <img
+                      src="https://static.xx.fbcdn.net/rsrc.php/v3/yC/r/a6OjkIIE-R0.png"
+                      alt=""
+                    ></img>
+                    <h4 className="font-semibold text-gray-400 mx-4">
+                      Ảnh/Video
+                    </h4>
+                  </div>
+                  <div className="cursor-pointer flex items-center hover:bg-gray-300 rounded">
+                    <img
+                      src="https://static.xx.fbcdn.net/rsrc.php/v3/yz/r/JlS35MWIk0L.png"
+                      alt=""
+                    ></img>
+                    <h4 className="font-semibold text-gray-400 mx-4">
+                      Thăm dò ý kiến
+                    </h4>
+                  </div>
+                </div>
               </div>
-              <div className="cursor-pointer flex items-center hover:bg-gray-300 rounded">
-                <img
-                  src="https://static.xx.fbcdn.net/rsrc.php/v3/yC/r/a6OjkIIE-R0.png"
-                  alt=""
-                ></img>
-                <h4 className="font-semibold text-gray-400 mx-4">Ảnh/Video</h4>
-              </div>
-              <div className="cursor-pointer flex items-center hover:bg-gray-300 rounded">
-                <img
-                  src="https://static.xx.fbcdn.net/rsrc.php/v3/yz/r/JlS35MWIk0L.png"
-                  alt=""
-                ></img>
-                <h4 className="font-semibold text-gray-400 mx-4">
-                  Thăm dò ý kiến
-                </h4>
-              </div>
-            </div>
-          </div>
-          <div className="flex rounded-lg justify-between items-center shadow-sm border-[1px] bg-white my-4">
-            <p className="cursor-pointer flex p-4 items-center ">
-              Đáng chú ý
-              <span className="cursor-pointer mx-2">
+            )}
+            <div className="flex rounded-lg justify-between items-center shadow-sm border-[1px] bg-white my-4">
+              <p className="cursor-pointer flex p-4 items-center ">
+                Đáng chú ý
+                <span className="cursor-pointer mx-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="1em"
+                    viewBox="0 0 64 512"
+                  >
+                    <path d="M64 64c0-17.7-14.3-32-32-32S0 46.3 0 64V320c0 17.7 14.3 32 32 32s32-14.3 32-32V64zM32 480a40 40 0 1 0 0-80 40 40 0 1 0 0 80z" />
+                  </svg>
+                </span>
+              </p>
+              <span className="cursor-pointer p-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   height="1em"
-                  viewBox="0 0 64 512"
+                  viewBox="0 0 512 512"
                 >
-                  <path d="M64 64c0-17.7-14.3-32-32-32S0 46.3 0 64V320c0 17.7 14.3 32 32 32s32-14.3 32-32V64zM32 480a40 40 0 1 0 0-80 40 40 0 1 0 0 80z" />
+                  <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
                 </svg>
               </span>
-            </p>
-            <span className="cursor-pointer p-4">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="1em"
-                viewBox="0 0 512 512"
-              >
-                <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
-              </svg>
-            </span>
-          </div>
-          <div className="rounded-lg  shadow-sm border-[1px] bg-white my-6">
+            </div>
+
             {isLoading ? (
               <p>Loading...</p>
             ) : (
-              <>
+              <div className="bg-[#f8d59e]">
                 {data.map((post) => (
-                  <div key={post.id}>
+                  <div
+                    key={post.id}
+                    className="rounded-lg  shadow-sm border-[1px] bg-white my-6"
+                  >
                     <div className="flex  justify-between items-center">
                       <div className="flex  items-center p-4">
                         <div className="cursor-pointer">
@@ -259,7 +697,9 @@ const Discussion = (url) => {
                             {users.find((user) => user.id === post.user_id)
                               ?.username || "Unknown"}
                           </p>
-                          <span className="hover:underline">16 giờ trước</span>
+                          <span className="hover:underline">
+                            {post.time} giờ trước
+                          </span>
                         </div>
                       </div>
                       <div className="cursor-pointer flex  mx-4">
@@ -510,94 +950,94 @@ const Discussion = (url) => {
                     </div>
                   </div>
                 ))}
-              </>
+              </div>
             )}
           </div>
-        </div>
-        <div className="xl:basis-2/5 xl:block hidden">
-          <div className="rounded-lg shadow-sm border-[1px] bg-white">
-            <p className="text-[20px] p-4">Giới thiệu</p>
-            <p className="mx-4 top-[-10px]">
-              Hội nhằm giúp anh, chị, em giao lưu, học hỏi kinh nghiệm chăm sóc
-              bonsai cây cảnh. Giúp chia sẽ những giống cây, mô hình và những
-              tác phẩm bonsai, cây cảnh. Giao lưu, mua bán những tác phẩm
-              bonsai, cây cảnh dựa trên tinh thần thiện chí. Cấm tuyêt đối những
-              hành vi gian lận. Lừa lọc. Tuyệt đối không đăng tải, chia sẽ những
-              nội dung không liên quan đến bonsai, cây cảnh. (gỡ bài viết 1 lần
-              trước khi bị ban khỏi nhóm) Chúc ace có được những tác phẩm đẹp
-              như ý. Ẩn bớt
-            </p>
-            <div className="p-4 ">
-              <div className="cursor-pointer flex items-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="1em"
-                  viewBox="0 0 512 512"
-                >
-                  <path d="M57.7 193l9.4 16.4c8.3 14.5 21.9 25.2 38 29.8L163 255.7c17.2 4.9 29 20.6 29 38.5v39.9c0 11 6.2 21 16 25.9s16 14.9 16 25.9v39c0 15.6 14.9 26.9 29.9 22.6c16.1-4.6 28.6-17.5 32.7-33.8l2.8-11.2c4.2-16.9 15.2-31.4 30.3-40l8.1-4.6c15-8.5 24.2-24.5 24.2-41.7v-8.3c0-12.7-5.1-24.9-14.1-33.9l-3.9-3.9c-9-9-21.2-14.1-33.9-14.1H257c-11.1 0-22.1-2.9-31.8-8.4l-34.5-19.7c-4.3-2.5-7.6-6.5-9.2-11.2c-3.2-9.6 1.1-20 10.2-24.5l5.9-3c6.6-3.3 14.3-3.9 21.3-1.5l23.2 7.7c8.2 2.7 17.2-.4 21.9-7.5c4.7-7 4.2-16.3-1.2-22.8l-13.6-16.3c-10-12-9.9-29.5 .3-41.3l15.7-18.3c8.8-10.3 10.2-25 3.5-36.7l-2.4-4.2c-3.5-.2-6.9-.3-10.4-.3C163.1 48 84.4 108.9 57.7 193zM464 256c0-36.8-9.6-71.4-26.4-101.5L412 164.8c-15.7 6.3-23.8 23.8-18.5 39.8l16.9 50.7c3.5 10.4 12 18.3 22.6 20.9l29.1 7.3c1.2-9 1.8-18.2 1.8-27.5zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z" />
-                </svg>
-                <h4 className="cursor-pointer text-[20px] mx-2">Công khai</h4>
+          <div className="xl:basis-2/5 xl:block hidden">
+            <div className="rounded-lg shadow-sm border-[1px] bg-white">
+              <p className="text-[20px] p-4">Giới thiệu</p>
+              <p className="mx-4 top-[-10px]">
+                Hội nhằm giúp anh, chị, em giao lưu, học hỏi kinh nghiệm chăm
+                sóc bonsai cây cảnh. Giúp chia sẽ những giống cây, mô hình và
+                những tác phẩm bonsai, cây cảnh. Giao lưu, mua bán những tác
+                phẩm bonsai, cây cảnh dựa trên tinh thần thiện chí. Cấm tuyêt
+                đối những hành vi gian lận. Lừa lọc. Tuyệt đối không đăng tải,
+                chia sẽ những nội dung không liên quan đến bonsai, cây cảnh. (gỡ
+                bài viết 1 lần trước khi bị ban khỏi nhóm) Chúc ace có được
+                những tác phẩm đẹp như ý. Ẩn bớt
+              </p>
+              <div className="p-4 ">
+                <div className="cursor-pointer flex items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="1em"
+                    viewBox="0 0 512 512"
+                  >
+                    <path d="M57.7 193l9.4 16.4c8.3 14.5 21.9 25.2 38 29.8L163 255.7c17.2 4.9 29 20.6 29 38.5v39.9c0 11 6.2 21 16 25.9s16 14.9 16 25.9v39c0 15.6 14.9 26.9 29.9 22.6c16.1-4.6 28.6-17.5 32.7-33.8l2.8-11.2c4.2-16.9 15.2-31.4 30.3-40l8.1-4.6c15-8.5 24.2-24.5 24.2-41.7v-8.3c0-12.7-5.1-24.9-14.1-33.9l-3.9-3.9c-9-9-21.2-14.1-33.9-14.1H257c-11.1 0-22.1-2.9-31.8-8.4l-34.5-19.7c-4.3-2.5-7.6-6.5-9.2-11.2c-3.2-9.6 1.1-20 10.2-24.5l5.9-3c6.6-3.3 14.3-3.9 21.3-1.5l23.2 7.7c8.2 2.7 17.2-.4 21.9-7.5c4.7-7 4.2-16.3-1.2-22.8l-13.6-16.3c-10-12-9.9-29.5 .3-41.3l15.7-18.3c8.8-10.3 10.2-25 3.5-36.7l-2.4-4.2c-3.5-.2-6.9-.3-10.4-.3C163.1 48 84.4 108.9 57.7 193zM464 256c0-36.8-9.6-71.4-26.4-101.5L412 164.8c-15.7 6.3-23.8 23.8-18.5 39.8l16.9 50.7c3.5 10.4 12 18.3 22.6 20.9l29.1 7.3c1.2-9 1.8-18.2 1.8-27.5zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z" />
+                  </svg>
+                  <h4 className="cursor-pointer text-[20px] mx-2">Công khai</h4>
+                </div>
+                <div className="">
+                  <p className="px-6">
+                    Bất kỳ ai cũng có thể nhìn thấy mọi người trong nhóm và
+                    những gì họ đăng.
+                  </p>
+                </div>
               </div>
-              <div className="">
-                <p className="px-6">
-                  Bất kỳ ai cũng có thể nhìn thấy mọi người trong nhóm và những
-                  gì họ đăng.
-                </p>
+              <div className="px-4 ">
+                <div className="cursor-pointer flex items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="1em"
+                    viewBox="0 0 576 512"
+                  >
+                    <path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z" />
+                  </svg>
+                  <h4 className="cursor-pointer text-[20px] mx-2">Hiển thị</h4>
+                </div>
+                <div className="">
+                  <p className="px-6">Ai cũng có thể tìm thấy nhóm này.</p>
+                </div>
+              </div>
+              <div className="p-4">
+                <button className="rounded-lg w-full bg-gray-300 hover:bg-gray-400 py-2">
+                  <Link to="/References" className="py-2">
+                    Tìm hiểu thêm
+                  </Link>
+                </button>
               </div>
             </div>
-            <div className="px-4 ">
-              <div className="cursor-pointer flex items-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="1em"
-                  viewBox="0 0 576 512"
-                >
-                  <path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z" />
-                </svg>
-                <h4 className="cursor-pointer text-[20px] mx-2">Hiển thị</h4>
+            <div className="rounded-lg shadow-sm border-[1px] bg-white my-4">
+              <p className="text-[20px] p-4">File phương tiện mới chia sẻ</p>
+              <a className="cursor-pointer grid grid-cols-2 px-4 gap-2">
+                <img
+                  src="https://bcolohouse.com.vn/wp-content/uploads/2022/04/trong-cay-bonsai-mini-1.jpg"
+                  alt=""
+                ></img>
+                <img
+                  src="https://pgdphurieng.edu.vn/wp-content/uploads/2023/04/top-20-cay-bonsai-mini-de-ban-dep-nhat-hop-phong-thuy-202207081607066956.jpg"
+                  alt=""
+                ></img>
+                <img
+                  src="https://hoala.vn/img_news/news_1492849941.jpg"
+                  alt=""
+                ></img>
+                <img
+                  src="https://webcaycanh.com/wp-content/uploads/2018/05/can-thanh-bonsai-mini-de-ban-1.jpg"
+                  alt=""
+                ></img>
+              </a>
+              <div className="p-4">
+                <button className="rounded-lg w-full bg-gray-300 hover:bg-gray-400 py-2">
+                  <Link to="/Media_files" className="py-2">
+                    Xem tất cả
+                  </Link>
+                </button>
               </div>
-              <div className="">
-                <p className="px-6">Ai cũng có thể tìm thấy nhóm này.</p>
-              </div>
-            </div>
-            <div className="p-4">
-              <button className="rounded-lg w-full bg-gray-300 hover:bg-gray-400 py-2">
-                <Link to="/References" className="py-2">
-                  Tìm hiểu thêm
-                </Link>
-              </button>
             </div>
           </div>
-          <div className="rounded-lg shadow-sm border-[1px] bg-white my-4">
-            <p className="text-[20px] p-4">File phương tiện mới chia sẻ</p>
-            <a className="cursor-pointer grid grid-cols-2 px-4 gap-2">
-              <img
-                src="https://bcolohouse.com.vn/wp-content/uploads/2022/04/trong-cay-bonsai-mini-1.jpg"
-                alt=""
-              ></img>
-              <img
-                src="https://pgdphurieng.edu.vn/wp-content/uploads/2023/04/top-20-cay-bonsai-mini-de-ban-dep-nhat-hop-phong-thuy-202207081607066956.jpg"
-                alt=""
-              ></img>
-              <img
-                src="https://hoala.vn/img_news/news_1492849941.jpg"
-                alt=""
-              ></img>
-              <img
-                src="https://webcaycanh.com/wp-content/uploads/2018/05/can-thanh-bonsai-mini-de-ban-1.jpg"
-                alt=""
-              ></img>
-            </a>
-            <div className="p-4">
-              <button className="rounded-lg w-full bg-gray-300 hover:bg-gray-400 py-2">
-                <Link to="/Media_files" className="py-2">
-                  Xem tất cả
-                </Link>
-              </button>
-            </div>
-          </div>
         </div>
-      </div>
+      )}
       {/* <Discuss/> */}
     </div>
   );

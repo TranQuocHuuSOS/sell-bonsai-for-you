@@ -703,7 +703,6 @@ const Navbar = () => {
           </dialog>
 
           {/*Kết thúc modal search */}
-
           {/* <button onClick={handleNavs} class="m-1 btn hover:bg-gray-300  top-2 flex items-center rounded bg-primary px-6 py-2.5 text-xs font-medium uppercase leading-tight bg-white shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg"
                     type="button"id="button-addon1"data-te-ripple-initdata-te-ripple-color="light">
                         {nav ? <AiOutlineClose size={20} className='text-black mx-2' /> : <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M8 256a56 56 0 1 1 112 0A56 56 0 1 1 8 256zm160 0a56 56 0 1 1 112 0 56 56 0 1 1 -112 0zm216-56a56 56 0 1 1 0 112 56 56 0 1 1 0-112z"/></svg>   }  
