@@ -26,23 +26,12 @@ function App() {
     <div className="bg-[#f8e8ce]">
       <Header />
       {/* <div className="container"> */}
-      
-      {isLoggedIn &&  userData.role === "user" && (
-          
-      <Navbar />
-      )}
-      {isLoggedIn &&  userData.role === "admin" && (
-          
-          <Page_main />
-          
-         
-       
-      )}
+
+      {isLoggedIn && userData.role === "user" && <Navbar />}
+      {isLoggedIn && userData.role === "admin" && <Page_main />}
 
       <Routes>
-      {!isLoggedIn && (
-        <Route path="/" element={<ConnectMe />} />
-      )}
+        {!isLoggedIn && <Route path="/" element={<ConnectMe />} />}
         <Route path="/Discussion" element={<Discussion />} />
         <Route path="/Important" element={<Important />} />
         <Route path="/Utilities" element={<Utilities />} />
@@ -55,8 +44,8 @@ function App() {
         <Route path="/Signin" element={<Signin />} />
         <Route path="/Signup" element={<Signup />} />
         <Route path="/ResetPassword" element={<ResetPassword />} />
-        <Route path="/List_posts" element={<List_posts/>}/>
-        <Route path="/List_users" element={<List_users/>}/>
+        <Route path="/List_posts" element={<List_posts />} />
+        <Route path="/List_users" element={<List_users />} />
       </Routes>
       {/* </div> */}
       {/* <Footer/> */}

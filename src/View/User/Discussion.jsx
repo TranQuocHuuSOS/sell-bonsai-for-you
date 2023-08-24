@@ -39,7 +39,6 @@ const Discussion = (url) => {
         setIsLoading(false);
       });
   }, [url]);
-
   useEffect(() => {
     // lấy thông tin người dùng liên quan
     const usersId = data.map((post) => post.user_id);
@@ -108,7 +107,7 @@ const Discussion = (url) => {
                   </a>
                   <button
                     onClick={() => window.my_modal_post.showModal()}
-                    className="flex items-center cursor-pointer xl:mx-8 lg:mx-8 md:mx-6 sm:mx-4 mx-2 shadow font-light text-[16px] flex appearance-none bg-gray-200  rounded-[50px] w-full hover:border-gray-500  text-gray-700  leading-tight focus:outline-none focus:shadow-outline"
+                    className="flex hover:bg-gray-400 items-center cursor-pointer xl:mx-8 lg:mx-8 md:mx-6 sm:mx-4 mx-2 shadow font-light text-[16px] flex appearance-none bg-gray-200  rounded-[50px] w-full hover:border-gray-500  text-gray-700  leading-tight focus:outline-none focus:shadow-outline"
                     id="password"
                     type="button"
                   >
@@ -149,7 +148,7 @@ const Discussion = (url) => {
                                   : "Guest"}
                               </p>
                               <div className="gap-4 mx-2 grid sm:flex md:flex lg:flex xl:flex">
-                                <button className="flex items-center justify-center bg-gray-300 rounded p-1">
+                                <button className="hover:bg-gray-400 flex items-center justify-center bg-gray-300 rounded p-1">
                                   <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     height="1em"
@@ -159,7 +158,7 @@ const Discussion = (url) => {
                                   </svg>
                                   Nhóm công khai
                                 </button>
-                                <button className="flex items-center justify-center bg-gray-300 rounded p-1">
+                                <button className="hover:bg-gray-400 flex items-center justify-center bg-gray-300 rounded p-1">
                                   <i
                                     data-visualcompletion="css-img"
                                     className="x1b0d499 xep6ejk"
@@ -186,10 +185,10 @@ const Discussion = (url) => {
                           value={title}
                           onChange={(e) => setTitle(e.target.value)}
                           type="text"
-                          className="cursor-pointer w-[100%] h-[100px] mx-4"
+                          className="cursor-pointer w-[100%] h-[100px] mx-4 hover:border-[1px] hover:border-black"
                           placeholder="Tạo bài viết công khai..."
                         ></input>
-                        <div className="border-[2px] rounded p-4 grid sm:flex md:flex lg:flex xl:flex w-[100%] items-center justify-center sm:justify-between md:justify-between lg:justify-between xl:justify-between mx-4">
+                        <div className="border-[2px] rounded hover:border-black p-4 grid sm:flex md:flex lg:flex xl:flex w-[100%] items-center justify-center sm:justify-between md:justify-between lg:justify-between xl:justify-between mx-4">
                           <div className="cursor-pointer">
                             Thêm vào bài viết của bạn
                           </div>
@@ -211,7 +210,8 @@ const Discussion = (url) => {
                                 />
                               </span>
                             </label>
-                            <span className="flex items-center cursor-pointer">
+                            <label className="inline-flex  text-blue-700 w-auto h-[40px] text-center rounded-md items-center justify-center hover:bg-gray-300">
+                            <span className="flex items-center cursor-pointer ">
                               <img
                                 className="x1b0d499 xl1xv1r"
                                 src="https://static.xx.fbcdn.net/rsrc.php/v3/yC/r/MqTJr_DM3Jg.png"
@@ -224,6 +224,8 @@ const Discussion = (url) => {
                                 style={{ display: "none" }}
                               />
                             </span>
+                            </label>
+                            <label className="inline-flex  text-blue-700 w-auto h-[40px] text-center rounded-md items-center justify-center hover:bg-gray-300">
                             <span className="flex items-center cursor-pointer">
                               <img
                                 className="x1b0d499 xl1xv1r"
@@ -237,6 +239,8 @@ const Discussion = (url) => {
                                 style={{ display: "none" }}
                               />
                             </span>
+                            </label>
+                            <label className="inline-flex  text-blue-700 w-auto h-[40px] text-center rounded-md items-center justify-center hover:bg-gray-300">
                             <span
                               onClick={() => window.my_modal_icon.showModal()}
                               className="flex items-center cursor-pointer"
@@ -253,6 +257,7 @@ const Discussion = (url) => {
                                 style={{ display: "none" }}
                               />
                             </span>
+                            </label>
                             {/* bắt đầu 1 cái modal để mình chọn icon cảm xúc cho các bài đăng*/}
                             <dialog
                               id="my_modal_icon"
@@ -286,7 +291,7 @@ const Discussion = (url) => {
                                     </div>
                                     <div className="overscroll-y-200 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
                                       <div className="">
-                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
                                           <img
                                             height={20}
                                             width={20}
@@ -301,7 +306,7 @@ const Discussion = (url) => {
                                             style={{ display: "none" }}
                                           />
                                         </div>
-                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
                                           <img
                                             height={20}
                                             width={20}
@@ -311,7 +316,7 @@ const Discussion = (url) => {
                                           />
                                           Được yêu
                                         </div>
-                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
                                           <img
                                             height={20}
                                             width={20}
@@ -321,7 +326,7 @@ const Discussion = (url) => {
                                           />
                                           Đáng yêu
                                         </div>
-                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
                                           <img
                                             height="20"
                                             width="20"
@@ -331,7 +336,7 @@ const Discussion = (url) => {
                                           />
                                           Hào hứng
                                         </div>
-                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
                                           <img
                                             height={20}
                                             width={20}
@@ -341,7 +346,7 @@ const Discussion = (url) => {
                                           />
                                           Điên
                                         </div>
-                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
                                           <img
                                             height={20}
                                             width={20}
@@ -351,7 +356,7 @@ const Discussion = (url) => {
                                           />
                                           Có phúc
                                         </div>
-                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
                                           <img
                                             height={20}
                                             width={20}
@@ -361,7 +366,7 @@ const Discussion = (url) => {
                                           />
                                           Buồn
                                         </div>
-                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
                                           <img
                                             height={20}
                                             width={20}
@@ -371,7 +376,7 @@ const Discussion = (url) => {
                                           />
                                           Biết ơn
                                         </div>
-                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
                                           <img
                                             height={20}
                                             width={20}
@@ -381,7 +386,7 @@ const Discussion = (url) => {
                                           />
                                           Đang yêu
                                         </div>
-                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
                                           <img
                                             height={20}
                                             width={20}
@@ -391,7 +396,7 @@ const Discussion = (url) => {
                                           />
                                           Sung sướng
                                         </div>
-                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
                                           <img
                                             height={20}
                                             width={20}
@@ -403,7 +408,7 @@ const Discussion = (url) => {
                                         </div>
                                       </div>
                                       <div className="">
-                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
                                           <img
                                             height={20}
                                             width={20}
@@ -413,7 +418,7 @@ const Discussion = (url) => {
                                           />
                                           Thư giãn
                                         </div>
-                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
                                           <img
                                             height={20}
                                             width={20}
@@ -423,7 +428,7 @@ const Discussion = (url) => {
                                           />
                                           Vui vẻ
                                         </div>
-                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
                                           <img
                                             height={20}
                                             width={20}
@@ -433,7 +438,7 @@ const Discussion = (url) => {
                                           />
                                           Thoải mái
                                         </div>
-                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
                                           <img
                                             height={20}
                                             width={20}
@@ -443,7 +448,7 @@ const Discussion = (url) => {
                                           />
                                           Hân hoan
                                         </div>
-                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
                                           <img
                                             height={20}
                                             width={20}
@@ -453,7 +458,7 @@ const Discussion = (url) => {
                                           />
                                           Có động lực
                                         </div>
-                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
                                           <img
                                             height={20}
                                             width={20}
@@ -498,7 +503,7 @@ const Discussion = (url) => {
                                   <div className="p-0 sm:p-2 md:p-4 lg:p-4 xl:p-4">
                                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
                                       <div className="">
-                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
                                           <img
                                             className="x1b0d499 xl1xv1r"
                                             src="https://static.xx.fbcdn.net/rsrc.php/v3/yC/r/a6OjkIIE-R0.png"
@@ -513,7 +518,7 @@ const Discussion = (url) => {
                                           />
                                         </div>
 
-                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
                                           <img
                                             className="x1b0d499 xl1xv1r"
                                             src="https://static.xx.fbcdn.net/rsrc.php/v3/yy/r/uywzfiZad5N.png"
@@ -522,7 +527,7 @@ const Discussion = (url) => {
                                           />
                                           Check in
                                         </div>
-                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
                                           <img
                                             className="x1b0d499 xl1xv1r"
                                             src="https://static.xx.fbcdn.net/rsrc.php/v3/yX/r/j0Jp-GpONWx.png"
@@ -531,7 +536,7 @@ const Discussion = (url) => {
                                           />
                                           File GIF
                                         </div>
-                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
                                           <img
                                             className="x1b0d499 xl1xv1r"
                                             src="https://static.xx.fbcdn.net/rsrc.php/v3/yf/r/9GrkIIXcz_9.png"
@@ -540,7 +545,7 @@ const Discussion = (url) => {
                                           />
                                           Gắn thẻ sự kiện
                                         </div>
-                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
                                           <img
                                             className="x1b0d499 xl1xv1r"
                                             src="https://static.xx.fbcdn.net/rsrc.php/v3/yl/r/GNB0Xu7GKO5.png"
@@ -551,7 +556,7 @@ const Discussion = (url) => {
                                         </div>
                                       </div>
                                       <div className="">
-                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
                                           <img
                                             className="x1b0d499 xl1xv1r"
                                             src="https://static.xx.fbcdn.net/rsrc.php/v3/yC/r/MqTJr_DM3Jg.png"
@@ -560,7 +565,7 @@ const Discussion = (url) => {
                                           />
                                           Gắn thẻ người khác
                                         </div>
-                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
                                           <img
                                             className="x1b0d499 xl1xv1r"
                                             src="https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/yMDS19UDsWe.png"
@@ -569,7 +574,7 @@ const Discussion = (url) => {
                                           />
                                           Cảm xúc/ Hoạt động
                                         </div>
-                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
                                           <img
                                             className="x1b0d499 xl1xv1r"
                                             src="https://static.xx.fbcdn.net/rsrc.php/v3/yz/r/JlS35MWIk0L.png"
@@ -578,7 +583,7 @@ const Discussion = (url) => {
                                           />
                                           Thăm dò ý kiến
                                         </div>
-                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
                                           <img
                                             className="x1b0d499 xl1xv1r"
                                             src="https://static.xx.fbcdn.net/rsrc.php/v3/yF/r/v1iF2605Cb5.png"
@@ -587,7 +592,7 @@ const Discussion = (url) => {
                                           />
                                           Video trực tiếp
                                         </div>
-                                        <div className="cursor-pointer p-2 flex items-center gap-2">
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
                                           <img
                                             className="x1b0d499 xl1xv1r"
                                             src="https://static.xx.fbcdn.net/rsrc.php/v3/yf/r/9GrkIIXcz_9.png"
@@ -703,11 +708,11 @@ const Discussion = (url) => {
                         </div>
                       </div>
                       <div className="cursor-pointer flex  mx-4">
-                        <div onClick={handleNav} className="block">
+                        <div onClick={handleNav} className="block hover:bg-gray-300">
                           {nav ? (
                             <AiOutlineClose
                               size={20}
-                              className="text-black mx-2"
+                              className="text-black mx-2 hover:bg-gray-300"
                             />
                           ) : (
                             <svg
@@ -886,8 +891,8 @@ const Discussion = (url) => {
                         ></img>
                       </div>
                     </div>
-                    <div className="p-2 xl:mx-16 lg:mx-16 md:mx-12 sm:mx-6 mx-2 grid  grid-cols-3 border-t-[1px]">
-                      <div className="cursor-pointer flex items-center">
+                    <div className="p-2 xl:mx-16 lg:mx-16 md:mx-12 sm:mx-6 mx-2 grid gap-2  grid-cols-3 border-t-[1px]">
+                      <div className="cursor-pointer flex items-center hover:bg-gray-300 rounded-sm">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           height="1em"
@@ -899,7 +904,7 @@ const Discussion = (url) => {
                           Thích
                         </h4>
                       </div>
-                      <div className="cursor-pointer flex items-center">
+                      <div className="cursor-pointer flex items-center hover:bg-gray-300 rounded-sm">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           height="1em"
@@ -911,7 +916,7 @@ const Discussion = (url) => {
                           Bình luận
                         </h4>
                       </div>
-                      <div className="cursor-pointer flex items-center">
+                      <div className="cursor-pointer flex items-center hover:bg-gray-300 rounded-sm">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           height="1em"
@@ -938,7 +943,7 @@ const Discussion = (url) => {
                         type="text"
                         placeholder=" Viết bình luận công khai..."
                       />
-                      <button className=" ">
+                      <button className="hover:bg-gray-300 rounded-full w-12 h-10 flex items-center justify-center ">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           height="1em"

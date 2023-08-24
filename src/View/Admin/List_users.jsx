@@ -36,9 +36,7 @@ const List_users = (url) => {
           <tbody>
             {data.map((users) => (
               <tr key={users.id}>
-                <td className=" border-[2px] border-green-700 ">
-                  {users.id}
-                </td>
+                <td className=" border-[2px] border-green-700 ">{users.id}</td>
                 <td className=" border-[2px] border-green-700 ">
                   {users.username}
                 </td>
