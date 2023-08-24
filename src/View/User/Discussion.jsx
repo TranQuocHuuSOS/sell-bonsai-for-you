@@ -253,7 +253,7 @@ const Discussion = (url) => {
                               />
                               <input
                                 className="flex items-center justify-center"
-                                type="file"
+                                
                                 style={{ display: "none" }}
                               />
                             </span>
@@ -610,7 +610,6 @@ const Discussion = (url) => {
                             {/* kết thúc modal chọn file ảnh các file liên quan*/}
                           </div>
                         </div>
-
                         <button
                           onClick={post}
                           className="bg-gray-300 shadow mx-4 my-8 hover:bg-gray-400 text-[16px] text-black font-bold h-[40px] w-[100%] rounded focus:outline-none focus:shadow-outline"
