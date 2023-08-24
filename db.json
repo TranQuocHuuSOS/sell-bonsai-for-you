@@ -159,6 +159,16 @@
       "numberphone": "0897876424",
       "status": "action",
       "id": 16
+    },
+    {
+      "username": "thư phan",
+      "email": "hhhhh@gmail.com",
+      "password": "098765",
+      "role": "user",
+      "location": "101B lê hữu trác",
+      "numberphone": "0982635474",
+      "status": "action",
+      "id": 17
     }
   ],
   "Plants": [
