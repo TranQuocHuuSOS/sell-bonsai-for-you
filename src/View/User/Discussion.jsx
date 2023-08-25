@@ -628,7 +628,7 @@ const Discussion = (url) => {
                       alt=""
                     ></img>
                     <h4 className="font-semibold text-gray-400 mx-4">
-                      Bài đăng ẩn danh
+                    Bài đăng ẩn danh
                     </h4>
                   </div>
                   <div className="cursor-pointer flex items-center hover:bg-gray-300 rounded">

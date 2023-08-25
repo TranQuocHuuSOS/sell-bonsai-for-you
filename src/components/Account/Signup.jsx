@@ -81,7 +81,7 @@ function isValidEmail(email) {
         (window.location.href = "/Signin")
       ) : (
         <div className="px-2 py-8 flex items-center justify-center lg:min-h-[120vh] xl:min-h-[120vh]">
-          <form className="bg-white p-2 sm:px-4 md:px-6 lg:px-8 xl:px-8    rounded sm:w-[60%] md:w-[50%] lg:w-[40%]  xl:w-[40%] shadow-lg  bg-gradient-to-b  from-green-500 to-green-200 ">
+          <form className="bg-white mt-16 p-2 sm:px-4 md:px-6 lg:px-8 xl:px-8    rounded sm:w-[60%] md:w-[50%] lg:w-[40%]  xl:w-[40%] shadow-lg  bg-gradient-to-b  from-green-500 to-green-200 ">
             <h3 className="text-center font-bold text-[20px] md:text-[24px] lg:text-[24px] xl:text-[24px]">
               Đăng ký
             </h3>
