@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const BeginPage = () => {
   return (
     <div className="w-full inline-block">
-      <div className="min-h-[100vh] mt-44">
+      <div className="min-h-[100vh] mt-52">
         <span className="flex items-center justify-center top-[50px]">
           <img
             className="rounded-full w-24 h-24 md:w-36 lg:w-36 xl:w-44 md:h-36 lg:h-36 xl:h-44"

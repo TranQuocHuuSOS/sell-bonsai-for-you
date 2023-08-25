@@ -269,6 +269,16 @@
       "numberphone": "0396236337",
       "status": "action",
       "id": 27
+    },
+    {
+      "username": "người ẩn danh",
+      "email": "an@gmail.com",
+      "password": "654321",
+      "role": "Người dùng",
+      "location": "101B lê hữu trác",
+      "numberphone": "0395142866",
+      "status": "action",
+      "id": 28
     }
   ],
   "Plants": [
