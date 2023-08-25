@@ -179,6 +179,76 @@
       "numberphone": "",
       "status": "action",
       "id": 18
+    },
+    {
+      "username": "",
+      "email": "h@gmail.com",
+      "password": "654321",
+      "role": "",
+      "location": "",
+      "numberphone": "",
+      "status": "action",
+      "id": 19
+    },
+    {
+      "username": "",
+      "email": "",
+      "password": "",
+      "role": "",
+      "location": "",
+      "numberphone": "",
+      "status": "action",
+      "id": 20
+    },
+    {
+      "username": "",
+      "email": "",
+      "password": "",
+      "role": "",
+      "location": "",
+      "numberphone": "",
+      "status": "action",
+      "id": 21
+    },
+    {
+      "username": "anh hai",
+      "email": "h@gmail.com",
+      "password": "654321",
+      "role": "user",
+      "location": "101B lê huu trac",
+      "numberphone": "0924353634",
+      "status": "action",
+      "id": 22
+    },
+    {
+      "username": "nguyễn văn a",
+      "email": "a@gmail.com",
+      "password": "654321",
+      "role": "buyer",
+      "location": "101B lê hữu trác",
+      "numberphone": "0395142866",
+      "status": "action",
+      "id": 23
+    },
+    {
+      "username": "anh nguyễn hậu",
+      "email": "aa@gmail.com",
+      "password": "654321",
+      "role": " Người dùng",
+      "location": "101B lê hữu trác",
+      "numberphone": "0905050312",
+      "status": "action",
+      "id": 24
+    },
+    {
+      "username": "thu tran",
+      "email": "tran@gmail.com",
+      "password": "654321",
+      "role": "Người dùng",
+      "location": "101B lê hữu trác",
+      "numberphone": "0395142866",
+      "status": "action",
+      "id": 25
     }
   ],
   "Plants": [

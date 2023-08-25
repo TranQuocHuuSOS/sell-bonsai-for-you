@@ -7,8 +7,23 @@ const Signin = ({ history }) => {
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
   const { login } = useAuth();
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+
   function handleLogin() {
     // kiểm tra dữ liệu đăng nhập
+    setEmailError("");
+    setPasswordError("");
+    if (!email) {
+      setEmailError("Vui lòng nhập email");
+    }
+    else if (!isValidEmail(email)) {
+      setEmailError("Email không đúng định dạng");
+    }
+    
+    if (!password) {
+      setPasswordError("Vui lòng nhập mật khẩu");
+    }
     if (email && password ) {
       axios
         .get("http://localhost:3000/users")
@@ -24,10 +39,10 @@ const Signin = ({ history }) => {
             alert("bạn đã đăng nhập thành công!");
             // Lưu thông tin người dùng vào local storage
             localStorage.setItem("userData", JSON.stringify(user));
-            if (user.role === "user" || user.role === "buyer") {
+            if (user.role === "Người dùng" || user.role === "Người bán") {
               window.location.href = "./Discussion";
             } 
-            else if (user.role === "admin") {
+            else if (user.role === "Quản lý") {
               window.location.href = "./Page_main";
             }
           }
@@ -46,6 +61,11 @@ const Signin = ({ history }) => {
       console.log("Please enter email and password");
     }
   }
+  function isValidEmail(email) {
+    // Biểu thức chính quy để kiểm tra định dạng email
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailPattern.test(email);
+  }
   return (
     <div className="   w-full">
       <div className="px-2 flex items-center justify-center min-h-[70vh] sm:min-h-[80vh] md:min-h-[100vh] lg:min-h-[100vh]   xl:min-h-[100vh]">
@@ -61,8 +81,9 @@ const Signin = ({ history }) => {
               className="cursor-pointer shadow font-light text-[16px]  appearance-none border rounded w-full py-2 px-3 hover:border-green-500 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="username"
               type="email"
-              placeholder="SDT hoặc Email"
+              placeholder="SDT hoặc Email" required
             />
+             <p className="text-red-500">{emailError}</p>
           </div>
           <br />
           <div className="mx-4">
@@ -73,8 +94,9 @@ const Signin = ({ history }) => {
               className="cursor-pointer shadow font-light text-[16px]  appearance-none border  rounded w-full py-2 hover:border-green-500 px-3 text-gray-700  leading-tight focus:outline-none focus:shadow-outline"
               id="password"
               type="password"
-              placeholder="Mật khẩu của bạn"
+              placeholder="Mật khẩu của bạn" required
             />
+             <p className="text-red-500">{passwordError}</p>
           </div>
           <br />
           <div className="text-center items-center lg:gap-2 justify-center">

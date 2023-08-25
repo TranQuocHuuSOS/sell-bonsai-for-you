@@ -8,9 +8,45 @@ const Signup = () => {
   const [role, setRole] = useState("");
   const [location, setLocation] = useState("");
   const [numberphone, setNumberphone] = useState("");
+  const [usernameError, setUsernameError] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+  const [roleError, setRoleError] = useState("");
+  const [locationError, setLocationError] = useState("");
+  const [numberphoneError, setNumberphoneError] = useState("");
   const [status, setStatus] = useState("");
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   function Sign_up() {
+    // kiểm tra dữ liệu đăng nhập
+    setUsernameError("");
+    setEmailError("");
+    setPasswordError("");
+    setRoleError("");
+    setLocationError("");
+    setNumberphoneError("");
+    if (!username) {
+      setUsernameError("Vui lòng nhập tên người dùng");
+    }
+    if (!email) {
+      setEmailError("Vui lòng nhập email");
+    }
+    else if (!isValidEmail(email)) {
+      setEmailError("Email không đúng định dạng");
+    }
+    if (!password) {
+      setPasswordError("Vui lòng nhập mật khẩu");
+    }
+    if (!role) {
+      setRoleError("Vui lòng chọn 1 vai trò");
+    }
+    if (!location) {
+      setLocationError("Vui lòng nhập địa chỉ");
+    }
+    if (!numberphone) {
+      setNumberphoneError("Vui lòng nhập sdt");
+    }
+  
+    if (username && email && password && role && location && numberphone) {
     const data = {
       username: username,
       email: email,
@@ -33,6 +69,12 @@ const Signup = () => {
         console.error("An error occurred:", error);
       });
   }
+}
+function isValidEmail(email) {
+  // Biểu thức chính quy để kiểm tra định dạng email
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailPattern.test(email);
+}
   return (
     <div className="w-full">
       {showSuccessMessage ? (
@@ -53,6 +95,7 @@ const Signup = () => {
                 id="username"
                 placeholder="Tên người dùng"
               />
+              <p className="text-red-500">{usernameError}</p>
             </div>
             <br />
             <div className="mx-4">
@@ -65,6 +108,7 @@ const Signup = () => {
                 id="username"
                 placeholder="Đại chỉ email"
               />
+              <p className="text-red-500">{emailError}</p>
             </div>
             <br />
             <div className="mx-4">
@@ -77,6 +121,7 @@ const Signup = () => {
                 id="username"
                 placeholder="Mật khẩu"
               />
+               <p className="text-red-500">{passwordError}</p>
             </div>
 
             <br />
@@ -90,6 +135,7 @@ const Signup = () => {
                 id="username"
                 placeholder="Nhập vị trí của bạn tại đây"
               />
+               <p className="text-red-500">{locationError}</p>
             </div>
             <br />
             <div className="mx-4">
@@ -102,6 +148,7 @@ const Signup = () => {
                 id="password"
                 placeholder="Nh sdt hoặc email tại đây"
               />
+               <p className="text-red-500">{numberphoneError}</p>
             </div>
             <br />
             <div className="mx-4">
@@ -113,13 +160,14 @@ const Signup = () => {
                 className="cursor-pointer bg-gray-50 border-[1px] hover:bg-gray-300 border-black text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               >
                 <option className="cursor-pointer" selected="selected">Vui lòng chọn một vai trò!</option>
-                <option value="user" className="cursor-pointer flex">
+                <option value="Người dùng" className="cursor-pointer flex">
                   Người dùng
                 </option>
-                <option value="buyer" className="cursor-pointer">
+                <option value="Người bán" className="cursor-pointer">
                   Người bán
                 </option>
               </select>
+              <p className="text-red-500">{roleError}</p>
             </div>
             <div className="grid text-center items-center justify-center">
               <button

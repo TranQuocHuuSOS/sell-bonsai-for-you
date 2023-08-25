@@ -23,13 +23,12 @@ import List_users from "./View/Admin/List_users";
 function App() {
   const { isLoggedIn, userData } = useAuth();
   return (
-    <div className="bg-[#f8e8ce] h-full">
+    <div className="bg-[#f8e8ce]">
       <Header />
       {/* <div className="container"> */}
 
-      {isLoggedIn && userData.role === "user" && <Navbar />}
-      {isLoggedIn && userData.role === "admin" && <Page_main />}
-
+      {isLoggedIn && userData.role === "Người dùng" | userData.role === "Người bán" && <Navbar />}
+      {isLoggedIn && userData.role === "Quản lý" && <Page_main />}
       <Routes>
         {!isLoggedIn && <Route path="/" element={<ConnectMe />} />}
         <Route path="/Discussion" element={<Discussion />} />
