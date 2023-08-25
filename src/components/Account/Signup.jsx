@@ -39,84 +39,86 @@ const Signup = () => {
         (window.location.href = "/Signin")
       ) : (
         <div className="px-2 py-8 flex items-center justify-center lg:min-h-[120vh] xl:min-h-[120vh]">
-          <form className="bg-white p-2 sm:p-4 md:p-6 lg:p-8 xl:p-8    rounded sm:w-[60%] md:w-[50%] lg:w-[40%]  xl:w-[40%] shadow-lg  bg-gradient-to-b  from-green-500 to-green-200 ">
+          <form className="bg-white p-2 sm:px-4 md:px-6 lg:px-8 xl:px-8    rounded sm:w-[60%] md:w-[50%] lg:w-[40%]  xl:w-[40%] shadow-lg  bg-gradient-to-b  from-green-500 to-green-200 ">
             <h3 className="text-center font-bold text-[20px] md:text-[24px] lg:text-[24px] xl:text-[24px]">
-              Sign Up
+              Đăng ký
             </h3>
             <div className="mx-4">
-              <label className="cursor-pointer my-2">User name</label>
+              <label className="cursor-pointer">Nhập tên người dùng</label>
               <input
                 type="text"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 className="cursor-pointer shadow font-light text-[16px]  appearance-none border rounded w-full py-2 px-3 hover:border-green-500 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="username"
-                placeholder="Enter your phone or email"
+                placeholder="Tên người dùng"
               />
             </div>
             <br />
             <div className="mx-4">
-              <label className="cursor-pointer my-2">Your Email</label>
+              <label className="cursor-pointer">Nhập email của bạn</label>
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="cursor-pointer shadow font-light text-[16px]  appearance-none border rounded w-full py-2 px-3 hover:border-green-500 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="username"
-                placeholder="Enter your email"
+                placeholder="Đại chỉ email"
               />
             </div>
             <br />
             <div className="mx-4">
-              <label className="cursor-pointer my-2">Your password</label>
+              <label className="cursor-pointer">Mật khẩu của bạn</label>
               <input
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="cursor-pointer shadow font-light text-[16px]  appearance-none border rounded w-full py-2 px-3 hover:border-green-500 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="username"
-                placeholder="Enter your password"
+                placeholder="Mật khẩu"
               />
             </div>
 
             <br />
             <div className="mx-4">
-              <label className="cursor-pointer my-2">Your location</label>
+              <label className="cursor-pointer">Vị trí của bạn</label>
               <input
                 type="text"
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
                 className="cursor-pointer shadow font-light text-[16px]  appearance-none border rounded w-full py-2 px-3 hover:border-green-500 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="username"
-                placeholder="Enter your location"
+                placeholder="Nhập vị trí của bạn tại đây"
               />
             </div>
             <br />
             <div className="mx-4">
-              <label className="cursor-pointer my-2">Your phone number</label>
+              <label className="cursor-pointer">SDT hoặc email</label>
               <input
                 type="number"
                 value={numberphone}
                 onChange={(e) => setNumberphone(e.target.value)}
                 className="cursor-pointer shadow font-light text-[16px]  appearance-none border  rounded w-full py-2 hover:border-green-500 px-3 text-gray-700  leading-tight focus:outline-none focus:shadow-outline"
                 id="password"
-                placeholder="Enter your phone number"
+                placeholder="Nh sdt hoặc email tại đây"
               />
             </div>
             <br />
             <div className="mx-4">
-              <label className="cursor-pointer my-2">Your role</label>
+              <label className="cursor-pointer">Vai trò của bạn</label>
               <select
                 value={role}
                 onChange={(e) => setRole(e.target.value)}
                 id="countries"
                 className="cursor-pointer bg-gray-50 border-[1px] hover:bg-gray-300 border-black text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               >
-                <option className="cursor-pointer" selected="selected">Hãy select một vai trò!</option>
+                <option className="cursor-pointer" selected="selected">Vui lòng chọn một vai trò!</option>
                 <option value="user" className="cursor-pointer flex">
-                  user
+                  Người dùng
                 </option>
-                <option value="buyer" className="cursor-pointer">buyer</option>
+                <option value="buyer" className="cursor-pointer">
+                  Người bán
+                </option>
               </select>
             </div>
             <div className="grid text-center items-center justify-center">
@@ -125,7 +127,7 @@ const Signup = () => {
                 className="bg-green-700 my-4 shadow hover:bg-green-500  text-[16px] text-white font-bold py-2 px-4 h-[40px] w-[150px] rounded focus:outline-none focus:shadow-outline"
                 type="button"
               >
-                Sign up
+                Đăng ký
               </button>
               <a
                 className=" py-2 align-baseline font-bold text-[16px] text-sm text-blue-700 hover:text-blue-500 "

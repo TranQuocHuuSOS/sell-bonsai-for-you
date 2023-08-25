@@ -1,6 +1,91 @@
-import React, { Component } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { useAuth } from "../../components/Account/AuthContext";
 import { Link } from "react-router-dom";
-const Remarkable = ({ children, isActive }) => {
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fas } from "@fortawesome/free-solid-svg-icons";
+import "../../components/style/output.css";
+import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+// import Discuss from './Discuss';
+library.add(fas);
+const Remarkable = ({ children, isActive }, url) => {
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+  const [imagepost, setImagepost] = useState("");
+  const [userID, setUserID] = useState("");
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  const { isLoggedIn, userData, login } = useAuth(); // Use the useAuth hook
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [nav, setNav] = useState(false);
+  const handleNav = () => {
+    setNav(!nav);
+  };
+  const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [users, setUsers] = useState([]);
+  useEffect(() => {
+    axios
+      .get("http://localhost:3000/posts")
+      .then((response) => {
+        setData(response.data);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.error(
+          "An error occurred while fetching data from the server:",
+          error
+        );
+        setIsLoading(false);
+      });
+  }, [url]);
+  useEffect(() => {
+    // lấy thông tin người dùng liên quan
+    const usersId = data.map((post) => post.user_id);
+    const uniqueUserIds = Array.from(new Set(usersId));
+    axios
+      .get("http://localhost:3000/users", {
+        params: {
+          id: uniqueUserIds.join(","),
+        },
+      })
+      .then((response) => {
+        setUsers(response.data);
+      })
+      .catch((error) => {
+        console.error("An error occurred while fetching user data:", error);
+      });
+  }, [data]);
+
+  useEffect(() => {
+    const storedUserData = localStorage.getItem("userData");
+    if (storedUserData) {
+      const parsedUserData = JSON.parse(storedUserData);
+      login(parsedUserData);
+    }
+  }, [login]);
+  const showProfileAndLogout = isLoggedIn || userData;
+
+  function post() {
+    const data = {
+      title: title,
+      content: content,
+      imagepost: imagepost,
+      userID: userID,
+    };
+    axios
+      .post("http://localhost:3000/posts", data)
+      .then((response) => {
+        if (response.status > 0) {
+          setShowSuccessMessage(true);
+          alert("Posted successfully!");
+        } else {
+          console.error("Post failed!");
+        }
+      })
+      .catch((error) => {
+        console.error("An error occurred:", error);
+      });
+  }
   return (
     <div className="w-full  inline-block">
       {/* start contennt */}
@@ -15,12 +100,521 @@ const Remarkable = ({ children, isActive }) => {
                   alt=""
                 ></img>
               </a>
-              <input
-                className="cursor-pointer xl:mx-8 lg:mx-8 md:mx-6 sm:mx-4 mx-2 shadow font-light text-[16px] flex appearance-none bg-gray-200  rounded-[50px] w-full hover:border-gray-500  text-gray-700  leading-tight focus:outline-none focus:shadow-outline"
-                id="password"
-                type="text"
-                placeholder=" Bạn hãy viết gì đi..."
-              />
+              <button
+                    onClick={() => window.my_modal_post.showModal()}
+                    className="flex hover:bg-gray-400 items-center cursor-pointer xl:mx-8 lg:mx-8 md:mx-6 sm:mx-4 mx-2 shadow font-light text-[16px] flex appearance-none bg-gray-200  rounded-[50px] w-full hover:border-gray-500  text-gray-700  leading-tight focus:outline-none focus:shadow-outline"
+                    id="password"
+                    type="button"
+                  >
+                    Bạn hãy viết gì đi...
+                  </button>
+
+                  {/*Bắt đầu modal post */}
+                  <dialog
+                    id="my_modal_post"
+                    className="modal w-[100%] sm:w-[80%] md:w-[60%] lg:w-[50%] xl:w-[50%] rounded-xl"
+                  >
+                    <form method="dialog" className="modal-box">
+                      <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+                        ✕
+                      </button>
+                      <form className="w-[95%] p-4  ">
+                        <div className="relative text-[20px] flex items-center justify-center font-bold">
+                          Tạo bài viết
+                        </div>
+                        <div className="p-0 sm:p-2 md:p-4 lg:p-4 xl:p-4">
+                          <div className="cursor-pointer flex items-center my-2">
+                            <a className="">
+                              <img
+                                className="rounded-full w-[30px] sm:w-[40px] md:w-[50px] lg:w-[50px] xl:w-[50px] h-[30px] sm:h-[40px] md:h-[50px] lg:h-[50px] xl:h-[50px]"
+                                src="https://bcolohouse.com.vn/wp-content/uploads/2022/04/trong-cay-bonsai-mini-1.jpg"
+                                alt=""
+                              ></img>
+                            </a>
+                            <div className="">
+                              <p className=" mx-2 font-medium text-[16px] hover:underline">
+                                <div className="hidden">
+                                  {isLoggedIn && userData
+                                    ? userData.id
+                                    : "Guest"}
+                                </div>
+                                {isLoggedIn && userData
+                                  ? userData.username
+                                  : "Guest"}
+                              </p>
+                              <div className="gap-4 mx-2 grid sm:flex md:flex lg:flex xl:flex">
+                                <button className="hover:bg-gray-400 flex items-center justify-center bg-gray-300 rounded p-1">
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    height="1em"
+                                    viewBox="0 0 512 512"
+                                  >
+                                    <path d="M57.7 193l9.4 16.4c8.3 14.5 21.9 25.2 38 29.8L163 255.7c17.2 4.9 29 20.6 29 38.5v39.9c0 11 6.2 21 16 25.9s16 14.9 16 25.9v39c0 15.6 14.9 26.9 29.9 22.6c16.1-4.6 28.6-17.5 32.7-33.8l2.8-11.2c4.2-16.9 15.2-31.4 30.3-40l8.1-4.6c15-8.5 24.2-24.5 24.2-41.7v-8.3c0-12.7-5.1-24.9-14.1-33.9l-3.9-3.9c-9-9-21.2-14.1-33.9-14.1H257c-11.1 0-22.1-2.9-31.8-8.4l-34.5-19.7c-4.3-2.5-7.6-6.5-9.2-11.2c-3.2-9.6 1.1-20 10.2-24.5l5.9-3c6.6-3.3 14.3-3.9 21.3-1.5l23.2 7.7c8.2 2.7 17.2-.4 21.9-7.5c4.7-7 4.2-16.3-1.2-22.8l-13.6-16.3c-10-12-9.9-29.5 .3-41.3l15.7-18.3c8.8-10.3 10.2-25 3.5-36.7l-2.4-4.2c-3.5-.2-6.9-.3-10.4-.3C163.1 48 84.4 108.9 57.7 193zM464 256c0-36.8-9.6-71.4-26.4-101.5L412 164.8c-15.7 6.3-23.8 23.8-18.5 39.8l16.9 50.7c3.5 10.4 12 18.3 22.6 20.9l29.1 7.3c1.2-9 1.8-18.2 1.8-27.5zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z" />
+                                  </svg>
+                                  Nhóm công khai
+                                </button>
+                                <button className="hover:bg-gray-400 flex items-center justify-center bg-gray-300 rounded p-1">
+                                  <i
+                                    data-visualcompletion="css-img"
+                                    className="x1b0d499 xep6ejk"
+                                    aria-label="Quy tắc"
+                                    role="img"
+                                    style={{
+                                      backgroundImage:
+                                        'url("https://static.xx.fbcdn.net/rsrc.php/v3/yx/r/8gTfEscoFW8.png")',
+                                      backgroundPosition: "-74px -98px",
+                                      backgroundSize: "98px 142px",
+                                      width: 16,
+                                      height: 16,
+                                      backgroundRepeat: "no-repeat",
+                                      display: "inline-block",
+                                    }}
+                                  />
+                                  Quy tắc
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <input
+                          value={title}
+                          onChange={(e) => setTitle(e.target.value)}
+                          type="text"
+                          className="cursor-pointer w-[100%] h-[100px] mx-4 hover:border-[1px] hover:border-black"
+                          placeholder="Tạo bài viết công khai..."
+                        ></input>
+                        <div className="border-[2px] rounded hover:border-black p-4 grid sm:flex md:flex lg:flex xl:flex w-[100%] items-center justify-center sm:justify-between md:justify-between lg:justify-between xl:justify-between mx-4">
+                          <div className="cursor-pointer">
+                            Thêm vào bài viết của bạn
+                          </div>
+                          <div className="flex gap-4">
+                            <label className="inline-flex  text-blue-700 w-auto h-[40px] text-center rounded-md items-center justify-center hover:bg-gray-300">
+                              <span className="cursor-pointer">
+                                <img
+                                  className="x1b0d499 xl1xv1r"
+                                  src="https://static.xx.fbcdn.net/rsrc.php/v3/yC/r/a6OjkIIE-R0.png"
+                                  alt=""
+                                  style={{ height: 24, width: 24 }}
+                                />
+                                <input
+                                  value={imagepost}
+                                  onChange={(e) => setImagepost(e.target.value)}
+                                  className="flex items-center justify-center"
+                                  type="file"
+                                  style={{ display: "none" }}
+                                />
+                              </span>
+                            </label>
+                            <label className="inline-flex  text-blue-700 w-auto h-[40px] text-center rounded-md items-center justify-center hover:bg-gray-300">
+                            <span className="flex items-center cursor-pointer ">
+                              <img
+                                className="x1b0d499 xl1xv1r"
+                                src="https://static.xx.fbcdn.net/rsrc.php/v3/yC/r/MqTJr_DM3Jg.png"
+                                alt=""
+                                style={{ height: 24, width: 24 }}
+                              />
+                              <input
+                                className="flex items-center justify-center"
+                                type="file"
+                                style={{ display: "none" }}
+                              />
+                            </span>
+                            </label>
+                            <label className="inline-flex  text-blue-700 w-auto h-[40px] text-center rounded-md items-center justify-center hover:bg-gray-300">
+                            <span className="flex items-center cursor-pointer">
+                              <img
+                                className="x1b0d499 xl1xv1r"
+                                src="https://static.xx.fbcdn.net/rsrc.php/v3/yy/r/uywzfiZad5N.png"
+                                alt=""
+                                style={{ height: 24, width: 24 }}
+                              />
+                              <input
+                                className="flex items-center justify-center"
+                                type="file"
+                                style={{ display: "none" }}
+                              />
+                            </span>
+                            </label>
+                            <label className="inline-flex  text-blue-700 w-auto h-[40px] text-center rounded-md items-center justify-center hover:bg-gray-300">
+                            <span
+                              onClick={() => window.my_modal_icon.showModal()}
+                              className="flex items-center cursor-pointer"
+                            >
+                              <img
+                                className="x1b0d499 xl1xv1r"
+                                src="https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/yMDS19UDsWe.png"
+                                alt=""
+                                style={{ height: 24, width: 24 }}
+                              />
+                              <input
+                                className="flex items-center justify-center"
+                                
+                                style={{ display: "none" }}
+                              />
+                            </span>
+                            </label>
+                            {/* bắt đầu 1 cái modal để mình chọn icon cảm xúc cho các bài đăng*/}
+                            <dialog
+                              id="my_modal_icon"
+                              className="modal w-[100%] sm:w-[80%] md:w-[60%] lg:w-[50%] xl:w-[50%] rounded-xl"
+                            >
+                              <form method="dialog" className="modal-box">
+                                <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+                                  ✕
+                                </button>
+                                <form className="w-[95%] p-4  ">
+                                  <div className="relative text-[20px] flex items-center justify-center font-bold">
+                                    Bạn đang cảm thấy thế nào?
+                                  </div>
+                                  <div className="p-0 sm:p-2 md:p-4 lg:p-4 xl:p-4">
+                                    <div className="grid sm:flex md:flex lg:flex xl:flex gap-2 md:gap-4 lg:gap-6 xl:gap-8 justify-center md:justify-start lg:justify-start xl:justify-start">
+                                      <p className="text-green-700 font-bold p-2 flex items-center justify-center hover:bg-gray-400 cursor-pointer rounded w-[100px] lg:w-[100px] xl:w-[100px]">
+                                        Cảm xúc
+                                      </p>
+                                      <p className="text-green-700 font-bold p-2 flex items-center justify-center hover:bg-gray-400 cursor-pointer rounded w-[100px] lg:w-[100px] xl:w-[100px]">
+                                        Hoạt động
+                                      </p>
+                                    </div>
+                                    <div className="">
+                                      <input
+                                        type="search"
+                                        id="default-search"
+                                        className="cursor-pointer block w-[100%] p-4 pl-10 text-sm text-gray-900 border bg-gray-300 border-gray-300 rounded-lg  focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="Tìm kiếm hội nhóm, bạn bè,..."
+                                        required=""
+                                      />
+                                    </div>
+                                    <div className="overscroll-y-200 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
+                                      <div className="">
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
+                                          <img
+                                            height={20}
+                                            width={20}
+                                            alt=""
+                                            referrerPolicy="origin-when-cross-origin"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yg/r/2T8CKph5g-l.png"
+                                          />
+                                          Hạnh phúc
+                                          <input
+                                            className="flex items-center justify-center"
+                                            type="file"
+                                            style={{ display: "none" }}
+                                          />
+                                        </div>
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
+                                          <img
+                                            height={20}
+                                            width={20}
+                                            alt=""
+                                            referrerPolicy="origin-when-cross-origin"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yn/r/6uxKmbIP8GH.png"
+                                          />
+                                          Được yêu
+                                        </div>
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
+                                          <img
+                                            height={20}
+                                            width={20}
+                                            alt=""
+                                            referrerPolicy="origin-when-cross-origin"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yn/r/6uxKmbIP8GH.png"
+                                          />
+                                          Đáng yêu
+                                        </div>
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
+                                          <img
+                                            height="20"
+                                            width="20"
+                                            alt=""
+                                            referrerpolicy="origin-when-cross-origin"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yi/r/1HpO3vuPieX.png"
+                                          />
+                                          Hào hứng
+                                        </div>
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
+                                          <img
+                                            height={20}
+                                            width={20}
+                                            alt=""
+                                            referrerPolicy="origin-when-cross-origin"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/66a8gSiDW1a.png"
+                                          />
+                                          Điên
+                                        </div>
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
+                                          <img
+                                            height={20}
+                                            width={20}
+                                            alt=""
+                                            referrerPolicy="origin-when-cross-origin"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yZ/r/8co0V8Vlpb5.png"
+                                          />
+                                          Có phúc
+                                        </div>
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
+                                          <img
+                                            height={20}
+                                            width={20}
+                                            alt=""
+                                            referrerPolicy="origin-when-cross-origin"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yb/r/Qmhf7JHw_Ht.png"
+                                          />
+                                          Buồn
+                                        </div>
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
+                                          <img
+                                            height={20}
+                                            width={20}
+                                            alt=""
+                                            referrerPolicy="origin-when-cross-origin"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/KlUlzF0jf_B.png"
+                                          />
+                                          Biết ơn
+                                        </div>
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
+                                          <img
+                                            height={20}
+                                            width={20}
+                                            alt=""
+                                            referrerPolicy="origin-when-cross-origin"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yn/r/6uxKmbIP8GH.png"
+                                          />
+                                          Đang yêu
+                                        </div>
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
+                                          <img
+                                            height={20}
+                                            width={20}
+                                            alt=""
+                                            referrerPolicy="origin-when-cross-origin"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yl/r/0DfJywXMapU.png"
+                                          />
+                                          Sung sướng
+                                        </div>
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
+                                          <img
+                                            height={20}
+                                            width={20}
+                                            alt=""
+                                            referrerPolicy="origin-when-cross-origin"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yy/r/xO5gTNyuse0.png"
+                                          />
+                                          Khờ khạo
+                                        </div>
+                                      </div>
+                                      <div className="">
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
+                                          <img
+                                            height={20}
+                                            width={20}
+                                            alt=""
+                                            referrerPolicy="origin-when-cross-origin"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yy/r/xO5gTNyuse0.png"
+                                          />
+                                          Thư giãn
+                                        </div>
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
+                                          <img
+                                            height={20}
+                                            width={20}
+                                            alt=""
+                                            referrerPolicy="origin-when-cross-origin"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/Wh8KupBh0Py.png"
+                                          />
+                                          Vui vẻ
+                                        </div>
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
+                                          <img
+                                            height={20}
+                                            width={20}
+                                            alt=""
+                                            referrerPolicy="origin-when-cross-origin"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/ym/r/ScTevBl-xyd.png"
+                                          />
+                                          Thoải mái
+                                        </div>
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
+                                          <img
+                                            height={20}
+                                            width={20}
+                                            alt=""
+                                            referrerPolicy="origin-when-cross-origin"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yl/r/0DfJywXMapU.png"
+                                          />
+                                          Hân hoan
+                                        </div>
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
+                                          <img
+                                            height={20}
+                                            width={20}
+                                            alt=""
+                                            referrerPolicy="origin-when-cross-origin"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yz/r/C8Of21bdJ1C.png"
+                                          />
+                                          Có động lực
+                                        </div>
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
+                                          <img
+                                            height={20}
+                                            width={20}
+                                            alt=""
+                                            referrerPolicy="origin-when-cross-origin"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/y0/r/cyuCzxUQ3ex.png"
+                                          />
+                                          Giận dữ
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </form>
+                              </form>
+                            </dialog>
+                            {/* kết thúc modal chọn icon cảm xúc cho bài đăng*/}
+                            <p
+                              onClick={() => window.my_modal_file.showModal()}
+                              className="flex items-center cursor-pointer rounded-full hover:bg-gray-300"
+                            >
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                height="1em"
+                                viewBox="0 0 448 512"
+                              >
+                                <path d="M8 256a56 56 0 1 1 112 0A56 56 0 1 1 8 256zm160 0a56 56 0 1 1 112 0 56 56 0 1 1 -112 0zm216-56a56 56 0 1 1 0 112 56 56 0 1 1 0-112z" />
+                              </svg>
+                            </p>
+                            {/* bắt đầu 1 cái modal để mình chọn file ảnh các thứ liên quan*/}
+                            <dialog
+                              id="my_modal_file"
+                              className="modal w-[100%] sm:w-[80%] md:w-[60%] lg:w-[50%] xl:w-[50%] rounded-xl"
+                            >
+                              <form method="dialog" className="modal-box">
+                                <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+                                  ✕
+                                </button>
+                                <form className="w-[95%] p-4  ">
+                                  <div className="relative text-[20px] flex items-center justify-center font-bold">
+                                    Thêm vào bài viết của bạn
+                                  </div>
+                                  <div className="p-0 sm:p-2 md:p-4 lg:p-4 xl:p-4">
+                                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
+                                      <div className="">
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
+                                          <img
+                                            className="x1b0d499 xl1xv1r"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yC/r/a6OjkIIE-R0.png"
+                                            alt=""
+                                            style={{ height: 24, width: 24 }}
+                                          />
+                                          Ảnh/video
+                                          <input
+                                            className="flex items-center justify-center"
+                                            type="file"
+                                            style={{ display: "none" }}
+                                          />
+                                        </div>
+
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
+                                          <img
+                                            className="x1b0d499 xl1xv1r"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yy/r/uywzfiZad5N.png"
+                                            alt=""
+                                            style={{ height: 24, width: 24 }}
+                                          />
+                                          Check in
+                                        </div>
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
+                                          <img
+                                            className="x1b0d499 xl1xv1r"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yX/r/j0Jp-GpONWx.png"
+                                            alt=""
+                                            style={{ height: 24, width: 24 }}
+                                          />
+                                          File GIF
+                                        </div>
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
+                                          <img
+                                            className="x1b0d499 xl1xv1r"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yf/r/9GrkIIXcz_9.png"
+                                            alt=""
+                                            style={{ height: 24, width: 24 }}
+                                          />
+                                          Gắn thẻ sự kiện
+                                        </div>
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
+                                          <img
+                                            className="x1b0d499 xl1xv1r"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yl/r/GNB0Xu7GKO5.png"
+                                            alt=""
+                                            style={{ height: 24, width: 24 }}
+                                          />
+                                          File
+                                        </div>
+                                      </div>
+                                      <div className="">
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
+                                          <img
+                                            className="x1b0d499 xl1xv1r"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yC/r/MqTJr_DM3Jg.png"
+                                            alt=""
+                                            style={{ height: 24, width: 24 }}
+                                          />
+                                          Gắn thẻ người khác
+                                        </div>
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
+                                          <img
+                                            className="x1b0d499 xl1xv1r"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yk/r/yMDS19UDsWe.png"
+                                            alt=""
+                                            style={{ height: 24, width: 24 }}
+                                          />
+                                          Cảm xúc/ Hoạt động
+                                        </div>
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
+                                          <img
+                                            className="x1b0d499 xl1xv1r"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yz/r/JlS35MWIk0L.png"
+                                            alt=""
+                                            style={{ height: 24, width: 24 }}
+                                          />
+                                          Thăm dò ý kiến
+                                        </div>
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
+                                          <img
+                                            className="x1b0d499 xl1xv1r"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yF/r/v1iF2605Cb5.png"
+                                            alt=""
+                                            style={{ height: 24, width: 24 }}
+                                          />
+                                          Video trực tiếp
+                                        </div>
+                                        <div className="cursor-pointer p-2 flex items-center gap-2 hover:bg-gray-300 rounded">
+                                          <img
+                                            className="x1b0d499 xl1xv1r"
+                                            src="https://static.xx.fbcdn.net/rsrc.php/v3/yf/r/9GrkIIXcz_9.png"
+                                            alt=""
+                                            style={{ height: 24, width: 24 }}
+                                          />
+                                          Tạo sự kiện
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </form>
+                              </form>
+                            </dialog>
+                            {/* kết thúc modal chọn file ảnh các file liên quan*/}
+                          </div>
+                        </div>
+                        <button
+                          onClick={post}
+                          className="bg-gray-300 shadow mx-4 my-8 hover:bg-gray-400 text-[16px] text-black font-bold h-[40px] w-[100%] rounded focus:outline-none focus:shadow-outline"
+                          type="button"
+                        >
+                          Tạo sự kiện
+                        </button>
+                      </form>
+                    </form>
+                  </dialog>
             </div>
             <div className="p-4 items-center justify-center grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 grid-cols-1 border-t-[1px]">
               <div className="flex items-center hover:bg-gray-300 rounded">
@@ -29,7 +623,7 @@ const Remarkable = ({ children, isActive }) => {
                   alt=""
                 ></img>
                 <h4 className="font-semibold text-gray-400 mx-4">
-                  Anonymous Post
+                  Bài đăng ẩn danh
                 </h4>
               </div>
               <div className="flex items-center hover:bg-gray-300 rounded">

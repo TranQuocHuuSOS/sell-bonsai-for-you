@@ -38,40 +38,40 @@ const Header = () => {
             {!isLoggedIn && (
               <div className="flex items-center lg:gap-2 justify-between gap-2">
                 <button
-                  className="cursor-pointer hidden lg:block xl:block bg-green-700 shadow hover:bg-green-500 text-[16px] text-white font-bold py-2 px-4 h-[40px] w-[100px] rounded focus:outline-none focus:shadow-outline"
+                  className="cursor-pointer hidden lg:block xl:block bg-green-700 shadow hover:bg-green-500 text-[16px] text-white font-bold py-2 px-4 h-[40px] w-[120px] rounded focus:outline-none focus:shadow-outline"
                   type="button"
                 >
-                  <Link to="/Signin">Sign In</Link>
+                  <Link to="/Signin">Đăng nhập</Link>
                 </button>
                 <button
-                  className="cursor-pointer hidden lg:block xl:block bg-green-700 shadow hover:bg-green-500 text-[16px] text-white font-bold py-2 px-4 h-[40px] w-[100px] rounded focus:outline-none focus:shadow-outline"
+                  className="cursor-pointer hidden lg:block xl:block bg-green-700 shadow hover:bg-green-500 text-[16px] text-white font-bold py-2 px-4 h-[40px] w-[120px] rounded focus:outline-none focus:shadow-outline"
                   type="button"
                 >
-                  <Link to="/Signup">Sign Up</Link>
+                  <Link to="/Signup">Đăng ký</Link>
                 </button>
               </div>
             )}
             {showProfileAndLogout && (
               <details className="dropdown h-[30px] sm:h-[40px] md:h-[40px] lg:h-[40px] xl:h-[40px]">
                 <summary className="cursor-pointer flex hover:bg-gray-300  top-2  items-center rounded bg-primary px-6 py-2.5 text-xs font-bold uppercase leading-tight bg-white shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg h-[30px] sm:h-[40px] md:h-[40px] lg:h-[40px] xl:h-[40px]  text-[16px]">
-                  Profile
+                Hồ sơ
                 </summary>
                 <div className="font-bold text-[16px] rounded-lg mx-4 right-[2px] sm:right-[10px] md:right-[10px] lg:right-[10px] xl:right-[10px] p-2 absolute menu dropdown-content z-[1] bg-base-100 rounded-box shadow-lg bg-green-200 text-black">
                     <div className="border-b-[2px] border-gray-400">
-                        Welcome,{" "}
+                        Chào mừng,{" "}
                         {isLoggedIn && userData ? userData.username : "Guest"}
                     </div>
                     <div className="border-b-[2px] border-gray-400">
-                        My email: {isLoggedIn && userData ? userData.email : "Guest"}
+                        Địa chỉ email: {isLoggedIn && userData ? userData.email : "Guest"}
                     </div>
                     <div className="border-b-[2px] border-gray-400">
-                        My phone number: {isLoggedIn && userData ? userData.numberphone : "Guest"}
+                        SDT của bạn: {isLoggedIn && userData ? userData.numberphone : "Guest"}
                     </div>
                     <div className="border-b-[2px] border-gray-400">
-                        My role: {isLoggedIn && userData ? userData.role : "Guest"}
+                        Vai trò của bạn: {isLoggedIn && userData ? userData.role : "Guest"}
                     </div>
                     <div className="border-b-[2px] border-gray-400">
-                        My location: {isLoggedIn && userData ? userData.location: "Guest"}
+                        Vị trí của bạn: {isLoggedIn && userData ? userData.location: "Guest"}
                     </div>
                   
                 </div>

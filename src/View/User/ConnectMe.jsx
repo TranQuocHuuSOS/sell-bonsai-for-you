@@ -2,12 +2,12 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 const BeginPage = () => {
   return (
-    <div className="w-full  inline-block">
-      <div className="min-h-[50vh] p-12">
+    <div className="w-full inline-block">
+      <div className="min-h-[100vh] mt-44">
         <span className="flex items-center justify-center top-[50px]">
           <img
-            className=""
-            src="https://w7.pngwing.com/pngs/618/6/png-transparent-computer-icons-bonsai-icon-design-bonsai-miscellaneous-logo-smiley.png"
+            className="rounded-full w-24 h-24 md:w-36 lg:w-36 xl:w-44 md:h-36 lg:h-36 xl:h-44"
+            src="https://img.freepik.com/premium-photo/beautiful-bonsai-tree-garden_832479-76.jpg"
             alt=""
           ></img>
         </span>

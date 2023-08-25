@@ -51,29 +51,29 @@ const Signin = ({ history }) => {
       <div className="px-2 flex items-center justify-center min-h-[70vh] sm:min-h-[80vh] md:min-h-[100vh] lg:min-h-[100vh]   xl:min-h-[100vh]">
         <form className="bg-white p-2 sm:p-4 md:p-6 lg:p-8 xl:p-8    rounded sm:w-[60%] md:w-[50%] lg:w-[40%]  xl:w-[40%] shadow-lg  bg-gradient-to-b  from-green-500 to-green-200 ">
           <h3 className=" text-center font-bold text-[20px] md:text-[24px] lg:text-[24px] xl:text-[24px]">
-            Sign In
+            Đăng nhập
           </h3>
           <div className="mx-4">
-            <label className="cursor-pointer my-2">Enter your email</label>
+            <label className="cursor-pointer my-2">Nhập email của bạn</label>
             <input
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="cursor-pointer shadow font-light text-[16px]  appearance-none border rounded w-full py-2 px-3 hover:border-green-500 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="username"
               type="email"
-              placeholder="Phone or email"
+              placeholder="SDT hoặc Email"
             />
           </div>
           <br />
           <div className="mx-4">
-            <label className="cursor-pointer my-2">Enter your password</label>
+            <label className="cursor-pointer my-2">Nhập mật khẩu của bạn</label>
             <input
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="cursor-pointer shadow font-light text-[16px]  appearance-none border  rounded w-full py-2 hover:border-green-500 px-3 text-gray-700  leading-tight focus:outline-none focus:shadow-outline"
               id="password"
               type="password"
-              placeholder="Enter your password"
+              placeholder="Mật khẩu của bạn"
             />
           </div>
           <br />
@@ -83,21 +83,21 @@ const Signin = ({ history }) => {
               className="bg-green-700  shadow hover:bg-green-500  text-[16px] text-white font-bold py-2 px-4 h-[40px] w-[150px] rounded focus:outline-none focus:shadow-outline"
               type="button"
             >
-              Sign In
+              Đăng nhập
             </button>
             <br />
             <a
               className=" py-2 align-baseline font-bold text-[16px] text-sm text-blue-700 hover:text-blue-500 "
               href="#"
             >
-              <Link to="/Signup">Create Account</Link>
+              <Link to="/Signup">Tạo một tài khoản</Link>
             </a>
             <br />
             <a
               className="py-2 align-baseline font-bold text-[16px] text-sm text-blue-700 hover:text-blue-500 "
               href="#"
             >
-              <Link to="/ResetPassword">Forgot Password?</Link>
+              <Link to="/ResetPassword">Quên mật khẩu?</Link>
             </a>
           </div>
         </form>
