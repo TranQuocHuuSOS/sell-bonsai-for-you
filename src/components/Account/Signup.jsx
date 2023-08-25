@@ -45,7 +45,6 @@ const Signup = () => {
     if (!numberphone) {
       setNumberphoneError("Vui lòng nhập sdt");
     }
-  
     if (username && email && password && role && location && numberphone) {
     const data = {
       username: username,
@@ -61,6 +60,7 @@ const Signup = () => {
       .then((Response) => {
         if (Response.status > 0) {
           setShowSuccessMessage(true);
+          alert("Bạn đã đăng nhập thành công!");
         } else {
           console.error("Registration failed!");
         }
@@ -139,14 +139,14 @@ function isValidEmail(email) {
             </div>
             <br />
             <div className="mx-4">
-              <label className="cursor-pointer">SDT hoặc email</label>
+              <label className="cursor-pointer">SDT của bạn</label>
               <input
                 type="number"
                 value={numberphone}
                 onChange={(e) => setNumberphone(e.target.value)}
                 className="cursor-pointer shadow font-light text-[16px]  appearance-none border  rounded w-full py-2 hover:border-green-500 px-3 text-gray-700  leading-tight focus:outline-none focus:shadow-outline"
                 id="password"
-                placeholder="Nh sdt hoặc email tại đây"
+                placeholder="Nhập sdt tại đây"
               />
                <p className="text-red-500">{numberphoneError}</p>
             </div>

@@ -10,7 +10,7 @@ const Signin = ({ history }) => {
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
 
-  function handleLogin() {
+  function handleLogin(){
     // kiểm tra dữ liệu đăng nhập
     setEmailError("");
     setPasswordError("");
@@ -20,7 +20,6 @@ const Signin = ({ history }) => {
     else if (!isValidEmail(email)) {
       setEmailError("Email không đúng định dạng");
     }
-    
     if (!password) {
       setPasswordError("Vui lòng nhập mật khẩu");
     }
@@ -58,7 +57,22 @@ const Signin = ({ history }) => {
           console.error("An error occurred!", error);
         });
     } else {    
-      console.log("Please enter email and password");
+      if (email && password) {
+        // Thực hiện kiểm tra thông tin tài khoản trực tiếp
+        // Ví dụ: Để cho phép đăng nhập thành công với tài khoản cố định
+        const fixedEmail = "example@example.com";
+        const fixedPassword = "password123";
+  
+        if (email === fixedEmail && password === fixedPassword) {
+          console.log("Login Successfully!");
+          alert("Bạn đã đăng nhập thành công!");
+  
+          // Chuyển hướng sau khi đăng nhập
+          window.location.href = "./Discussion"; // Điều này sẽ cần sửa đổi nếu bạn sử dụng React Router
+        } else {
+          console.log("Invalid credentials!");
+        }
+      }
     }
   }
   function isValidEmail(email) {
